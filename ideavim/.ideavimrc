@@ -1,0 +1,192 @@
+"--------------
+" key mapping
+"--------------
+let mapleader ="\<Space>"
+
+" Plugins
+"--------------
+Plug 'preservim/nerdtree'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+
+"--------------
+" Settings
+"--------------
+set nocompatible
+set clipboard=unnamed
+" set noswapfile
+" set hidden
+" set nobomb            " no BOM(Byte Order Mark)
+
+"--------------
+" Filetype and Encoding
+"--------------
+filetype on
+filetype indent on
+filetype plugin on
+
+" File encoding
+set encoding=utf-8
+scriptencoding utf-8
+
+"--------------
+" Search
+"--------------
+" highlight matching characters while search
+set hlsearch
+" case insensitive while searching
+set ignorecase
+" incremental search
+set incsearch
+" search will be case-sensitive while searching with some upper case characters.
+set smartcase
+" cancel search highlight if hit enter key after searching
+nnoremap <Enter> :nohlsearch<Enter><Enter>
+
+"--------------
+" appearance
+"--------------
+" show line numberset showmode
+set number
+"
+set relativenumber
+" display command
+set showcmd
+set wildmenu
+" 
+set showmode
+" do not display invisible characters
+set nolist
+set wrap
+set linebreak
+set cursorline
+set ruler
+set showtabline=2
+" remove splash wording
+set shortmess=I      
+" Increase history size to 1000 items.
+if &history < 1000
+  set history=1000
+endi
+
+"--------------
+" split window
+"--------------
+set splitbelow
+set splitright
+set laststatus=2
+
+"--------------
+" Scroll
+"--------------
+if !&scrolloff
+  set scrolloff=3 " Keep 5 lines next to thre cursor when scrolling vertically.
+endif
+if !&sidescrolloff
+  set sidescrolloff=5 " Keep 3 columns next to the cursor when scrolling horizontally.
+endif
+
+"--------------
+" Tab and space
+"--------------
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+"--------------
+" ColorScheme
+"--------------
+set t_Co=256  " Number of colors
+syntax on
+
+try
+  set background=dark
+  colorscheme gruvbox
+  highlight EndOfBuffer cterm=NONE ctermfg=bg ctermbg=bg
+catch
+endtry
+
+"--------------
+" Sound
+"--------------
+" disable sound on errors
+set visualbell
+set noerrorbells
+set t_vb=
+set tm=500
+
+"--------------
+" Idea Vim Extend
+"--------------
+set keep-english-in-normal
+set keep-english-in-normal-and-restore-in-insert
+" ideajoin
+set ideajoin
+
+"--------------
+" NERDTree
+"--------------
+" Map tt to NERDTree
+nnoremap <silent> nt :NERDTree<Enter>
+" Map tt to toggle NERDTree
+nnoremap <silent> tt :NERDTreeToggle<Enter>
+" Map ttf to NERDTree find
+nnoremap <silent> tf :NERDTreeFind<Enter>
+
+"--------------
+" IDEA Action
+"--------------
+" copy operation
+nnoremap <Leader>c :<C-u>action $Copy<CR>
+" paste operation
+nnoremap <Leader>v :<C-u>action $Paste<CR>
+" cut operation
+nnoremap <Leader>x :<C-u>action $Cut<CR>
+" Select All
+nnoremap <Leader>a :<C-u>action $SelectAll<CR>
+" reformat code
+nnoremap <Leader>f :<C-u>action ReformatCode<CR>
+" refresh code
+nnoremap <Leader>fr :<C-u>action Refresh<CR>
+" New File
+nnoremap <Leader>n :<C-u>action NewFile<CR>
+" 找到usage
+nnoremap <Leader>fu :<C-u>action FindUsages<CR>
+" 调用idea的replace操作
+nnoremap <Leader>; :<C-u>action Replace<CR>
+" go to class
+nnoremap <Leader>gc :<C-u>action GotoClass<CR>
+" go to action
+nnoremap <Leader>ga :<C-u>action GotoAction<CR>
+" go to declaration
+nnoremap <Leader>gd :<C-u>action GotoDeclaration<CR>
+" go to implementation
+nnoremap <Leader>gi :<C-u>action GotoImplementation<CR>
+" go to super method
+nnoremap <Leader>gs :<C-u>action GotoSuperMethod<CR>
+" 最近项目列表
+nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+" run class
+nnoremap <Leader>rc :<C-u>action RunClass<CR>
+" run
+nnoremap <Leader>r :<C-u>action Run<CR>
+" debug class
+nnoremap <Leader>dc :<C-u>action DebugClass<CR>
+" debug
+" nnoremap <Leader>d :<C-u>action Debug<CR>
+nnoremap <Leader>d :<C-u>action ChooseDebugConfiguration<CR>
+" 显示当前文件的文件路径
+nnoremap <Leader>sfp :<C-u>action ShowFilePath<CR>
+" 显示使用方法
+nnoremap <Leader>su :<C-u>action ShowUsages<CR>
+" 隐藏激活窗口
+nnoremap <Leader>h :<C-u>action HideActiveWindow<CR>
+" stop
+nnoremap <Leader>s :<C-u>action Stop<CR>
+" rename element
+nnoremap <Leader>rn :<C-u>action RenameElement<CR>
+" active terminal tool window
+nnoremap <Leader>at :action ActivateTerminalToolWindow<CR>
+" file structure [cmd + F12]
+nnoremap <Leader>fs :<C-u>action FileStructurePopup<CR>
