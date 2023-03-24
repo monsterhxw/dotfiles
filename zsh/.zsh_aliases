@@ -5,8 +5,6 @@ alias godl='cd ~/Downloads'
 alias gopj='cd ~/project'
 alias godt='cd ~/Desktop'
 alias gohome='cd ~'
-# work
-alias gowpj='cd ~/project/works/leyaoyao_gitlab_repositories'
 
 # Proxy
 # alias proxy='export all_proxy=socks5://127.0.0.1:11008'
