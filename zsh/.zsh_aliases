@@ -1,0 +1,26 @@
+# Alias
+
+# Go to dirs
+alias godl='cd ~/Downloads'
+alias gopj='cd ~/project'
+alias godt='cd ~/Desktop'
+alias gohome='cd ~'
+# work
+alias gowpj='cd ~/project/works/leyaoyao_gitlab_repositories'
+alias gowlyy='cd ~/Downloads/工作/乐摇摇_LeYaoYao'
+
+# Proxy
+# alias proxy='export all_proxy=socks5://127.0.0.1:11008'
+# alias unproxy='unset all_proxy'
+
+# Replace remove 
+alias rm='trash'
+
+# The Fuck
+eval "$(thefuck --alias fck)"
+
+# Replace ll
+alias ll='ls -lhas'
+
+# brew upgrade with xargs Commanda
+alias brewupgrade='brew outdated | xargs -L 1 -p brew upgrade'
