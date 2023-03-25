@@ -19,6 +19,14 @@ window:
   dynamic_padding: false
   decorations: buttonless # full
 
+# autostart tmux on alacritty launch
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux new -s lab"
+
 font:
   normal:
     family: "JetBrains Mono"
