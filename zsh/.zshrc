@@ -170,5 +170,11 @@ eval "$(starship init zsh)"
 
 eval $(thefuck --alias)
 
+#if [ -z "$TMUX" ]; then
+#  tmux attach
+#else
+#  tmux new -s lab
+#fi
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
