@@ -10,14 +10,19 @@ selection:
 window: 
   # 窗口大小
   dimensions:
-    columns: 168
-    lines: 42
-  opacity: 0.92
+    columns: 160
+    lines: 45
+  opacity: 0.90
   padding:
     x: 10
     y: 8
   dynamic_padding: false
   decorations: buttonless # full
+  startup_mode: Maximized
+
+scrolling:
+  history: 10000
+  multiplier: 3
 
 # autostart tmux on alacritty launch
 shell:
@@ -38,7 +43,6 @@ font:
     family: "JetBrains Mono"
     style: Italic
   size: 15.0
-  use_thin_strokes: false
   
 mouse:
   hide_when_typing: false
