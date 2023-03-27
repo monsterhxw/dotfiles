@@ -18,7 +18,7 @@ window:
     y: 8
   dynamic_padding: false
   decorations: buttonless # full
-  startup_mode: Maximized
+    #startup_mode: Maximized
 
 scrolling:
   history: 10000
