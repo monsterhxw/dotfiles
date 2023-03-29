@@ -91,6 +91,8 @@ plugins=(
   vi-mode
   zsh-autosuggestions
   tmux
+  extract
+  fig
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -157,6 +159,7 @@ export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 # Source zprofile
 [[ -f ~/.zprofile ]] && source ~/.zprofile
 
+
 # Auto jump
 ## ps plugin has value
 [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -175,6 +178,9 @@ eval $(thefuck --alias)
 #else
 #  tmux new -s lab
 #fi
+
+# Source fzf
+[[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
