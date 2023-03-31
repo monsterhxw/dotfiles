@@ -10,15 +10,13 @@ selection:
 window: 
   # 窗口大小
   dimensions:
-    columns: 160
+    columns: 170
     lines: 45
-  opacity: 0.90
+  opacity: 0.9
   padding:
     x: 10
     y: 8
-  dynamic_padding: false
   decorations: buttonless # full
-    #startup_mode: Maximized
 
 scrolling:
   history: 10000
@@ -65,16 +63,16 @@ key_bindings:
   # Switch to last tmux session
   - { key: L, mods: Command, chars: "\x02\x4c" }
   - { key: LBracket, mods: Command, chars: "\x02\x5b" }
-  # Change to the previous tmux window
-  - { key: LBracket, mods: Command|Shift, chars: "\x02\x70" }
+  # Change to the previous tmux window ##- { key: LBracket, mods: Command|Shift, chars: "\x02\x70" }
+  - { key: J, mods: Command|Shift, chars: "\x02\x70" }
+  # Change to the next tmux window ##- { key: RBracket, mods: Command|Shift, chars: "\x02\x6e" }
+  - { key: K, mods: Command|Shift, chars: "\x02\x6e" }
   # Split the current pane into two, left and right
   - { key: D, mods: Command, chars: "\x02\x25" }
   # Split the current pane into two, top and bottom.
   - { key: D, mods: Command|Shift, chars: "\x02\x22" }
   # Detach the current tmux client
   - { key: W, mods: Command|Shift, chars: "\x02\x64" }
-  # Change to the next tmux window
-  - { key: RBracket, mods: Command|Shift, chars: "\x02\x6e" }
   # Type <escape>:w<enter> to save neovim
   - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" }
   # Create a new tmux window
