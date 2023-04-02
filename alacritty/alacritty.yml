@@ -62,8 +62,10 @@ key_bindings:
   - { key: Key9, mods: Command, chars: "\x02\x39" }
   # Switch to last tmux session
   - { key: L, mods: Command, chars: "\x02\x4c" }
-  # open file manager 'gokcehan/lf'
-  - { key: F, mods: Command, chars: "lfcd\n" } 
+  # open file 
+  - { key: F, mods: Command, chars: "fto\n" } 
+  # cd into the directory of the selected file
+  - { key: G, mods: Command, chars: "cdft\n" } 
   # Popup and switch pane
   - { key: J, mods: Command, chars: "\x02\x0c" }
   #

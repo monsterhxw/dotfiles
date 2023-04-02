@@ -32,24 +32,28 @@ export FZF_COMPLETION_TRIGGER='**'
 
 
 export FZF_TMUX=1
-export FZF_TMUX_HEIGHT='90%'
-#export FZF_TMUX_OPTS=
+export FZF_TMUX_OPTS='-p80%,60%'
 
-# Modified version where you can press
-#   - CTRL-O to open with `open` command,
-#   - CTRL-E or Enter key to open with the $EDITOR
-fo() {
-  IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
-  key=$(head -1 <<< "$out")
-  file=$(head -2 <<< "$out" | tail -1)
-  if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-  fi
-}
 
 # cdf - cd into the directory of the selected file
 cdf() {
    local file
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+cdft() {
+   local file
+   local dir
+   file=$(fzf-tmux $FZF_TMUX_OPTS --preview 'bat --color=always --line-range :50 {}' +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+fo() {
+  local file
+  file=$(fzf +m -q "$1") && vim "$file"
+}
+
+fto() {
+  local file
+  file=$(fzf-tmux $FZF_TMUX_OPTS --preview 'bat --color=always --line-range :50 {}' +m -q "$1") && vim "$file"
 }
