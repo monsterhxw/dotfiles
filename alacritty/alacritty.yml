@@ -17,6 +17,7 @@ window:
     x: 10
     y: 8
   decorations: buttonless # full
+  startup_mode: Maximized
 
 scrolling:
   history: 10000
