@@ -4,7 +4,8 @@
 alias godl='cd ~/Downloads'
 alias gopj='cd ~/project'
 alias godt='cd ~/Desktop'
-alias gohome='cd ~'
+alias gh='cd ~'
+alias gtmp='cd $HOME/project/tmp'
 
 # Proxy
 # alias proxy='export all_proxy=socks5://127.0.0.1:11008'
