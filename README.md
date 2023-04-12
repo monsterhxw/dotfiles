@@ -14,6 +14,8 @@
 
 - [lf](https://github.com/gokcehan/lf)
 
+- [lsd](https://github.com/lsd-rs/lsd)
+
 - [thefuck](https://github.com/nvbn/thefuck)
 
 - [tldr](https://github.com/tldr-pages/tldr)

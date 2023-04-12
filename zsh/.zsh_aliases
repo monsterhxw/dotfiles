@@ -18,7 +18,9 @@ alias rm='trash'
 eval "$(thefuck --alias fck)"
 
 # Replace ll
-alias ll='ls -lhas'
+#alias ll='ls -lhas'
+alias ll='lsd -la'
+alias lt='lsd --tree -l --depth 2'
 
 # brew upgrade with xargs Commanda
 alias brewupgrade='brew outdated | xargs -L 1 -p brew upgrade'
