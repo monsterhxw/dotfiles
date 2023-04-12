@@ -35,7 +35,8 @@ font:
   normal:
     #family: "JetBrains Mono"
     family: "BlexMono Nerd Font"
-    style: Regular
+    #style: Regular
+    style: Medium
   bold:
     #family: "JetBrains Mono"
     family: "BlexMono Nerd Font"
