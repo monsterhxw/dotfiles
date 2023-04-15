@@ -89,10 +89,10 @@ plugins=(
   git 
   autojump
   vi-mode
-  zsh-autosuggestions
   tmux
   extract
-  fig
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -140,7 +140,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # JDK export command
 # export JDK8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
 # export JDK12_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home"
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_292)
 
 # MySQL
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
