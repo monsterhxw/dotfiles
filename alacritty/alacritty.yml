@@ -33,17 +33,14 @@ shell:
 
 font:
   normal:
-    #family: "JetBrains Mono"
-    family: "BlexMono Nerd Font"
+    family: "BlexMono NFM"
     #style: Regular
     style: Medium
   bold:
-    #family: "JetBrains Mono"
-    family: "BlexMono Nerd Font"
+    family: "BlexMono NFM"
     style: Bold
   italic:
-    #family: "JetBrains Mono"
-    family: "BlexMono Nerd Font"
+    family: "BlexMono NFM"
     style: Italic
   size: 15.0
   
