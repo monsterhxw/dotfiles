@@ -119,8 +119,10 @@ set tm=500
 "--------------
 " Idea Vim Extend
 "--------------
+" https://github.com/hadix-lin/ideavim_extension
 set keep-english-in-normal
 set keep-english-in-normal-and-restore-in-insert
+
 " ideajoin
 set ideajoin
 
@@ -138,17 +140,16 @@ nnoremap <silent> tf :NERDTreeFind<Enter>
 " IDEA Action
 "--------------
 " copy operation
-nnoremap <Leader>c :<C-u>action $Copy<CR>
+"nnoremap <Leader>c :<C-u>action $Copy<CR>
 " paste operation
-nnoremap <Leader>v :<C-u>action $Paste<CR>
+"nnoremap <Leader>v :<C-u>action $Paste<CR>
 " cut operation
-nnoremap <Leader>x :<C-u>action $Cut<CR>
+"nnoremap <Leader>x :<C-u>action $Cut<CR>
 " Select All
 nnoremap <Leader>a :<C-u>action $SelectAll<CR>
 " reformat code
 nnoremap <Leader>f :<C-u>action ReformatCode<CR>
-" refresh code
-nnoremap <Leader>fr :<C-u>action Refresh<CR>
+vmap <Leader>f :<C-u>action ReformatCode<CR>
 " New File
 nnoremap <Leader>n :<C-u>action NewFile<CR>
 " 找到usage
@@ -190,3 +191,7 @@ nnoremap <Leader>rn :<C-u>action RenameElement<CR>
 nnoremap <Leader>at :action ActivateTerminalToolWindow<CR>
 " file structure [cmd + F12]
 nnoremap <Leader>fs :<C-u>action FileStructurePopup<CR>
+" compile file
+nnoremap <Leader>c :<C-u>action CompileFile<CR>
+" rebuild project
+nnoremap <Leader>cp :<C-u>action CompileProject<CR>
