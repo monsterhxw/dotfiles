@@ -9,13 +9,13 @@ selection:
 
 window: 
   # 窗口大小
-  dimensions:
-    columns: 170
-    lines: 45
-  opacity: 0.85
+  #dimensions:
+  #  columns: 170
+  #  lines: 45
   padding:
-    x: 10
-    y: 8
+    x: 2
+    y: 2
+  opacity: 0.85
   decorations: buttonless # full
   startup_mode: Maximized
 
@@ -34,8 +34,8 @@ shell:
 font:
   normal:
     family: "BlexMono NFM"
-    #style: Regular
-    style: Medium
+    style: Regular
+    #style: Medium
   bold:
     family: "BlexMono NFM"
     style: Bold
