@@ -42,7 +42,8 @@ set incsearch
 " search will be case-sensitive while searching with some upper case characters.
 set smartcase
 " cancel search highlight if hit enter key after searching
-nnoremap <Enter> :nohlsearch<Enter><Enter>
+" nnoremap <Enter> :nohlsearch<Enter><Enter>
+nnoremap <Leader><Enter> :nohls<CR>
 
 "--------------
 " appearance
@@ -126,6 +127,10 @@ set keep-english-in-normal-and-restore-in-insert
 " ideajoin
 set ideajoin
 
+" Quickscope
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 "--------------
 " NERDTree
 "--------------
@@ -195,3 +200,7 @@ nnoremap <Leader>fs :<C-u>action FileStructurePopup<CR>
 nnoremap <Leader>c :<C-u>action CompileFile<CR>
 " rebuild project
 nnoremap <Leader>cp :<C-u>action CompileProject<CR>
+" TypeHierarchy
+nnoremap <Leader>th :<C-u>action TypeHierarchy<CR>
+" Back
+nnoremap <Leader>gb :<C-u>action Back<CR>
