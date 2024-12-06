@@ -1,0 +1,127 @@
+live_config_reload = true
+
+[colors.bright]
+black = "0x636363"
+blue = "0x7eaac7"
+cyan = "0x86d3ce"
+green = "0x909d63"
+magenta = "0xaa6292"
+red = "0xbc5653"
+white = "0xf7f7f7"
+yellow = "0xebc17a"
+
+[colors.cursor]
+cursor = "0xd9d9d9"
+text = "0x2c2c2c"
+
+[colors.dim]
+black = "0x232323"
+blue = "0x556b79"
+cyan = "0x5c8482"
+green = "0x5e6547"
+magenta = "0x6e4962"
+red = "0x74423f"
+white = "0x828282"
+yellow = "0x8b7653"
+
+[colors.normal]
+black = "0x1c1c1c"
+blue = "0x7eaac7"
+cyan = "0x86d3ce"
+green = "0x909d63"
+magenta = "0xaa6292"
+red = "0xbc5653"
+white = "0xcacaca"
+yellow = "0xebc17a"
+
+[colors.primary]
+background = "0x2c2c2c"
+# bright_background = "0x3a3a3a"
+bright_foreground = "0xd9d9d9"
+# dim_background = "0x202020"
+dim_foreground = "0xdbdbdb"
+foreground = "0xd6d6d6"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+#family = "BlexMono NFM"
+#family = "CaskaydiaMono Nerd Font Mono"
+family = "Inconsolata LGC Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+#family = "BlexMono NFM"
+#family = "CaskaydiaMono Nerd Font Mono"
+family = "Inconsolata LGC Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+#family = "BlexMono NFM"
+#family = "CaskaydiaMono Nerd Font Mono"
+family = "Inconsolata LGC Nerd Font Mono"
+style = "Regular"
+
+[keyboard]
+bindings = [ # `\u0002` = CTRL + B (TMUX Prefix)
+{ key = "Comma", mods = "Command", chars = "\u0002,"}, # Rename the current tmux window name, `cmd + ,`
+{ key = "K", mods = "Command", chars = "\u0002s" }, # Select a new tmux session for the attached client interactively, `cmd + k`
+{ key = "Key1", mods = "Command", chars = "\u00021" }, # Select tmux window 1-9, `cmd + 1`
+{ key = "Key2", mods = "Command", chars = "\u00022" }, # `cmd + 2`
+{ key = "Key3", mods = "Command", chars = "\u00023" }, # `cmd + 3`
+{ key = "Key4", mods = "Command", chars = "\u00024" }, # `cmd + 4`
+{ key = "Key5", mods = "Command", chars = "\u00025" }, # `cmd + 5`
+{ key = "Key6", mods = "Command", chars = "\u00026" }, # `cmd + 6`
+{ key = "Key7", mods = "Command", chars = "\u00027" }, # `cmd + 7`
+{ key = "Key8", mods = "Command", chars = "\u00028" }, # `cmd + 8`
+{ key = "Key9", mods = "Command", chars = "\u00029" }, # Select tmux window 1-9, `cmd + 9`
+{ key = "J", mods = "Command", chars = "\u0002\f" }, # Popup and switch pane, `cmd + j`
+{ key = "J", mods = "Command|Shift", chars = "\u0002p" }, # Change to the previous tmux window, `cmd + shift + j`
+{ key = "K", mods = "Command|Shift", chars = "\u0002n" }, # Change to the next tmux window, `cmd + shift + k`
+{ key = "D", mods = "Command|Shift", chars = "\u0002d" },# Detach the current tmux client, `cmd + shift + d`
+{ key = "T", mods = "Command", chars = "\u0002c" }, # Create a new tmux window, `cmd + t`
+{ key = "T", mods = "Command|Shift", chars = "\u0002!" }, # Break the current tmux pane out of the tmux window, `cmd + shift + t`
+{ key = "X", mods = "Command", chars = "\u0002x" }, # Kill the current tmux pane (and window if last pane), `cmd + x`
+{ key = "Z", mods = "Command", chars = "\u0002z" },  # Toggle the zoom state of the current tmux pane, `cmd + z`
+{ key = "LBracket", mods = "Command", chars = "\u0002[" }, # Enter Tmux Copy mode, `cmd + [`
+{ key = "S", mods = "Command", chars = "\u001B:w\n" },# Type <escape>:w<enter> to save vim/neovim, `cmd + s`
+{ key = "F", mods = "Command", chars = "fto\n" }, # open file, `cmd + f`
+{ key = "G", mods = "Command", chars = "cdft\n" } # cd into the directory of the selected filea, `cmd + g`
+]
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+#[terminal.shell]
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux attach || tmux new -s lab"]
+
+[window]
+decorations = "Buttonless"
+opacity = 0.78
+blur = true
+startup_mode = "Maximized"
+padding = { x = 5, y = 3}
+option_as_alt = "Both"
+
+#[general]
+#live_config_reload = true
+
+[terminal]
+
+#[window.padding]
+#x = 3
+#y = 3
