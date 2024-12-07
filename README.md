@@ -124,4 +124,10 @@
   brew install watch
   ```
 
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+
+  ```bash
+  brew install zoxide
+  ```
+
 </details>
