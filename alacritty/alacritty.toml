@@ -24,6 +24,9 @@ red = "0x74423f"
 white = "0x828282"
 yellow = "0x8b7653"
 
+[colors]
+draw_bold_text_with_bright_colors = true
+
 [colors.normal]
 black = "0x1c1c1c"
 blue = "0x7eaac7"
@@ -67,31 +70,48 @@ family = "Inconsolata LGC Nerd Font Mono"
 style = "Regular"
 
 [keyboard]
-bindings = [ # `\u0002` = CTRL + B (TMUX Prefix)
-{ key = "Comma", mods = "Command", chars = "\u0002,"}, # Rename the current tmux window name, `cmd + ,`
-{ key = "K", mods = "Command", chars = "\u0002s" }, # Select a new tmux session for the attached client interactively, `cmd + k`
-{ key = "Key1", mods = "Command", chars = "\u00021" }, # Select tmux window 1-9, `cmd + 1`
-{ key = "Key2", mods = "Command", chars = "\u00022" }, # `cmd + 2`
-{ key = "Key3", mods = "Command", chars = "\u00023" }, # `cmd + 3`
-{ key = "Key4", mods = "Command", chars = "\u00024" }, # `cmd + 4`
-{ key = "Key5", mods = "Command", chars = "\u00025" }, # `cmd + 5`
-{ key = "Key6", mods = "Command", chars = "\u00026" }, # `cmd + 6`
-{ key = "Key7", mods = "Command", chars = "\u00027" }, # `cmd + 7`
-{ key = "Key8", mods = "Command", chars = "\u00028" }, # `cmd + 8`
-{ key = "Key9", mods = "Command", chars = "\u00029" }, # Select tmux window 1-9, `cmd + 9`
-{ key = "J", mods = "Command", chars = "\u0002\f" }, # Popup and switch pane, `cmd + j`
-{ key = "J", mods = "Command|Shift", chars = "\u0002p" }, # Change to the previous tmux window, `cmd + shift + j`
-{ key = "K", mods = "Command|Shift", chars = "\u0002n" }, # Change to the next tmux window, `cmd + shift + k`
-{ key = "D", mods = "Command|Shift", chars = "\u0002d" },# Detach the current tmux client, `cmd + shift + d`
-{ key = "T", mods = "Command", chars = "\u0002c" }, # Create a new tmux window, `cmd + t`
-{ key = "T", mods = "Command|Shift", chars = "\u0002!" }, # Break the current tmux pane out of the tmux window, `cmd + shift + t`
-{ key = "X", mods = "Command", chars = "\u0002x" }, # Kill the current tmux pane (and window if last pane), `cmd + x`
-{ key = "Z", mods = "Command", chars = "\u0002z" },  # Toggle the zoom state of the current tmux pane, `cmd + z`
-{ key = "LBracket", mods = "Command|Alt", chars = "\u0002[" }, # Enter Tmux Copy mode, `cmd + [`
-{ key = "S", mods = "Command", chars = "\u001B:w\n" },# Type <escape>:w<enter> to save vim/neovim, `cmd + s`
-{ key = "F", mods = "Command", chars = "fto\n" }, # open file, `cmd + f`
-{ key = "G", mods = "Command", chars = "cdft\n" }, # cd into the directory of the selected file, `cmd + g`
-{ key = "L", mods = "Command", chars = "lfcd\n" } # Change working dir in shell to last dir in lf, `cmd + l`
+bindings = [ 
+# ** `\u0002` = CTRL + B (TMUX Prefix)
+# Rename the current tmux window name, `cmd + ,`
+{ key = "Comma", mods = "Command", chars = "\u0002,"}, 
+# Select a new tmux session for the attached client interactively, `cmd + k`
+{ key = "K", mods = "Command", chars = "\u0002s" },
+# Select tmux window 1-5, `cmd + 1`
+{ key = "Key1", mods = "Command", chars = "\u00021" }, 
+# Select tmux window 1-5, `cmd + 2`
+{ key = "Key2", mods = "Command", chars = "\u00022" },
+# Select tmux window 1-5, `cmd + 3`
+{ key = "Key3", mods = "Command", chars = "\u00023" },
+# Select tmux window 1-5, `cmd + 4`
+{ key = "Key4", mods = "Command", chars = "\u00024" },
+# Select tmux window 1-5, `cmd + 5`
+{ key = "Key5", mods = "Command", chars = "\u00025" },
+# Popup and switch tmux pane, `cmd + j`
+{ key = "J", mods = "Command", chars = "\u0002\f" }, 
+# Change to the previous tmux window, `cmd + shift + j`
+{ key = "J", mods = "Command|Shift", chars = "\u0002p" }, 
+# Change to the next tmux window, `cmd + shift + k`
+{ key = "K", mods = "Command|Shift", chars = "\u0002n" }, 
+# Detach the current tmux client, `cmd + shift + d`
+{ key = "D", mods = "Command|Shift", chars = "\u0002d" },
+# Create a new tmux window, `cmd + t`
+{ key = "T", mods = "Command", chars = "\u0002c" }, 
+# Break the current tmux pane out of the tmux window, `cmd + shift + t`
+{ key = "T", mods = "Command|Shift", chars = "\u0002!" }, 
+# Kill the current tmux pane (and window if last pane), `cmd + x`
+{ key = "X", mods = "Command", chars = "\u0002x" }, 
+# Toggle the zoom state of the current tmux pane, `cmd + z`
+{ key = "Z", mods = "Command", chars = "\u0002z" },
+# Enter Tmux Copy mode, `cmd + alt + [`
+{ key = "LBracket", mods = "Command|Alt", chars = "\u0002[" }, 
+# Type <escape>:w<enter> to save vim/neovim, `cmd + s`
+{ key = "S", mods = "Command", chars = "\u001B:w\n" },
+# open file, `cmd + f`
+{ key = "F", mods = "Command", chars = "fto\n" }, 
+# cd into the directory of the selected file, `cmd + g`
+{ key = "G", mods = "Command", chars = "cdft\n" }, 
+# Change working dir in shell to last dir in lf, `cmd + l`
+{ key = "L", mods = "Command", chars = "lfcd\n" } 
 ]
 
 [mouse]
