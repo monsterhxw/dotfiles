@@ -1,0 +1,10 @@
+# Include files from `~/.ssh/config.d/` dir, excluding files that start with a dot(.).
+Include config.d/[!.]*
+
+# Global options
+Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  PreferredAuthentications publickey # Only use public key authentication
+  IdentitiesOnly Yes                 # Only use the specified IdentityFile (Identity Key)
+  IdentityFile ~/.ssh/id_ed25519     # Default key
