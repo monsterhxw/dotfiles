@@ -38,12 +38,12 @@ white = "0xcacaca"
 yellow = "0xebc17a"
 
 [colors.primary]
-background = "0x2c2c2c"
+background = "0x111111"
 # bright_background = "0x3a3a3a"
 bright_foreground = "0xd9d9d9"
 # dim_background = "0x202020"
 dim_foreground = "0xdbdbdb"
-foreground = "0xd6d6d6"
+foreground = "0xF4F4FF"
 
 [env]
 TERM = "xterm-256color"
@@ -128,7 +128,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 #[terminal.shell]
 [shell]
 program = "/bin/zsh"
-args = ["-l", "-c", "tmux attach || tmux new -s lab"]
+args = ["-l", "-c", "if tmux has-session 2>/dev/null; then tmux attach; else tmux new -s lab; fi"]
 
 [window]
 decorations = "Buttonless"
