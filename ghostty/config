@@ -1,0 +1,79 @@
+# Font
+font-family = "Inconsolata LGC Nerd Font Mono"
+font-size = 14
+
+# Theme
+theme = MaterialDesignColors
+
+# Background and Foreground
+background = #111111
+foreground = #f4f4ff
+background-opacity = 0.76
+background-blur-radius = 20
+minimum-contrast = 3
+
+# Window
+#window-decoration = true
+window-padding-x = 3
+window-padding-y = 1
+window-padding-balance = true
+
+# quit
+confirm-close-surface = false
+
+# Mouse
+#mouse-hide-while-typing = true
+
+# Shell
+shell-integration = zsh
+shell-integration-features = no-cursor
+
+# macOS
+macos-option-as-alt = true
+#macos-titlebar-style = hidden
+
+
+# Keybindings
+### Vim, Shell bindings
+# Type <escape>:w<enter> to save vim/neovim, `cmd + s`
+keybind = cmd+s=text:\x1b:w\n
+# open file, `cmd + f`
+keybind = cmd+f=text:fto\n
+# cd into the directory of the selected file, `cmd + g
+keybind = cmd+g=text:cdft\n
+# Change working dir in shell to last dir in lf, `cmd + l`
+keybind = cmd+l=text:lfcd\n
+#
+### Tmux bindings `\x02`=`CTRL+B(TMUX Prefix)`
+# Rename the current tmux window name, `cmd + ,`
+keybind = cmd+comma=text:\x02,
+# Select a new tmux session for the attached client interactively, `cmd + k`
+keybind = cmd+k=text:\x02s
+# Select tmux window 1-5, `cmd + 1`
+keybind = cmd+one=text:\x021
+# Select tmux window 1-5, `cmd + 2`
+keybind = cmd+two=text:\x022
+# Select tmux window 1-5, `cmd + 3`
+keybind = cmd+three=text:\x023
+# Select tmux window 1-5, `cmd + 4`
+keybind = cmd+four=text:\x024
+# Select tmux window 1-5, `cmd + 5`
+keybind = cmd+five=text:\x025
+# Popup and switch tmux pane, `cmd + j`
+keybind = cmd+j=text:\x02\x0c
+# Change to the previous tmux window, `cmd + shift + j`
+keybind = cmd+shift+j=text:\x02p
+# Change to the next tmux window, `cmd + shift + k`
+keybind = cmd+shift+k=text:\x02n
+# Detach the current tmux client, `cmd + d`
+keybind = cmd+d=text:\x02d
+# Create a new tmux window, `cmd + t`
+keybind = cmd+t=text:\x02c
+# Break the current tmux pane out of the tmux window, `cmd + shift + t`
+keybind = cmd+shift+t=text:\x02!
+# Kill the current tmux pane (and window if last pane), `cmd + x`
+keybind = cmd+x=text:\x02x
+# Toggle the zoom state of the current tmux pane, `cmd + z`
+keybind = cmd+z=text:\x02z
+# Enter Tmux Copy mode, `cmd + alt + [`
+keybind = cmd+alt+[=text:\x02[
