@@ -13,13 +13,14 @@ background-blur-radius = 20
 minimum-contrast = 3
 
 # Window
-#window-decoration = true
+window-decoration = true
 window-padding-x = 3
 window-padding-y = 1
 window-padding-balance = true
 
 # quit
 confirm-close-surface = false
+quit-after-last-window-closed = true
 
 # Mouse
 #mouse-hide-while-typing = true
@@ -28,10 +29,14 @@ confirm-close-surface = false
 shell-integration = zsh
 shell-integration-features = no-cursor
 
+#Command
+initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux attach; else tmux new -s lab; fi"
+
 # macOS
 macos-option-as-alt = true
 #macos-titlebar-style = hidden
-
+#macos-non-native-fullscreen = visible-menu
+#fullscreen = true
 
 # Keybindings
 ### Vim, Shell bindings
