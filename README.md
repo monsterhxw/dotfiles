@@ -42,10 +42,34 @@
   brew install --cask font-inconsolata-lgc-nerd-font
   ```
 
+- [font-jetbrains-mono](https://github.com/JetBrains/JetBrainsMono)
+
+  ```bash
+  brew install --cask font-jetbrains-mono
+  ```
+
+- [font-lxgw-wenkai](https://github.com/lxgw/LxgwWenKai)
+
+  ```bash
+  brew install --cask font-lxgw-wenkai
+  ```
+
 - [fzf](https://github.com/junegunn/fzf)
 
   ```bash
   brew install fzf
+  ```
+
+- [ghostty](https://github.com/ghostty-org/ghostty)
+
+  ```bash
+  brew install ghostty
+  ```
+
+- [hammerspoon](https://github.com/Hammerspoon/hammerspoon)
+
+  ```bash
+  brew install --cask hammerspoon
   ```
 
 - [jq](https://github.com/jqlang/jq)
