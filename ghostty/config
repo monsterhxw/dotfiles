@@ -1,6 +1,7 @@
 # Font
 font-family = "Inconsolata LGC Nerd Font Mono"
 font-size = 14
+font-thicken
 
 # Theme
 theme = catppuccin-mocha
