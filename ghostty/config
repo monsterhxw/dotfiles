@@ -1,7 +1,7 @@
 # Font
 #font-family = "Inconsolata LGC Nerd Font Mono"
+#font-family = "JetBrainsMono Nerd Font Mono"
 font-family = "GeistMono Nerd Font Mono"
-#font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-size = 14
 font-thicken
 font-feature = -liga
@@ -16,8 +16,8 @@ palette = 240=#767676
 # Background and Foreground
 background = "#111111"
 foreground = "#f4f4ff"
-background-opacity = 0.78
-background-blur-radius = 20
+background-opacity = 0.75
+background-blur-radius = 15
 minimum-contrast = 1.1
 
 # Window
