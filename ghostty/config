@@ -6,6 +6,9 @@ font-size = 14
 font-thicken
 font-feature = -liga
 
+# Term
+term = xterm-256color
+
 # Theme
 theme = catppuccin-mocha
 # For zsh-autosuggestions
@@ -14,8 +17,8 @@ palette = 8=#7f869e
 palette = 240=#767676
 
 # Background and Foreground
-background = "#111111"
-foreground = "#f4f4ff"
+background = "#1f2430"
+foreground = "#cbccc6"
 background-opacity = 0.75
 background-blur-radius = 15
 minimum-contrast = 1.1
