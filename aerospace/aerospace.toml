@@ -57,8 +57,8 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical =   8
+inner.horizontal = 5
+inner.vertical =   5
 outer.left =       8
 outer.bottom =     8
 outer.top =        8
@@ -225,6 +225,10 @@ up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
 # On Window Detected
+# Finder
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
 # App Store
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
