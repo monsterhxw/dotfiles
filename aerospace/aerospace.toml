@@ -21,7 +21,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 20
+accordion-padding = 15
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -104,25 +104,15 @@ outer.right =      8
 cmd-ctrl-slash = 'layout h_tiles v_tiles'
 cmd-ctrl-comma = 'layout v_accordion h_accordion'
 
-# Focus Monitor
-cmd-ctrl-shift-b = 'focus-monitor --wrap-around next'
-cmd-ctrl-shift-f = 'focus-monitor --wrap-around prev'
-
 # Focus Workspce
-cmd-ctrl-b = 'workspace --wrap-around next'
-cmd-ctrl-f = 'workspace --wrap-around prev'
+cmd-ctrl-f = 'workspace --wrap-around next'
+cmd-ctrl-b = 'workspace --wrap-around prev'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-ctrl-h = 'focus left --boundaries-action wrap-around-the-workspace'
 cmd-ctrl-j = 'focus down --boundaries-action wrap-around-the-workspace'
 cmd-ctrl-k = 'focus up --boundaries-action wrap-around-the-workspace'
 cmd-ctrl-l = 'focus right --boundaries-action wrap-around-the-workspace'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-cmd-ctrl-shift-h = 'move left'
-cmd-ctrl-shift-j = 'move down'
-cmd-ctrl-shift-k = 'move up'
-cmd-ctrl-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 cmd-ctrl-minus = 'resize smart -50'
@@ -207,16 +197,28 @@ cmd-ctrl-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+cmd-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
 
-cmd-ctrl-shift-h = ['join-with left', 'mode main']
-cmd-ctrl-shift-j = ['join-with down', 'mode main']
-cmd-ctrl-shift-k = ['join-with up', 'mode main']
-cmd-ctrl-shift-l = ['join-with right', 'mode main']
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+h = ['move left', 'mode main']
+j = ['move down', 'mode main']
+k = ['move up', 'mode main']
+l = ['move right', 'mode main']
+
+shift-h = ['join-with left', 'mode main']
+shift-j = ['join-with down', 'mode main']
+shift-k = ['join-with up', 'mode main']
+shift-l = ['join-with right', 'mode main']
+
+z = ['fullscreen', 'mode main']
+
+# Focus Monitor
+f = ['focus-monitor --wrap-around next', 'mode main']
+b = ['focus-monitor --wrap-around prev', 'mode main']
 
 down = 'volume down'
 up = 'volume up'
@@ -226,6 +228,10 @@ shift-down = ['volume set 0', 'mode main']
 # App Store
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
+run = ['layout floating']
+# Activity Monitor
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
 run = ['layout floating']
 [[on-window-detected]]
 # OrbStack
@@ -291,6 +297,10 @@ run = ['layout floating']
 # Cubox
 [[on-window-detected]]
 if.app-id = 'com.linnk.Linnk'
+run = ['layout floating', 'move-node-to-workspace 1']
+# Mihomo Party
+[[on-window-detected]]
+if.app-id = 'party.mihomo.app'
 run = ['layout floating', 'move-node-to-workspace 1']
 # ---Specifies Workspace 2---
 # Logseq
