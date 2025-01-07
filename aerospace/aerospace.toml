@@ -220,78 +220,100 @@ z = ['fullscreen', 'mode main']
 f = ['focus-monitor --wrap-around next', 'mode main']
 b = ['focus-monitor --wrap-around prev', 'mode main']
 
+# Open Application
+alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
+
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
 
 # On Window Detected
 # Finder
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = ['layout floating']
+
 # App Store
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
 run = ['layout floating']
+
 # Activity Monitor
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
 run = ['layout floating']
-[[on-window-detected]]
+
 # OrbStack
+[[on-window-detected]]
 if.app-id = 'dev.kdrag0n.MacVirt'
 run = ['layout floating']
+
+# WeChat
 [[on-window-detected]]
 if.app-id = 'com.tencent.xinWeChat'
 run = ['layout floating']
+
 # Wireshark
 [[on-window-detected]]
 if.app-id = 'org.wireshark.Wireshark'
 run = ['layout floating']
+
 # Telegram
 [[on-window-detected]]
 if.app-id = 'ru.keepcoder.Telegram'
 run = ['layout floating']
+
 # Amazon Q
 [[on-window-detected]]
 if.app-id = 'com.amazon.codewhisperer'
 run = ['layout floating']
+
 # Discord
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = ['layout floating']
+
 # Slack
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['layout floating']
+
 # Raycast
 [[on-window-detected]]
 if.app-id = 'com.raycast.macos'
 run = ['layout floating']
+
 # Latest
 [[on-window-detected]]
 if.app-id = 'com.max-langer.Latest'
 run = ['layout floating']
+
 # Bob
 [[on-window-detected]]
 if.app-id = 'com.hezongyidev.Bob'
 run = ['layout floating']
+
 # Tencent Lemon
 [[on-window-detected]]
 if.app-id = 'com.tencent.Lemon'
 run = ['layout floating']
+
 # Craft
 [[on-window-detected]]
 if.app-id = 'com.lukilabs.lukiapp'
 run = ['layout floating']
+
 # Figma
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
 run = ['layout floating']
+
 # Keka
 [[on-window-detected]]
 if.app-id = 'com.aone.keka'
 run = ['layout floating']
+
 # Fork
 [[on-window-detected]]
 if.app-id = 'com.DanPristupov.Fork'
@@ -302,28 +324,34 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.linnk.Linnk'
 run = ['layout floating', 'move-node-to-workspace 1']
+
 # Mihomo Party
 [[on-window-detected]]
 if.app-id = 'party.mihomo.app'
 run = ['layout floating', 'move-node-to-workspace 1']
+
 # ---Specifies Workspace 2---
 # Logseq
 [[on-window-detected]]
 if.app-id = 'com.electron.logseq'
 run = ['layout floating', 'move-node-to-workspace 2']
+
 # Ghostty
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace 2']
+
 # Follow
 [[on-window-detected]]
 if.app-id = 'is.follow'
 run = ['layout floating', 'move-node-to-workspace 2']
+
 # ---Specifies Workspace 3---
 # Chrome
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = ['move-node-to-workspace 3']
+
 # ---Specifies Workspace 4---
 # Cherry Stuido
 [[on-window-detected]]
