@@ -37,8 +37,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = ['move-mouse window-lazy-center']
-
+# on-focus-changed = ['move-mouse window-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
@@ -107,6 +106,10 @@ cmd-ctrl-comma = 'layout v_accordion h_accordion'
 # Focus Workspce
 cmd-ctrl-f = 'workspace --wrap-around next'
 cmd-ctrl-b = 'workspace --wrap-around prev'
+
+# Focus Monitor
+cmd-ctrl-shift-f = 'focus-monitor --wrap-around next'
+cmd-ctrl-shift-b = 'focus-monitor --wrap-around prev'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-ctrl-h = 'focus left --boundaries-action wrap-around-the-workspace'
@@ -215,10 +218,6 @@ shift-k = ['join-with up', 'mode main']
 shift-l = ['join-with right', 'mode main']
 
 z = ['fullscreen', 'mode main']
-
-# Focus Monitor
-f = ['focus-monitor --wrap-around next', 'mode main']
-b = ['focus-monitor --wrap-around prev', 'mode main']
 
 # Open Application
 alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
