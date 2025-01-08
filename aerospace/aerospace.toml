@@ -219,6 +219,11 @@ shift-l = ['join-with right', 'mode main']
 
 z = ['fullscreen', 'mode main']
 
+n = ['move-node-to-workspace --focus-follows-window next', 'mode main']
+p = ['move-node-to-workspace --focus-follows-window prev', 'mode main']
+shift-n = ['move-node-to-monitor --focus-follows-window next', 'mode main']
+shift-p = ['move-node-to-monitor --focus-follows-window prev', 'mode main']
+
 # Open Application
 alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
 
@@ -331,6 +336,11 @@ run = ['layout floating']
 # DeepL
 [[on-window-detected]]
 if.app-id = 'com.linguee.DeepLCopyTranslator'
+run = ['layout floating']
+
+# Hammerspoon
+[[on-window-detected]]
+if.app-id = 'org.hammerspoon.Hammerspoon'
 run = ['layout floating']
 
 # ---Specifies Workspace 1---
