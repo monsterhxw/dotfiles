@@ -50,6 +50,10 @@ macos-option-as-alt = true
 #fullscreen = true
 
 # Keybindings
+### Fix CSI u encoding
+#### See https://github.com/ghostty-org/ghostty/issues/2976
+#### See https://github.com/ghostty-org/ghostty/discussions/3510
+keybind = ctrl+left_bracket=text:\x1b
 ### Vim, Shell bindings
 # Type <escape>:w<enter> to save vim/neovim, `cmd + s`
 keybind = cmd+s=text:\x1b:w\n
