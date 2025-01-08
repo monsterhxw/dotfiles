@@ -8,7 +8,7 @@ local config = {
   -- 0.1 = swipe distance > 10% of trackpad
   threshold = 0.08,
   showAlert = true,
-  alertDuration = 0.4
+  alertDuration = 0.3
 }
 
 local AEROSPACE = "/usr/local/bin/aerospace"
@@ -18,13 +18,12 @@ function aerospaceExec(cmd)
   hs.execute(command)
   
   if config.showAlert then
-    hs.alert.show("AeroSpace " .. cmd, config.alertDuration)
+    hs.alert.show("AeroSpace: " .. cmd, config.alertDuration)
   end
 end
 
--- use four finger swipe to switch workspace
 local current_id, threshold
-
+-- use 4-fingers swipe to switch workspace
 Swipe:start(config.fingers, function(direction, distance, id)
   if id == current_id then
     if distance > threshold then
