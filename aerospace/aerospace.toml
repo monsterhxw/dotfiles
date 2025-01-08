@@ -319,6 +319,21 @@ run = ['layout floating']
 if.app-id = 'com.DanPristupov.Fork'
 run = ['layout floating']
 
+# OpenCat
+[[on-window-detected]]
+if.app-id = 'tech.baye.OpenCat'
+run = ['layout floating']
+
+# ChatX
+[[on-window-detected]]
+if.app-id = 'com.app.ChatGPTX'
+run = ['layout floating']
+
+# DeepL
+[[on-window-detected]]
+if.app-id = 'com.linguee.DeepLCopyTranslator'
+run = ['layout floating']
+
 # ---Specifies Workspace 1---
 # Cubox
 [[on-window-detected]]
