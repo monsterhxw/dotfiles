@@ -56,8 +56,8 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 5
-inner.vertical =   5
+inner.horizontal = 2
+inner.vertical =   2
 outer.left =       8
 outer.bottom =     8
 outer.top =        8
@@ -199,8 +199,9 @@ cmd-ctrl-semicolon = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
+ctrl-leftSquareBracket = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-cmd-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+enter = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -212,17 +213,21 @@ j = ['move down', 'mode main']
 k = ['move up', 'mode main']
 l = ['move right', 'mode main']
 
+# Join with left/down/up/right
 shift-h = ['join-with left', 'mode main']
 shift-j = ['join-with down', 'mode main']
 shift-k = ['join-with up', 'mode main']
 shift-l = ['join-with right', 'mode main']
 
+# Maximize
 z = ['fullscreen', 'mode main']
 
-n = ['move-node-to-workspace --focus-follows-window next', 'mode main']
-p = ['move-node-to-workspace --focus-follows-window prev', 'mode main']
-shift-n = ['move-node-to-monitor --focus-follows-window next', 'mode main']
-shift-p = ['move-node-to-monitor --focus-follows-window prev', 'mode main']
+# Move node to workspace
+f = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
+b = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+# Move node to monitor
+shift-f = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
+shift-b = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
 
 # Open Application
 alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
