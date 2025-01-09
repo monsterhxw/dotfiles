@@ -223,11 +223,11 @@ shift-l = ['join-with right', 'mode main']
 z = ['fullscreen', 'mode main']
 
 # Move node to workspace
-f = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
-b = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+n = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
+p = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
 # Move node to monitor
-shift-f = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
-shift-b = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
+shift-n = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
+shift-p = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
 
 # Open Application
 alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
