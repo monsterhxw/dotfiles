@@ -6,7 +6,7 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon 🤖
+# @raycast.icon ⏮️
 
 # Documentation:
 # @raycast.author Monster_Dump
