@@ -108,8 +108,8 @@ cmd-ctrl-f = 'workspace --wrap-around next'
 cmd-ctrl-b = 'workspace --wrap-around prev'
 
 # Focus Monitor
-cmd-ctrl-shift-f = 'focus-monitor --wrap-around next'
-cmd-ctrl-shift-b = 'focus-monitor --wrap-around prev'
+cmd-ctrl-n = 'focus-monitor --wrap-around next'
+cmd-ctrl-p = 'focus-monitor --wrap-around prev'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-ctrl-h = 'focus left --boundaries-action wrap-around-the-workspace'
