@@ -1,8 +1,9 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
-
+# Amazon Q pre block. Keep at the top of this file.
+# [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh"
+# Q pre block. Keep at the top of this file.
 function echo_ok () {
-  echo "Ok.";
+  local caller=${funcstack[2]:-"Unknown"}
+  echo "[$caller] OK."
 }
 
 # Java version setting
@@ -12,19 +13,22 @@ function setjdk() {
   java -version
 }
 
-function proxy() {
-  export http_proxy=127.0.0.1:7890;
-  export https_proxy=$http_proxy;
-  export all_proxy=socks5://127.0.0.1:7890;
-  echo_ok;
-}
-
-function unproxy() {
-  unset http_proxy;
-  unset https_proxy;
-  unset all_proxy;
-  echo_ok;
-}
+# function proxy() {
+#   export http_proxy=http://127.0.0.1:7890;
+#   export https_proxy=http://127.0.0.1:7890;
+#   export all_proxy=http://127.0.0.1:7890;
+#   echo_ok;
+# }
+# 
+# function unproxy() {
+#   unset http_proxy;
+#   unset https_proxy;
+#   unset all_proxy;
+#   unset HTTP_PROXY;
+#   unset HTTPS_PROXY;
+#   unset ALL_PROXY;
+#   echo_ok;
+# }
 
 # set SSL KEY LOG FILE
 function setsslkey () {
@@ -39,23 +43,57 @@ function unsetsslkey () {
 }
 
 # see {@link https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh }
-lfcd () {
-    tmp="$(mktemp)"
+function lfcd () {
     # `command` is needed in case `lfcd` is aliased to `lf`
-    command lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
+    cd "$(command lf -print-last-dir "$@")"
+}
+
+# See [Runlike](https://github.com/lavie/runlike?tab=readme-ov-file#run-without-installing)
+# Docker container inspector function
+function runlike () {
+  # Check if container name/id is provided
+  if [ -z "$1" ]; then
+    echo "Usage: runlike <container-name|id>"
+    return 1
+  fi
+
+  # Check Docker daemon
+  if ! docker info &>/dev/null; then
+    echo "❌ Docker daemon is not running"
+    return 1
+  fi
+
+  # Check if container exists
+  if ! docker inspect "$1" &>/dev/null; then
+    echo "❌ Container '$1' not found"
+    return 1
+  fi
+
+  echo "✅ Inspecting container '$1'..."
+  docker run --rm -v /var/run/docker.sock:/var/run/docker.sock assaflavie/runlike -p "$1"
+}
+
+# Fix AmazonQ Display Error
+# function fixq () {
+#   q integrations -v uninstall input-method
+#   local terminal_app=$(osascript -e 'tell application "System Events" to get name of first application process whose frontmost is true')
+#   killall $terminal_app
+#   q integrations -v install input-method
+# }
+
+# Confirming exit in a Tmux session
+function exit () {
+  if [[ -n $TMUX ]]; then
+    echo "You're in a Tmux Session"
+  else
+    builtin exit
+  fi
 }
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
+# Q post block. Keep at the bottom of this file.
+
+# Amazon Q post block. Keep at the bottom of this file.
+# [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"
