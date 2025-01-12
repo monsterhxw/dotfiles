@@ -118,8 +118,8 @@ cmd-ctrl-k = 'focus up --boundaries-action wrap-around-the-workspace'
 cmd-ctrl-l = 'focus right --boundaries-action wrap-around-the-workspace'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-cmd-ctrl-minus = 'resize smart -50'
-cmd-ctrl-equal = 'resize smart +50'
+cmd-ctrl-minus = 'resize smart -100'
+cmd-ctrl-equal = 'resize smart +100'
 
 # See: https://nikitabobko.github.io/AeroSpace/non-empty-workspaces-root-containers-layout-on-startupcommands#workspace
 alt-1 = 'workspace 1'
@@ -206,8 +206,8 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
 # The Raycast Center Command Hotkey needs to be set to `ctrl + option + cmd + F2` (Key Code 120 = F2)
 period = [
-  '''exec-and-forget /usr/local/bin/aerospace layout floating && /usr/bin/osascript -e 'tell application "System Events" to key code 120 using {control down, option down, command down}' || /usr/local/bin/aerospace layout tiling''',
-  'mode main'
+    '''exec-and-forget /usr/local/bin/aerospace layout floating && /usr/bin/osascript -e 'tell application "System Events" to key code 120 using {control down, option down, command down}' || /usr/local/bin/aerospace layout tiling''',
+    'mode main'
 ]
 
 backspace = ['close-all-windows-but-current', 'mode main']
