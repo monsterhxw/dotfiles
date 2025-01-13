@@ -49,12 +49,19 @@ macos-option-as-alt = true
 #macos-non-native-fullscreen = visible-menu
 #fullscreen = true
 
+# Quick Terminal
+# quick-terminal-screen = mouse
+
 # Keybindings
-### Fix CSI u encoding
-#### See https://github.com/ghostty-org/ghostty/issues/2976
-#### See https://github.com/ghostty-org/ghostty/discussions/3510
+#Quick Terminal
+keybind = global:ctrl+q=toggle_quick_terminal
+#
+#Fix CSI u encoding
+# See https://github.com/ghostty-org/ghostty/issues/2976
+# See https://github.com/ghostty-org/ghostty/discussions/3510
 keybind = ctrl+left_bracket=text:\x1b
-### Vim, Shell bindings
+#
+#Vim, Shell bindings
 # Type <escape>:w<enter> to save vim/neovim, `cmd + s`
 keybind = cmd+s=text:\x1b:w\n
 # open file, `cmd + f`
@@ -64,7 +71,7 @@ keybind = cmd+g=text:cdft\n
 # Change working dir in shell to last dir in lf, `cmd + l`
 keybind = cmd+l=text:lfcd\n
 #
-### Tmux bindings `\x02`=`CTRL+B(TMUX Prefix)`
+#Tmux bindings `\x02`=`CTRL+B(TMUX Prefix)`
 # Rename the current tmux window name, `cmd + ,`
 keybind = cmd+comma=text:\x02,
 # Select a new tmux session for the attached client interactively, `cmd + k`
