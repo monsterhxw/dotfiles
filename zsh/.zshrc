@@ -25,7 +25,7 @@ bindkey '^B' backward-char
 bindkey '^K' kill-line
 
 # completion
-autoload -zU compinit && compinit
+# autoload -zU compinit && compinit # oh-my-zsh will call
 # Include hidden files
 _comp_options+=(globdots)
 zstyle ':completion::complete:*:*:(files|globbed-files)' ignored-patterns '.DS_Store'
