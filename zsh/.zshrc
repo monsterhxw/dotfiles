@@ -25,9 +25,11 @@ bindkey '^B' backward-char
 bindkey '^K' kill-line
 
 # completion
-# fzf-tab Include hidden files
+autoload -zU compinit && compinit
+# Include hidden files
 _comp_options+=(globdots)
-zstyle ':completion:*' ignored-patterns '.DS_Store'
+zstyle ':completion::complete:*:*:(files|globbed-files)' ignored-patterns '.DS_Store'
+zstyle ':completion::complete:(rm|trash):*:globbed-files' ignored-patterns
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
@@ -42,7 +44,7 @@ zstyle ':completion:*' menu no
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 # MySQL@5.7
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
