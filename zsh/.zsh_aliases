@@ -22,3 +22,6 @@ alias brewupgrade='brew outdated | xargs -L 1 -p brew upgrade'
 alias alacritty='/Applications/Alacritty.app/Contents/MacOS/alacritty'
 
 alias tksv='tmux kill-server'
+
+# AeroSpace Switch windows
+alias ass='aerospace list-windows --workspace focused | grep -v "^$(aerospace list-windows --focused --format '%{window-id}')" | fzf --reverse | cut -f1 -d"|" | xargs aerospace focus --window-id'
