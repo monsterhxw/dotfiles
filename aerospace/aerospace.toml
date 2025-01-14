@@ -191,12 +191,12 @@ automatically-unhide-macos-hidden-apps = false
     alt-cmd-semicolon = 'mode service'
 
     # Focus Workspce
-    alt-n = 'workspace --wrap-around next'
-    alt-p = 'workspace --wrap-around prev'
+    alt-leftSquareBracket = 'workspace --wrap-around next'
+    alt-rightSquareBracket = 'workspace --wrap-around prev'
     
     # Focus Monitor
-    alt-cmd-n = 'focus-monitor --wrap-around next'
-    alt-cmd-p = 'focus-monitor --wrap-around prev'
+    alt-cmd-leftSquareBracket = 'focus-monitor --wrap-around next'
+    alt-cmd-rightSquareBracket = 'focus-monitor --wrap-around prev'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -237,12 +237,12 @@ automatically-unhide-macos-hidden-apps = false
     l = ['move right', 'mode main']
 
     # Move node to workspace
-    n = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
-    p = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+    alt-leftSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
+    alt-rightSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
     
     # Move node to monitor
-    shift-n = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
-    shift-p = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
+    alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
+    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
     
     # Maximize
     z = ['fullscreen', 'mode main']
