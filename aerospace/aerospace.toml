@@ -188,7 +188,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-    alt-cmd-semicolon = 'mode service'
+    alt-semicolon = 'mode service'
 
     # Focus Workspce
     alt-leftSquareBracket = 'workspace --wrap-around next'
