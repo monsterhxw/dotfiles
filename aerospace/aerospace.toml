@@ -356,11 +356,10 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.linnk.Linnk'
     run = ['layout floating']
-# ---Specifies Workspace 1---
 # Mihomo Party
 [[on-window-detected]]
     if.app-id = 'party.mihomo.app'
-    run = ['layout floating', 'move-node-to-workspace 1']
+    run = ['layout floating'] 
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
