@@ -42,6 +42,13 @@ default-root-container-orientation = 'auto'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center', 'move-mouse window-lazy-center']
 
+on-focus-changed = [
+  # The border disappears when there is only one window in the focused workspace.
+  # See https://github.com/FelixKratz/JankyBorders/issues/53#issuecomment-2299849820
+  # See https://github.com/nikitabobko/AeroSpace/issues/846 (TODO Full Screen Situation)
+  'exec-and-forget [ $(/usr/local/bin/aerospace list-windows --workspace focused --count) -eq 1 ] && /usr/local/bin/borders width=0.0 || /usr/local/bin/borders width=2.0'
+]
+
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
