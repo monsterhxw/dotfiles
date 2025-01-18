@@ -64,8 +64,8 @@ keybind = ctrl+left_bracket=text:\x1b
 #Vim, Shell bindings
 # Type <escape>:w<enter> to save vim/neovim, `cmd + s`
 keybind = cmd+s=text:\x1b:w\n
-# open file, `cmd + f`
-keybind = cmd+f=text:fto\n
+# open file, `cmd + o`
+keybind = cmd+o=text:fto\n
 # cd into the directory of the selected file, `cmd + g
 keybind = cmd+g=text:cdft\n
 # Change working dir in shell to last dir in lf, `cmd + l`
@@ -102,5 +102,5 @@ keybind = cmd+shift+t=text:\x02!
 keybind = cmd+x=text:\x02x
 # Toggle the zoom state of the current tmux pane, `cmd + z`
 keybind = cmd+z=text:\x02z
-# Enter Tmux Copy mode, `cmd + alt + [`
-keybind = cmd+alt+[=text:\x02[
+# Enter Tmux Copy mode, `cmd + ctrl + [`
+keybind = cmd+ctrl+[=text:\x02[
