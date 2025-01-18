@@ -12,7 +12,7 @@ after-login-command = []
 # after-startup-command = []
 after-startup-command = [
   # https://github.com/FelixKratz/JankyBorders/issues/10#issuecomment-1824068145
-  'exec-and-forget /usr/local/bin/borders active_color=0xFF99D49B inactive_color=0x00000000 width=2.0 ax_focus=true'
+  'exec-and-forget /usr/local/bin/borders active_color=0xCF99D49B inactive_color=0x00000000 width=2.0 ax_focus=true'
 ]
 
 # Start AeroSpace at login
