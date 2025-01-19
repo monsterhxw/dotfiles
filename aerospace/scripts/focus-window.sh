@@ -2,7 +2,7 @@
 
 AEROSPACE="/usr/local/bin/aerospace"
 
-switch_window() {
+focus_window() {
   local direction=$1
   local current_id=$($AEROSPACE list-windows --focused --format '%{window-id}')
   local window_ids=($($AEROSPACE list-windows --workspace focused --format '%{window-id}'))
@@ -38,7 +38,7 @@ switch_window() {
 
 if [[ $# -eq 1 ]]; then
   $AEROSPACE focus --boundaries workspace --boundaries-action wrap-around-the-workspace "$1" \
-  || switch_window "$1"
+  || focus_window "$1"
 else
   exit 1
 fi
