@@ -8,6 +8,10 @@ switch_window() {
   local window_ids=($($AEROSPACE list-windows --workspace focused --format '%{window-id}'))
   local window_count=${#window_ids[@]}
 
+  if [[ $window_count -le 1 ]]; then
+    exit 1
+  fi
+
   local current_index
   for i in "${!window_ids[@]}"; do
     if [[ "${window_ids[$i]}" == "$current_id" ]]; then
