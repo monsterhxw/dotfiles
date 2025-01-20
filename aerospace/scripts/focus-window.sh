@@ -23,11 +23,11 @@ focus_window() {
 
   local target_index
   case $direction in
-    "left"|"up")
-      target_index=$(( (current_index - 1 + window_count) % window_count ))
+    left|up)
+      ((target_index = (current_index - 1 + window_count) % window_count))
       ;;
-    "right"|"down")
-      target_index=$(( (current_index + 1) % window_count ))
+    right|down)
+      ((target_index = (current_index + 1) % window_count))
       ;;
     *)
       exit 1
