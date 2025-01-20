@@ -5,6 +5,7 @@ font-family = "GeistMono Nerd Font Mono"
 font-size = 14
 font-thicken
 font-feature = -liga
+font-codepoint-map = U+EBC8,U+F489,U+F50C = GeistMono Nerd Font
 
 # Term
 term = xterm-256color
@@ -21,7 +22,7 @@ background = "#1f2430"
 foreground = "#cbccc6"
 background-opacity = 0.75
 background-blur-radius = 15
-minimum-contrast = 1.1
+# minimum-contrast = 1.1
 
 # Window
 window-decoration = true
