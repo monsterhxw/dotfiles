@@ -38,8 +38,7 @@ focus_window() {
 }
 
 if [[ $# -eq 1 ]]; then
-  $AEROSPACE focus --boundaries workspace --boundaries-action wrap-around-the-workspace "$1" \
-  || focus_window "$1"
+  focus_window "$1"
 else
   exit 1
 fi
