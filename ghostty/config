@@ -5,7 +5,7 @@ font-family = "GeistMono Nerd Font Mono"
 font-size = 14
 font-thicken
 font-feature = -liga
-font-codepoint-map = U+EBC8,U+F489,U+F50C = GeistMono Nerd Font
+font-codepoint-map = U+EBC8,U+F489,U+F50C,U+F16E1,U+F01E5,U+E635 = GeistMono Nerd Font
 
 # Term
 term = xterm-256color
