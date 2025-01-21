@@ -1,11 +1,10 @@
 # Font
-#font-family = "Inconsolata LGC Nerd Font Mono"
-#font-family = "JetBrainsMono Nerd Font Mono"
 font-family = "GeistMono Nerd Font Mono"
 font-size = 14
 font-thicken
 font-feature = -liga
-font-codepoint-map = U+EBC8,U+F489,U+F50C,U+F16E1,U+F01E5,U+E635 = GeistMono Nerd Font
+# See: https://www.nerdfonts.com/cheat-sheet
+font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+E635,U+F531,U+F0633,U+EBF2 = GeistMono Nerd Font
 
 # Term
 term = xterm-256color
@@ -14,13 +13,11 @@ term = xterm-256color
 theme = catppuccin-mocha
 # For zsh-autosuggestions
 palette = 8=#7f869e
-# For Vim line number color, 240=243
-palette = 240=#767676
 
 # Background and Foreground
 background = "#1f2430"
 foreground = "#cbccc6"
-background-opacity = 0.75
+background-opacity = 0.78
 background-blur-radius = 15
 # minimum-contrast = 1.1
 
@@ -46,7 +43,7 @@ initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux att
 
 # macOS
 macos-option-as-alt = true
-#macos-titlebar-style = hidden
+macos-titlebar-style = hidden
 #macos-non-native-fullscreen = visible-menu
 #fullscreen = true
 
