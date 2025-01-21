@@ -215,6 +215,18 @@ automatically-unhide-macos-hidden-apps = false
     alt-cmd-leftSquareBracket = 'focus-monitor --wrap-around next'
     alt-cmd-rightSquareBracket = 'focus-monitor --wrap-around prev'
 
+    # Maximize
+    alt-z = ['fullscreen', 'mode main']
+
+    # Toggle between floating-centered and tiling layout
+    # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
+    # The Raycast Center Command Hotkey needs to be set to `ctrl + option + cmd + F2` (Key Code 120 = F2)
+    alt-period = [
+        '''exec-and-forget /usr/local/bin/aerospace layout floating && /usr/bin/osascript -e 'tell application "System Events" to key code 120 using {control down, option down, command down}' || /usr/local/bin/aerospace layout tiling''',
+        'mode main'
+    ]
+
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -239,14 +251,6 @@ automatically-unhide-macos-hidden-apps = false
     leftSquareBracket = ['reload-config', 'mode main']
     ctrl-leftSquareBracket = ['reload-config', 'mode main']
 
-    # Toggle between floating-centered and tiling layout
-    # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
-    # The Raycast Center Command Hotkey needs to be set to `ctrl + option + cmd + F2` (Key Code 120 = F2)
-    period = [
-        '''exec-and-forget /usr/local/bin/aerospace layout floating && /usr/bin/osascript -e 'tell application "System Events" to key code 120 using {control down, option down, command down}' || /usr/local/bin/aerospace layout tiling''',
-        'mode main'
-    ]
-
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     h = ['move left', 'mode main']
     j = ['move down', 'mode main']
@@ -259,10 +263,7 @@ automatically-unhide-macos-hidden-apps = false
     
     # Move node to monitor
     alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
-    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
-    
-    # Maximize
-    z = ['fullscreen', 'mode main']
+    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main'] 
     
     # Open Application
     alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
