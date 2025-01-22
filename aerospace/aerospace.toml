@@ -226,6 +226,9 @@ automatically-unhide-macos-hidden-apps = false
         'mode main'
     ]
 
+    # Open Terminal
+    alt-t = 'exec-and-forget open -a Ghostty'
+
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -263,10 +266,7 @@ automatically-unhide-macos-hidden-apps = false
     
     # Move node to monitor
     alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
-    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main'] 
-    
-    # Open Application
-    alt-g = ['exec-and-forget open -a Ghostty', 'mode main']
+    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']     
 
 
 # On Window Detected
@@ -373,6 +373,10 @@ automatically-unhide-macos-hidden-apps = false
 # Mihomo Party
 [[on-window-detected]]
     if.app-id = 'party.mihomo.app'
+    run = ['layout floating'] 
+# ChatWise
+[[on-window-detected]]
+    if.app-id = 'app.chatwise'
     run = ['layout floating'] 
 # ---Specifies Workspace 2---
 # Ghostty
