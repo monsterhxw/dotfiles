@@ -41,8 +41,8 @@ zstyle ':completion:*' menu no
 [[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
 
 # export
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
+# X Desktop Group (Freedesktop)
+export XDG_CONFIG_HOME="$HOME/.config"
 # MySQL@5.7
 # export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
@@ -57,6 +57,8 @@ java() {
 }
 
 # eval
+# Homebrew
+eval "$(/usr/local/bin/brew shellenv)"
 # Startship
 eval "$(starship init zsh)"
 # Atuin
