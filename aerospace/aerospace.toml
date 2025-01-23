@@ -208,12 +208,12 @@ automatically-unhide-macos-hidden-apps = false
     alt-semicolon = 'mode service'
 
     # Focus Workspce
-    alt-leftSquareBracket = 'workspace --wrap-around next'
-    alt-rightSquareBracket = 'workspace --wrap-around prev'
+    alt-leftSquareBracket = 'workspace --wrap-around prev'
+    alt-rightSquareBracket = 'workspace --wrap-around next'
     
     # Focus Monitor
-    alt-cmd-leftSquareBracket = 'focus-monitor --wrap-around next'
-    alt-cmd-rightSquareBracket = 'focus-monitor --wrap-around prev'
+    alt-cmd-leftSquareBracket = 'focus-monitor --wrap-around prev'
+    alt-cmd-rightSquareBracket = 'focus-monitor --wrap-around next'
 
     # Maximize
     alt-z = ['fullscreen', 'mode main']
@@ -267,12 +267,12 @@ automatically-unhide-macos-hidden-apps = false
     l = ['move right', 'mode main']
 
     # Move node to workspace
-    alt-leftSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
-    alt-rightSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+    alt-leftSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+    alt-rightSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
     
     # Move node to monitor
-    alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']
-    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']     
+    alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
+    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']     
 
 
 # On Window Detected
@@ -397,6 +397,8 @@ automatically-unhide-macos-hidden-apps = false
 # Chrome
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
+    if.window-title-regex-substring = 'New Tab - Google Chrome'
+    check-further-callbacks = true
     run = ['move-node-to-workspace 3']
 # ---Specifies Workspace 4---
 # Cherry Stuido
