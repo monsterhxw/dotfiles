@@ -12,7 +12,7 @@ after-login-command = []
 # after-startup-command = []
 after-startup-command = [
   # https://github.com/FelixKratz/JankyBorders/issues/10#issuecomment-1824068145
-  'exec-and-forget /usr/local/bin/borders active_color=0xAAE1E3E4 inactive_color=0x00000000 width=2.0'
+  'exec-and-forget /usr/local/bin/borders active_color=0xAAE1E3E4 inactive_color=0x00000000 width=2.0 ax_focus=on'
 ]
 
 # Start AeroSpace at login
@@ -221,13 +221,20 @@ automatically-unhide-macos-hidden-apps = false
     # Toggle between floating-centered and tiling layout
     # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
     # The Raycast Center Command Hotkey needs to be set to `ctrl + option + cmd + F2` (Key Code 120 = F2)
-    alt-period = [
-        '''exec-and-forget /usr/local/bin/aerospace layout floating && /usr/bin/osascript -e 'tell application "System Events" to key code 120 using {control down, option down, command down}' || /usr/local/bin/aerospace layout tiling''',
-        'mode main'
-    ]
+    alt-period = '''exec-and-forget \
+      /usr/local/bin/aerospace layout floating \
+      && /usr/bin/osascript -e '
+           tell application "System Events"
+              key code 120 using {control down, option down, command down}
+            end tell' \
+      || /usr/local/bin/aerospace layout tiling
+    '''
 
     # Open Terminal
-    alt-t = 'exec-and-forget open -a Ghostty'
+    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty no-float'
+    # Open Notes
+    alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
+    #
 
 
 # 'service' binding mode declaration.
@@ -377,6 +384,10 @@ automatically-unhide-macos-hidden-apps = false
 # ChatWise
 [[on-window-detected]]
     if.app-id = 'app.chatwise'
+    run = ['layout floating'] 
+# Jetbrains Intellij IDEA Welcome Page
+[[on-window-detected]]
+    if.window-title-regex-substring = 'Welcome to IntelliJ IDEA'
     run = ['layout floating'] 
 # ---Specifies Workspace 2---
 # Ghostty
