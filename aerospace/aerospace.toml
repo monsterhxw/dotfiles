@@ -234,7 +234,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty no-float'
     # Open Notes
     alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
-    #
 
 
 # 'service' binding mode declaration.
