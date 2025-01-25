@@ -234,6 +234,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty no-float'
     # Open Notes
     alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
+    # Open AI App
+    alt-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.pake.deepseek DeepSeek float'
 
 
 # 'service' binding mode declaration.
@@ -388,6 +390,10 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.window-title-regex-substring = 'Welcome to IntelliJ IDEA'
     run = ['layout floating'] 
+# DeepSeek (By Pake package)
+[[on-window-detected]]
+    if.app-id = 'com.pake.deepseek'
+    run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
