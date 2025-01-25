@@ -4,7 +4,7 @@ font-size = 14
 font-thicken
 font-feature = -liga
 # See: https://www.nerdfonts.com/cheat-sheet
-font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+E635,U+F531,U+F0633,U+EBF2 = GeistMono Nerd Font
+font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = GeistMono Nerd Font
 
 # Term
 term = xterm-256color
