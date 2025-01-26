@@ -59,7 +59,11 @@ scratchpad() {
     $OPEN -a "$APP_NAME"
   elif is_app_in_scope "--workspace focused"; then
     local win_id=$(get_app_window_id "--workspace focused")
-    $AEROSPACE move-node-to-workspace NSP --window-id "$win_id"
+    if is_app_in_scope "--focused"; then
+      $AEROSPACE move-node-to-workspace NSP --window-id "$win_id"
+    else
+      $AEROSPACE focus --window-id "$win_id"
+    fi
   else
     local win_id=$(get_app_window_id "--all")
     local current_ws=$($AEROSPACE list-workspaces --focused)
