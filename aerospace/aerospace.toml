@@ -394,6 +394,14 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.pake.deepseek'
     run = ['layout floating']
+# Monica
+[[on-window-detected]]
+    if.app-id = 'im.monica.desktop.monica'
+    run = ['layout floating']
+# Poe App
+[[on-window-detected]]
+    if.app-id = 'com.quora.poe.electron'
+    run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
