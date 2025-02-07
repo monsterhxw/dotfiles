@@ -83,7 +83,7 @@ function runlike () {
 
 # Confirming exit in a Tmux session
 function exit () {
-  if [[ -n $TMUX ]]; then
+  if [[ -n $TMUX && -n $TERM_PROGRAM && $TERM_PROGRAM = "tmux" ]]; then
     echo "You're in a Tmux Session"
   else
     builtin exit
