@@ -402,6 +402,18 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.quora.poe.electron'
     run = ['layout floating']
+# Chrome - Untitled 
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    if.window-title-regex-substring = 'Untitled - Google Chrome'
+    check-further-callbacks = true
+    run = ['layout floating']
+# Chrome - Sign in - Google Accounts
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    if.window-title-regex-substring = 'Sign in - Google Accounts - Google Chrome'
+    check-further-callbacks = true
+    run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
