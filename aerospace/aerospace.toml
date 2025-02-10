@@ -231,7 +231,7 @@ automatically-unhide-macos-hidden-apps = false
     '''
 
     # Open Terminal
-    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty no-float'
+    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty float'
     # Open Notes
     alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
     # Open AI App
