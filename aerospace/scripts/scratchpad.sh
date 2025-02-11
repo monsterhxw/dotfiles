@@ -29,15 +29,17 @@ get_app_window_id() {
 }
 
 wait_for_window() {
-  local max_attempts=20 # 20 × 0.5S = 10S
-  local sleep_seconds=0.5 
+  local max_attempts=20 # 20 × 0.3S = 6S
+  local sleep_seconds=0.3
 
   for ((attempt=1; attempt<=max_attempts; attempt++)); do
-    [[ -n $(get_app_window_id "--all") ]] && return 0
+    if window_id=$(get_app_window_id "--all") && [[ -n "$window_id" ]]; then
+      return 0
+    fi
     sleep $sleep_seconds
   done
 
-  exit 1
+  return 1
 }
 
 float_app() {
@@ -57,6 +59,8 @@ float_app() {
 scratchpad() {
   if ! is_app_in_scope "--all"; then
     $OPEN -a "$APP_NAME"
+    wait_for_window
+    float_app
   elif is_app_in_scope "--workspace focused"; then
     local win_id=$(get_app_window_id "--workspace focused")
     if is_app_in_scope "--focused"; then
