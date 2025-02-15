@@ -43,7 +43,7 @@ initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux att
 
 # macOS
 macos-option-as-alt = true
-macos-titlebar-style = hidden
+# macos-titlebar-style = hidden
 #macos-non-native-fullscreen = visible-menu
 #fullscreen = true
 
