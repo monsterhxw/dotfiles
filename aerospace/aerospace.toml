@@ -414,6 +414,14 @@ automatically-unhide-macos-hidden-apps = false
     if.window-title-regex-substring = 'Sign in - Google Accounts - Google Chrome'
     check-further-callbacks = true
     run = ['layout floating']
+# IINA
+[[on-window-detected]]
+    if.app-id = 'com.colliderli.iina'
+    run = ['layout floating']
+# Wenxiaobai
+[[on-window-detected]]
+    if.app-id = 'com.wenxiaobai.desktop'
+    run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
