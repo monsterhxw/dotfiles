@@ -216,7 +216,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-cmd-rightSquareBracket = 'focus-monitor --wrap-around next'
 
     # Maximize
-    alt-z = ['fullscreen', 'mode main']
+    alt-z = 'fullscreen'
 
     # Toggle between floating-centered and tiling layout
     # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
