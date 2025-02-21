@@ -2,6 +2,14 @@
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Q pre block. Keep at the top of this file.
 
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+# orb and orbctl completions
+# $ mkdir -p $HOME/.zsh/completions/orbstack
+# $ orb completion zsh > $HOME/.zsh/completions/orbstack/_orb
+# $ orbctl completion zsh > $HOME/.zsh/completions/orbstack/_orbctl
+fpath+=("$HOME/.zsh/completions/orbstack")
+
 # oh my zsh
 export ZSH=$HOME/.oh-my-zsh
 plugins=(

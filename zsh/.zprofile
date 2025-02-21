@@ -90,9 +90,6 @@ function exit () {
   fi
 }
 
-# Added by OrbStack: command-line tools and integration
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
 # Q post block. Keep at the bottom of this file.
 
 # Amazon Q post block. Keep at the bottom of this file.
