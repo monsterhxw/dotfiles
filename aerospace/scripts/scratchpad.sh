@@ -5,7 +5,8 @@ set -euo pipefail
 
 APP_BUNDLE_ID="$1"
 APP_NAME="$2"
-IS_FLOAT="${3:-no}"
+IS_FLOAT="${3:-unfloat}"
+RESIZE="${4:-}"
 
 # Intel Chip Homebrew Path
 AEROSPACE="/usr/local/bin/aerospace"
@@ -29,8 +30,8 @@ get_app_window_id() {
 }
 
 wait_for_window() {
-  local max_attempts=20 # 20 × 0.3S = 6S
-  local sleep_seconds=0.3
+  local max_attempts=20 # 20 × 0.4S = 8S
+  local sleep_seconds=0.4
 
   for ((attempt=1; attempt<=max_attempts; attempt++)); do
     if window_id=$(get_app_window_id "--all") && [[ -n "$window_id" ]]; then
@@ -56,11 +57,18 @@ float_app() {
   fi;
 }
 
+resize_app() {
+  if [[ "$IS_FLOAT" != "float" && -n "$RESIZE" ]]; then
+    $AEROSPACE resize smart "$RESIZE"
+  fi;
+}
+
 scratchpad() {
   if ! is_app_in_scope "--all"; then
     $OPEN -a "$APP_NAME"
     wait_for_window
     float_app
+    resize_app
   elif is_app_in_scope "--workspace focused"; then
     local win_id=$(get_app_window_id "--workspace focused")
     if is_app_in_scope "--focused"; then
@@ -75,6 +83,7 @@ scratchpad() {
       --focus-follows-window \
       --window-id "$win_id"
     float_app
+    resize_app
   fi
 }
 
