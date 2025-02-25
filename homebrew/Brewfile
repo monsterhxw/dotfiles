@@ -1,0 +1,410 @@
+tap "amar1729/infer"
+tap "biyidev/biyi"
+tap "daipeihust/tap"
+tap "epk/epk"
+tap "felixkratz/formulae"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "lihaoyun6/tap"
+tap "mrkai77/cask"
+tap "nikitabobko/tap"
+tap "owo-network/brew"
+tap "xo/xo"
+# Mozilla CA certificate store
+brew "ca-certificates"
+# Software library to render fonts
+brew "freetype"
+# XML-based font configuration API for X Windows
+brew "fontconfig"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
+# Core application library for C
+brew "glib"
+# X.Org: Protocol Headers
+brew "xorgproto"
+# X.Org: Interface to the X Window System protocol
+brew "libxcb"
+# X.Org: Core X11 protocol client library
+brew "libx11"
+# Vector graphics library with cross-device output support
+brew "cairo"
+# Implementation of the Unicode BiDi algorithm
+brew "fribidi"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# C library for multiple-precision floating-point computations
+brew "mpfr"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
+# OpenType text shaping engine
+brew "harfbuzz"
+# TIFF library and utilities
+brew "libtiff"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# AI pair programming in your terminal
+brew "aider"
+# Library of 2D and 3D vector, matrix, and math operations
+brew "imath"
+# High dynamic-range image file format
+brew "openexr"
+# Perceptual video quality assessment based on multi-method fusion
+brew "libvmaf"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
+# Portable library for importing many well-known 3D model formats
+brew "assimp"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
+# Macro processing language
+brew "m4"
+# Automatic configure script builder
+brew "autoconf"
+# GNU database manager
+brew "gdbm"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Asynchronous DNS library
+brew "c-ares"
+# Cross-platform make
+brew "cmake"
+# Message bus system, providing inter-application communication
+brew "dbus"
+# Binary-decimal and decimal-binary routines for IEEE doubles
+brew "double-conversion"
+# Program that can automate interactive applications
+brew "expect"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# HTTP/2 C Library
+brew "libnghttp2"
+# Low-level cryptographic library
+brew "nettle"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# Distributed revision control system
+brew "git"
+# Blazing fast terminal-ui for git written in rust
+brew "gitui"
+# Common error values for all GnuPG components
+brew "libgpg-error"
+# Cryptographic library based on the code from GnuPG
+brew "libgcrypt"
+# Library for USB device access
+brew "libusb"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Development kit for the Java programming language
+brew "openjdk"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# Library for manipulating JPEG-2000 images
+brew "jasper"
+# Image manipulation
+brew "netpbm"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Generic library support script
+brew "libtool"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Powerful, lightweight programming language
+brew "lua"
+# Convert source code to formatted text with syntax highlighting
+brew "highlight"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Configurable static site generator
+brew "hugo"
+# Terminal Client for Redis with AutoCompletion and Syntax Highlighting
+brew "iredis"
+# Dex to Java decompiler
+brew "jadx"
+# JSON diff and patch
+brew "jd"
+# Load testing and performance measurement application
+brew "jmeter"
+# Image manipulation library
+brew "jpeg"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Command-line JSON pretty-printer
+brew "jsonpp"
+# Development kit for the Java programming language
+brew "openjdk@8"
+# Console-based JVM monitoring
+brew "jvm-mon"
+# DNS library written in C
+brew "ldns"
+# Terminal file manager
+brew "lf"
+# CBOR protocol implementation for C and others
+brew "libcbor"
+# Provides library functionality for FIDO U2F & FIDO 2.0, including USB
+brew "libfido2"
+# Library that provides automatic proxy configuration management
+brew "libproxy"
+# Multi-platform support library with a focus on asynchronous I/O
+brew "libuv"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Unix documentation system
+brew "man-db"
+# Mac App Store command-line interface
+brew "mas"
+# Java-based project management
+brew "maven"
+# CLI for MySQL with auto-completion and syntax highlighting
+brew "mycli"
+# Open source relational database management system
+brew "mysql@5.7"
+# Text-based UI library
+brew "ncurses"
+# HTTP/2 C Library
+brew "nghttp2"
+# Platform built on V8 to build network applications
+brew "node"
+# Development kit for the Java programming language
+brew "openjdk@11"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
+# Learn vim commands via a game
+brew "pacvim"
+# Perl compatible regular expressions library
+brew "pcre"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Cross-platform application and UI framework
+brew "qt"
+# Persistent key-value database, with built-in net interface
+brew "redis@6.2"
+# Perl-powered file rename script with many helpful built-ins
+brew "rename"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# SOcket CAT: netcat on steroids
+brew "socat"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Tool Command Language
+brew "tcl-tk"
+# Command-line packet analyzer
+brew "tcpdump"
+# User interface to the TELNET protocol
+brew "telnet"
+# Simplified and community-driven man pages
+brew "tldr"
+# Clean C library for processing UTF-8 Unicode data
+brew "utf8proc"
+# Terminal multiplexer
+brew "tmux"
+# Program that allows you to count code, quickly
+brew "tokei"
+# Implementation of Java Servlet and JavaServer Pages
+brew "tomcat@9"
+# CLI tool that moves files or folder to the trash
+brew "trash", link: true
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Centralized server for distributed coordination of services
+brew "zookeeper"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Switch your input method through terminal
+brew "daipeihust/tap/im-select"
+# A window border system for macOS
+brew "felixkratz/formulae/borders"
+# DeepLX is a permanently free DeepL API client written in Golang.
+brew "owo-network/brew/deeplx"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Note editor and whiteboard
+cask "affine"
+# Enable Windows-like alt-tab
+cask "alt-tab"
+# AI-powered productivity tool for the command-line
+cask "amazon-q"
+# Redis desktop manager
+cask "another-redis-desktop-manager"
+# Platform for API documentation, debugging, and testing
+cask "apifox"
+# AI chatbot for many LLMs
+cask "chatwise"
+# Desktop client that supports multiple LLM providers
+cask "cherry-studio"
+# Voice and text chat software
+cask "discord"
+# Window peeking utility app
+cask "dockdoor"
+# Online diagram software
+cask "drawio"
+cask "font-geist-mono-nerd-font"
+cask "font-inconsolata-lgc-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-lxgw-wenkai"
+cask "font-victor-mono-nerd-font"
+cask "font-zed-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Desktop automation application
+cask "hammerspoon"
+# Tool for multi-language users
+cask "input-source-pro"
+# Lyrics for iTunes, Spotify, Vox and Audirvana Plus
+cask "lyricsx"
+# Cross-platform MQTT 5.0 Desktop Client
+cask "mqttx"
+# Outline note taking and management app
+cask "mubu"
+# Htop on steroids
+cask "neohtop"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Collaboration platform for API development
+cask "postman"
+# A lightweight and high-performance screen recorder for macOS.
+cask "quickrecorder"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Displays all open files and sockets in use by all running processes
+cask "sloth"
+# Menu bar indicator showing the currently selected space
+cask "spaceid"
+# App to switch hosts
+cask "switchhosts"
+# Cloud video conferencing
+cask "tencent-meeting"
+# Menu bar pomodoro timer
+cask "tomatobar"
+# Easy to use text extraction tool
+cask "trex"
+# Set a Retina display to custom resolutions
+cask "usr-sse2-rdm"
+# All-in-One Java Troubleshooting Tool
+cask "visualvm"
+# Network protocol analyzer
+cask "wireshark"
+# REST, GraphQL and gRPC client
+cask "yaak"
+# Multiplayer code editor
+cask "zed"
+mas "Adblock Plus", id: 1432731683
+mas "BeMyEars", id: 1577662679
+mas "BetterPlayer", id: 1592876082
+mas "BewlyBewly", id: 6742200021
+mas "Bob", id: 1630034110
+mas "ChatBot", id: 6499505508
+mas "ChatX", id: 6446304087
+mas "Clocker", id: 1056643111
+mas "Conflux", id: 6450330892
+mas "CotEditor", id: 1024640650
+mas "Craft", id: 1487937127
+mas "Cubox", id: 1113361350
+mas "Cubox for Safari", id: 1550721541
+mas "Dark Mode for Safari", id: 6670191684
+mas "Disk Graph", id: 697942581
+mas "DockX", id: 6452276577
+mas "Drafts", id: 1435957248
+mas "Falling", id: 6639612868
+mas "Goodnotes", id: 1444383602
+mas "HotLaunch", id: 1570656803
+mas "Immersive Translate", id: 6447957425
+mas "iPreview", id: 1519213509
+mas "JSON2Model", id: 1533053348
+mas "Karing", id: 6472431552
+mas "Key Codes", id: 414568915
+mas "Keynote", id: 409183694
+mas "LocalSend", id: 1661733229
+mas "MarkMark", id: 6475077023
+mas "MD Clock", id: 1536358464
+mas "Medis", id: 1579200037
+mas "MenubarX", id: 1575588022
+mas "NetTools", id: 1461652639
+mas "Network & Battery", id: 1387780159
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "OLW", id: 1529988877
+mas "one sec", id: 1532875441
+mas "OneTab", id: 1540160809
+mas "OpenCat", id: 6445999201
+mas "Pages", id: 409201541
+mas "Parallels Client", id: 600925318
+mas "PDF Reader X", id: 684812309
+mas "PDFgear", id: 6469021132
+mas "Pictura", id: 6451364124
+mas "Picview", id: 6452016140
+mas "Power Node", id: 1195518228
+mas "Qi FM", id: 1479696191
+mas "QQ音乐", id: 595615424
+mas "QSpace", id: 1469774098
+mas "QuickShade", id: 931571202
+mas "Rayon", id: 1609781496
+mas "Readest", id: 6738622779
+mas "RSSHub Radar", id: 1610744717
+mas "ScreenBrush", id: 1233965871
+mas "Sequel Ace", id: 1518036000
+mas "ServerCat", id: 1501532023
+mas "shakepin", id: 6599856142
+mas "Shazam", id: 897118787
+mas "sing-box", id: 6451272673
+mas "SingleFile", id: 6444322545
+mas "SketchBook", id: 863486266
+mas "Slack", id: 803453959
+mas "SnippetsLab", id: 1006087419
+mas "Sourcegraph for Safari", id: 1543262193
+mas "Subscriptions", id: 1577082754
+mas "Table of contents", id: 1665115607
+mas "Take a Break", id: 1457158844
+mas "Termius", id: 1176074088
+mas "TestFlight", id: 899247664
+mas "Thor Launcher", id: 1120999687
+mas "TickTick", id: 966085870
+mas "Trancy Extension", id: 6475386403
+mas "uBlacklist for Safari", id: 1547912640
+mas "UPDF", id: 1619925971
+mas "Userscripts-Mac-App", id: 1463298887
+mas "VidHub", id: 1659622164
+mas "Vimari", id: 1480933944
+mas "Vimlike", id: 1584519802
+mas "Wayback Machine", id: 1472432422
+mas "Whisper Transcription", id: 1668083311
+mas "WPS Office", id: 1443749478
+mas "Xcode", id: 497799835
+mas "Xnip", id: 1221250572
+mas "xQR", id: 1602650129
+mas "Youtube LofiMusic", id: 1617770281
+mas "YPlayer", id: 1542569291
+mas "ZenUML", id: 1602636196
+mas "网易有道翻译", id: 491854842
