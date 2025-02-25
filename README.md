@@ -2,7 +2,7 @@
 
 > ⚙ My configuration files.
 
-## Homebrew
+## [Homebrew](homebrew/Brewfile)
 
 <details>
 
