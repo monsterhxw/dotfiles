@@ -248,10 +248,14 @@ brew "daipeihust/tap/im-select"
 brew "felixkratz/formulae/borders"
 # DeepLX is a permanently free DeepL API client written in Golang.
 brew "owo-network/brew/deeplx"
+# Intelligent cloud storage platform
+cask "adrive"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
 # Note editor and whiteboard
 cask "affine"
+# Menu bar tool to limit maximum charging percentage
+cask "aldente"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # AI-powered productivity tool for the command-line
@@ -260,28 +264,40 @@ cask "amazon-q"
 cask "another-redis-desktop-manager"
 # Platform for API documentation, debugging, and testing
 cask "apifox"
+# Cloud storage service
+cask "baidunetdisk"
 # AI chatbot for many LLMs
 cask "chatwise"
 # Desktop client that supports multiple LLM providers
 cask "cherry-studio"
+# Database version management tool
+cask "dbngin"
 # Voice and text chat software
 cask "discord"
 # Window peeking utility app
 cask "dockdoor"
 # Online diagram software
 cask "drawio"
+# Collaborative team software
+cask "figma"
 cask "font-geist-mono-nerd-font"
 cask "font-inconsolata-lgc-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-lxgw-wenkai"
 cask "font-victor-mono-nerd-font"
 cask "font-zed-mono-nerd-font"
+# GIT client
+cask "fork"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
+cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
 # Tool for multi-language users
 cask "input-source-pro"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
 # Lyrics for iTunes, Spotify, Vox and Audirvana Plus
 cask "lyricsx"
 # Cross-platform MQTT 5.0 Desktop Client
@@ -294,8 +310,12 @@ cask "neohtop"
 cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
+# HTTP debugging proxy
+cask "proxyman"
 # A lightweight and high-performance screen recorder for macOS.
 cask "quickrecorder"
+# HTTP client that helps testing and describing APIs
+cask "rapidapi"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Displays all open files and sockets in use by all running processes
@@ -304,6 +324,10 @@ cask "sloth"
 cask "spaceid"
 # App to switch hosts
 cask "switchhosts"
+# Remote access and connectivity software focused on security
+cask "teamviewer"
+# Messaging app with a focus on speed and security
+cask "telegram"
 # Cloud video conferencing
 cask "tencent-meeting"
 # Menu bar pomodoro timer
@@ -312,6 +336,8 @@ cask "tomatobar"
 cask "trex"
 # Set a Retina display to custom resolutions
 cask "usr-sse2-rdm"
+# Open-source code editor
+cask "visual-studio-code"
 # All-in-One Java Troubleshooting Tool
 cask "visualvm"
 # Network protocol analyzer
