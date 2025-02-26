@@ -426,6 +426,14 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.tencent.imamac'
     run = ['layout floating']
+# BaiduNetDisk
+[[on-window-detected]]
+    if.app-id = 'com.baidu.BaiduNetdisk-mac'
+    run = ['layout floating']
+# RapidAPI (Paw)
+[[on-window-detected]]
+    if.app-id = 'com.luckymarmot.Paw'
+    run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
 # [[on-window-detected]]
