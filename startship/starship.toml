@@ -1,7 +1,7 @@
 [character]
-success_symbol = '[λ](bold green)'
+success_symbol = '[λ](bold #68F4B0)'
 error_symbol = '[λ](bold red)'
-vimcmd_symbol = "[ʎ](bold #F07640)"
+vimcmd_symbol = "[ν](bold #68F4B0)"
 
 [buf]
 format = "via [$symbol]($style)"
