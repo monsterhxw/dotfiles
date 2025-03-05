@@ -12,7 +12,7 @@ after-login-command = []
 # after-startup-command = []
 after-startup-command = [
   # https://github.com/FelixKratz/JankyBorders/issues/10#issuecomment-1824068145
-  'exec-and-forget /usr/local/bin/borders active_color=0xDDE1E3E4 inactive_color=0x00000000 width=2.0'
+  'exec-and-forget /usr/local/bin/borders active_color=0xDDE1E3E4 inactive_color=0x00000000 width=3.0'
 ]
 
 # Start AeroSpace at login
@@ -46,7 +46,7 @@ on-focus-changed = [
   # The border disappears when there is only one window in the focused workspace.
   # See https://github.com/FelixKratz/JankyBorders/issues/53#issuecomment-2299849820
   # See https://github.com/nikitabobko/AeroSpace/issues/846 (TODO Full Screen Situation)
-  'exec-and-forget [ $(/usr/local/bin/aerospace list-windows --workspace focused --count) -eq 1 ] && /usr/local/bin/borders width=0.0 || /usr/local/bin/borders width=2.0'
+  'exec-and-forget [ $(/usr/local/bin/aerospace list-windows --workspace focused --count) -eq 1 ] && /usr/local/bin/borders width=0.0 || /usr/local/bin/borders width=3.0'
 ]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -68,12 +68,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 5
-    inner.vertical =   5
-    outer.left =       5
-    outer.bottom =     5
-    outer.top =        5
-    outer.right =      5
+    inner.horizontal = 6
+    inner.vertical =   6
+    outer.left =       8
+    outer.bottom =     8
+    outer.top =        8
+    outer.right =      8
 
 [workspace-to-monitor-force-assignment]
     1 = ['built-in', 'secondary']
