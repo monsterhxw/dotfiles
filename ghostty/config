@@ -1,6 +1,7 @@
 # Font
 font-family = "GeistMono Nerd Font Mono"
-font-size = 14
+font-family = "LXGW WenKai Mono"
+font-size = 13
 font-thicken
 font-feature = -liga
 # See: https://www.nerdfonts.com/cheat-sheet
@@ -17,8 +18,8 @@ palette = 8=#7f869e
 # Background and Foreground
 background = "#1f2430"
 foreground = "#cbccc6"
-background-opacity = 0.78
-background-blur-radius = 15
+background-opacity = 0.70
+background-blur-radius = 10
 # minimum-contrast = 1.1
 
 # Window
