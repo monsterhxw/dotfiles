@@ -81,7 +81,7 @@ vim.opt.swapfile = false
 vim.opt.undofile = true
 -- Set directory (`~/.local/share/<NVIM_APPNAME>/undo`) for undo files
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
--- Allow loading local .nvimrc/.exrc files
+-- Allow loading local .nvim.lua/.nvimrc/.exrc files
 vim.opt.exrc = true
 
 --------------------------------------------------
