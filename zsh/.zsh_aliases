@@ -14,7 +14,7 @@ alias rm='trash'
 #alias ll='ls -lhas'
 alias ls='lsd -NAv'
 alias ll='lsd -Nlav'
-alias lt='lsd --tree -Nlv --depth 2'
+alias lt='lsd --tree -Nv'
 
 # brew upgrade with xargs Commanda
 alias brewupgrade='brew outdated | xargs -L 1 -p brew upgrade'
