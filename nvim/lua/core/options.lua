@@ -59,8 +59,9 @@ vim.opt.ignorecase = true
 -- Override ignorecase when pattern has uppercase
 vim.opt.smartcase = true
 -- Configure completion behavior. 
--- Recommended by `nvim-cmp`, See: https://github.com/hrsh7th/nvim-cmp/wiki/Language-Server-Specific-Samples
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
+vim.opt.completeopt = {"menuone", "noselect"}
+-- First tab completes to longest common string, second tab shows full completion menu
+vim.opt.wildmode = "longest:full,full"
 
 --------------------------------------------------
 -- Window and Buffer Management
