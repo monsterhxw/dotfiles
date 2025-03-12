@@ -6,7 +6,6 @@ tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "lihaoyun6/tap"
-tap "mrkai77/cask"
 tap "nikitabobko/tap"
 tap "owo-network/brew"
 tap "xo/xo"
@@ -184,6 +183,8 @@ brew "mycli"
 brew "mysql@5.7"
 # Text-based UI library
 brew "ncurses"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
 # Platform built on V8 to build network applications
@@ -294,10 +295,16 @@ cask "ghostty"
 cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
+# Dedicated scratchpad for developers
+cask "heynote"
+# Keyboard shortcuts for every button on your screen
+cask "homerow"
 # Tool for multi-language users
 cask "input-source-pro"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Switch input method per application
+cask "keyboardholder"
 # Lyrics for iTunes, Spotify, Vox and Audirvana Plus
 cask "lyricsx"
 # Cross-platform MQTT 5.0 Desktop Client
@@ -340,6 +347,8 @@ cask "usr-sse2-rdm"
 cask "visual-studio-code"
 # All-in-One Java Troubleshooting Tool
 cask "visualvm"
+# Create, manage, and run virtual machines
+cask "vmware-fusion"
 # Network protocol analyzer
 cask "wireshark"
 # REST, GraphQL and gRPC client
@@ -353,6 +362,7 @@ mas "BewlyBewly", id: 6742200021
 mas "Bob", id: 1630034110
 mas "ChatBot", id: 6499505508
 mas "ChatX", id: 6446304087
+mas "clipyboard", id: 6738871678
 mas "Clocker", id: 1056643111
 mas "Conflux", id: 6450330892
 mas "CotEditor", id: 1024640650
