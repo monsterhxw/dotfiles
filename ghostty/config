@@ -8,18 +8,22 @@ font-feature = -liga
 font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = GeistMono Nerd Font
 
 # Term
-term = xterm-256color
+# term = xterm-256color
 
 # Theme
 theme = catppuccin-mocha
 # For zsh-autosuggestions
 palette = 8=#7f869e
 
+# Cursor
+cursor-color = "#68f4b0"
+cursor-text = "#011423"
+
 # Background and Foreground
-background = "#1f2430"
-foreground = "#cbccc6"
-background-opacity = 0.70
-background-blur-radius = 10
+# background = "#1f2430"
+# foreground = "#cbccc6"
+background-opacity = 0.78
+background-blur-radius = 5
 # minimum-contrast = 1.1
 
 # Window
