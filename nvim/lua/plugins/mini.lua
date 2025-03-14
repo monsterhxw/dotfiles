@@ -2,6 +2,9 @@ return {
   {
     "echasnovski/mini.statusline",
     event = "VeryLazy",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     opts = {
       use_icons = vim.g.have_nerd_font
     },
