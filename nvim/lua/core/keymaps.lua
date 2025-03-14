@@ -28,3 +28,7 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Paste replace visual selection without copying it.
 -- vim.keymap.set("v", "p", "\"_dP")
+
+-- CommandLine abbreviations
+-- Shortcut for Lazy plugin manager in command/abbrev modes
+vim.keymap.set("ca", "lz", "Lazy")

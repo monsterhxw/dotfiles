@@ -82,3 +82,11 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
 -- Allow loading local .nvim.lua/.nvimrc/.exrc files
 vim.opt.exrc = true
+
+
+--------------------------------------------------
+-- Custom Options
+--------------------------------------------------
+-- Global variable
+-- Flag indicating whether a Nerd Font is installed and available
+vim.g.have_nerd_font = true
