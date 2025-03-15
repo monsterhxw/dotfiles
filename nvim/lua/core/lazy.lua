@@ -21,3 +21,7 @@ require("lazy").setup({
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true },
 })
+
+-- CommandLine abbreviations
+-- Shortcut for Lazy plugin manager in command/abbrev modes
+vim.keymap.set("ca", "lz", "Lazy")
