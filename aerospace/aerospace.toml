@@ -134,6 +134,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +100'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    alt-0 = 'exec-and-forget /usr/local/bin/aerospace workspace NSP'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -167,6 +168,7 @@ automatically-unhide-macos-hidden-apps = false
     # alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    alt-cmd-0 = 'exec-and-forget /usr/local/bin/aerospace move-node-to-workspace NSP'
     alt-cmd-1 = 'move-node-to-workspace 1'
     alt-cmd-2 = 'move-node-to-workspace 2'
     alt-cmd-3 = 'move-node-to-workspace 3'
