@@ -5,7 +5,7 @@ return {
   opts = {
     options = {
       indicator = {
-        -- icon = " ",
+        icon = " ",
       },
     },
   },
