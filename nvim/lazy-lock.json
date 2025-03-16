@@ -1,4 +1,5 @@
 {
+  "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "dropbar.nvim": { "branch": "master", "commit": "009c214b6eadf49ec50fc81055ceb08ca3fcb8e1" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lualine.nvim": { "branch": "master", "commit": "02d61f515e7d88e1b02366ca972aecf2768d53df" },
