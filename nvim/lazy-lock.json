@@ -1,10 +1,11 @@
 {
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
-  "dropbar.nvim": { "branch": "master", "commit": "d08bf6b5e2b3bf160050b0f991c1831bf05a7523" },
+  "dropbar.nvim": { "branch": "master", "commit": "473951b086f8de24efe331a20f25d7503cc75f24" },
   "hlchunk.nvim": { "branch": "main", "commit": "5465dd33ade8676d63f6e8493252283060cd72ca" },
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lualine.nvim": { "branch": "master", "commit": "02d61f515e7d88e1b02366ca972aecf2768d53df" },
+  "mini.comment": { "branch": "main", "commit": "264b8a63edd5a9a41d5361a1d52c13131c3c51a2" },
   "mini.indentscope": { "branch": "main", "commit": "8ce41a77eed7f4121c83c67fda5e2e86af999e6d" },
   "mini.move": { "branch": "main", "commit": "c8b30e92dd2668dd6e56a9a23cb7d4ee38c2266d" },
   "mini.statusline": { "branch": "main", "commit": "83209bfbca156f9e4a5ec47a2a8ce1e5ce26311d" },
