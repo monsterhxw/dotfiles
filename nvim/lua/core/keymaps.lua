@@ -19,8 +19,8 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
 
 -- Move selected lines up and down in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+-- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+-- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Maintain Visual Selection After Indentation
 vim.keymap.set("v", "<", "<gv")

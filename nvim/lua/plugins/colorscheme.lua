@@ -1,4 +1,4 @@
-local transparent = true
+local transparent = false
 local bg = "#011628"
 local bg_dark = "#011423"
 local bg_highlight = "#143652"

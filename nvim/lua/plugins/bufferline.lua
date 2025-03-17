@@ -5,7 +5,8 @@ return {
   opts = {
     options = {
       indicator = {
-        icon = " ",
+        -- icon = " ",
+        separator_style = { "", "" },
       },
     },
   },
