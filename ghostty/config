@@ -1,11 +1,12 @@
 # Font
-font-family = "GeistMono Nerd Font Mono"
-font-family = "LXGW WenKai Mono"
+font-family = "Maple Mono NF CN"
+# font-family = "GeistMono Nerd Font Mono"
+# font-family = "LXGW WenKai Mono"
 font-size = 13
 font-thicken
-font-feature = -liga
+font-feature = -calt, -liga
 # See: https://www.nerdfonts.com/cheat-sheet
-font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = GeistMono Nerd Font
+font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = Maple Mono NF CN
 
 # Term
 # term = xterm-256color
