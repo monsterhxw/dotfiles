@@ -16,7 +16,7 @@ vim.opt.cursorline = true
 -- Always show the sign column
 vim.opt.signcolumn = "yes"
 -- Keep 10 lines visible above/below cursor when scrolling
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 -- Show line numbers
 vim.opt.number = true
 -- Show relative line numbers
