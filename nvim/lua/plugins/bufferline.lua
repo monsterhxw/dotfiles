@@ -7,6 +7,7 @@ return {
       indicator = {
         -- icon = " ",
       },
+      numbers = "id",
       separator_style = { "", "" },
     },
   },
