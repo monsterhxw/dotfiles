@@ -11,9 +11,10 @@ vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
 vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>")
 vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
 
+--- Replace this with 'rhysd/accelerated-jk' or 'rainbowhxch/accelerated-jk.nvim' plugin
 -- Smart j/k: Use gj/gk on wrapped lines, normal j/k with count prefix
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Copy to system clipboard in visual and normal modes
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
