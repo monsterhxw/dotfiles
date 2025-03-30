@@ -4,8 +4,8 @@
 alias godl='cd ~/Downloads'
 alias gopj='cd ~/project'
 alias godt='cd ~/Desktop'
-alias gh='cd ~'
-alias gtmp='cd $HOME/project/tmp'
+alias goh='cd ~'
+alias gotmp='cd $HOME/project/tmp'
 
 # Replace remove 
 alias rm='trash'
