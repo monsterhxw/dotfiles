@@ -17,6 +17,10 @@ return {
   opts = {
     style = "night",
     transparent = transparent,
+    styles = {
+      sidebars = transparent and "transparent" or "dark",
+      floats = transparent and "transparent" or "dark",
+    },
     on_colors = function(colors)
       colors.bg = bg
       colors.bg_highlight = bg_highlight
