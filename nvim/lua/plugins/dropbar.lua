@@ -1,5 +1,6 @@
 return {
   'Bekaboo/dropbar.nvim',
+  enabled = true,
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },

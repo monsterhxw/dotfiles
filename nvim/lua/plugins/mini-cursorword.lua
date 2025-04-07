@@ -1,8 +1,9 @@
 return {
   "echasnovski/mini.cursorword",
+  enabled = true,
   event = "VeryLazy",
   opts = {
-    delay = 250,
+    delay = 1000,
   },
   config = function(_, opts)
     require("mini.cursorword").setup(opts)

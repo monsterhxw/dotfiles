@@ -22,7 +22,7 @@ return {
       floats = transparent and "transparent" or "dark",
     },
     on_colors = function(colors)
-      colors.bg = bg
+      -- colors.bg = bg
       colors.bg_highlight = bg_highlight
       colors.bg_popup = bg_dark
       colors.bg_search = bg_search
