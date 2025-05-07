@@ -235,7 +235,7 @@ automatically-unhide-macos-hidden-apps = false
     # Open Terminal
     alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty unfloat -300'
     # Open Notes
-    alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
+    # alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
     # Open AI App
     alt-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.pake.deepseek DeepSeek float'
 
@@ -275,8 +275,24 @@ automatically-unhide-macos-hidden-apps = false
     alt-rightSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
     
     # Move node to monitor
-    alt-cmd-leftSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
-    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']     
+    alt-cmd-leftSquareBracket = [
+      'move-node-to-monitor --focus-follows-window --wrap-around prev',
+      'mode main',
+      '''exec-and-forget /usr/bin/osascript -e '
+          tell application "System Events"
+            key code 120 using {control down, option down, command down}
+          end tell'
+      '''
+    ]
+    alt-cmd-rightSquareBracket = [
+      'move-node-to-monitor --focus-follows-window --wrap-around next',
+      'mode main',
+      '''exec-and-forget /usr/bin/osascript -e '
+          tell application "System Events"
+            key code 120 using {control down, option down, command down}
+          end tell'
+      '''
+    ]     
 
 
 # On Window Detected
@@ -447,6 +463,16 @@ automatically-unhide-macos-hidden-apps = false
 # Karabinder-EventViewer
 [[on-window-detected]]
     if.app-id = 'org.pqrs.Karabiner-EventViewer'
+    run = ['layout floating']
+# Ghostty Configuration Errors
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
+    if.window-title-regex-substring = 'Configuration Errors'
+    check-further-callbacks = true
+    run = ['layout floating']
+# Trae
+[[on-window-detected]]
+    if.app-id = 'com.trae.app'
     run = ['layout floating']
 # ---Specifies Workspace 2---
 # Ghostty
