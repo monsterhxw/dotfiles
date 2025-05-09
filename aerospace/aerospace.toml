@@ -40,9 +40,10 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+# on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 on-focus-changed = [
+  'move-mouse window-lazy-center',
   # The border disappears when there is only one window in the focused workspace.
   # See https://github.com/FelixKratz/JankyBorders/issues/53#issuecomment-2299849820
   # See https://github.com/nikitabobko/AeroSpace/issues/846 (TODO Full Screen Situation)
@@ -271,28 +272,12 @@ automatically-unhide-macos-hidden-apps = false
     l = ['move right', 'mode main']
 
     # Move node to workspace
-    alt-leftSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
+    alt-leftSquareBracket  = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
     alt-rightSquareBracket = ['move-node-to-workspace --focus-follows-window --wrap-around next', 'mode main']
     
     # Move node to monitor
-    alt-cmd-leftSquareBracket = [
-      'move-node-to-monitor --focus-follows-window --wrap-around prev',
-      'mode main',
-      '''exec-and-forget /usr/bin/osascript -e '
-          tell application "System Events"
-            key code 120 using {control down, option down, command down}
-          end tell'
-      '''
-    ]
-    alt-cmd-rightSquareBracket = [
-      'move-node-to-monitor --focus-follows-window --wrap-around next',
-      'mode main',
-      '''exec-and-forget /usr/bin/osascript -e '
-          tell application "System Events"
-            key code 120 using {control down, option down, command down}
-          end tell'
-      '''
-    ]     
+    alt-cmd-leftSquareBracket  = ['move-node-to-monitor --focus-follows-window --wrap-around prev', 'mode main']
+    alt-cmd-rightSquareBracket = ['move-node-to-monitor --focus-follows-window --wrap-around next', 'mode main']     
 
 
 # On Window Detected
