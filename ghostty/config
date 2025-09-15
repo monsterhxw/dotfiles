@@ -12,7 +12,7 @@ font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = Maple
 # term = xterm-256color
 
 # Theme
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 # For zsh-autosuggestions
 palette = 8=#7f869e
 
