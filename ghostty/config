@@ -23,8 +23,8 @@ cursor-text = "#011423"
 # Background and Foreground
 # background = "#1f2430"
 # foreground = "#cbccc6"
-background-opacity = 0.78
-background-blur-radius = 5
+background-opacity = 0.88
+background-blur-radius = 10
 # minimum-contrast = 1.1
 
 # Window
@@ -32,6 +32,12 @@ window-decoration = true
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
+
+# Shader
+# Cursor Shader
+#   Refs: https://github.com/KroneCorylus/ghostty-shader-playground/tree/main/public/shaders
+custom-shader = "shaders/cursor_smear.glsl"
+# custom-shader = "shaders/cursor_smear_rainbow.glsl"
 
 # quit
 confirm-close-surface = false
