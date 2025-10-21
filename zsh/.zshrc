@@ -8,7 +8,9 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 # $ mkdir -p $HOME/.zsh/completions/orbstack
 # $ orb completion zsh > $HOME/.zsh/completions/orbstack/_orb
 # $ orbctl completion zsh > $HOME/.zsh/completions/orbstack/_orbctl
-fpath+=("$HOME/.zsh/completions/orbstack")
+# fpath+=("$HOME/.zsh/completions/orbstack")
+
+fpath+=("$HOME/.zsh/completions")
 
 # oh my zsh
 export ZSH=$HOME/.oh-my-zsh
@@ -19,6 +21,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-osx-autoproxy
+  macports
 )
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
@@ -53,16 +56,17 @@ zstyle ':completion:*' menu no
 export XDG_CONFIG_HOME="$HOME/.config"
 # MySQL@5.7
 # export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
-export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
-export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib:$LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include:$CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig:$PKG_CONFIG_PATH"
 # ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.ripgreprc"
 java() {
   unfunction java
-  export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+  export JAVA_HOME=$(/usr/libexec/java_home -v 21)
   java "$@"
 }
+export PATH="$HOME/.atuin/bin:$PATH"
 
 # eval
 # Homebrew
