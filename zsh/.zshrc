@@ -50,6 +50,7 @@ zstyle ':completion:*' menu no
 [[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
 [[ -f ~/.zprofile ]] && source ~/.zprofile
 [[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
+[[ -f ~/.atuin/bin/env ]] && source ~/.atuin/bin/env
 
 # export
 # X Desktop Group (Freedesktop)
@@ -66,7 +67,6 @@ java() {
   export JAVA_HOME=$(/usr/libexec/java_home -v 21)
   java "$@"
 }
-export PATH="$HOME/.atuin/bin:$PATH"
 
 # eval
 # Homebrew
@@ -76,6 +76,11 @@ eval "$(starship init zsh)"
 # Atuin
 ## See https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
 eval "$(atuin init zsh --disable-ctrl-r)"
+# 如果 atuin 在第一个位置，就把它移到最后
+if [[ "${ZSH_AUTOSUGGEST_STRATEGY[1]}" == "atuin" ]]; then
+    # 移除第一个元素 atuin 并添加到末尾
+    ZSH_AUTOSUGGEST_STRATEGY=("${ZSH_AUTOSUGGEST_STRATEGY[@]:1}" "atuin")
+fi
 # better cd
 # https://github.com/ajeetdsouza/zoxide
 z() {
