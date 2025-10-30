@@ -48,16 +48,19 @@ float_app() {
     # silent execution
     $AEROSPACE layout floating || true
     # Toggle between floating-centered and tiling layout
-    # Floating-centered needs to depend on Raycast Window Management Center Command Hotkey
-    # The Raycast Center Command Hotkey needs to be set to `ctrl + option + cmd + F2` (Key Code 120 = F2)
-    $OSASCRIPT -e \
-      'tell application "System Events"
-         key code 120 using {control down, option down, command down}
-       end tell'
+    # Floating-centered needs to depend on Raycast Window Management Center Command Deeplinks
+    # - See: https://manual.raycast.com/deeplinks#block-d1a7b2b605124a539323503f225301e3
+    $OPEN -g raycast://extensions/raycast/window-management/center
   fi;
 }
 
 resize_app() {
+  local win_id="${1:-}"
+  
+  if [[ -n "$win_id" ]]; then
+    $AEROSPACE focus --window-id "$win_id"
+  fi
+
   if [[ "$IS_FLOAT" != "float" && -n "$RESIZE" ]]; then
     $AEROSPACE resize smart "$RESIZE"
   fi;
@@ -83,7 +86,7 @@ scratchpad() {
       --focus-follows-window \
       --window-id "$win_id"
     float_app
-    resize_app
+    resize_app "$win_id"
   fi
 }
 

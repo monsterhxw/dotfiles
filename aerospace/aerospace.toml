@@ -543,6 +543,10 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.apple.Notes'
     run = ['layout floating']
+# GitButler
+[[on-window-detected]]
+    if.app-id = 'com.gitbutler.app'
+    run = ['layout floating']
 
 # ---Specifies Workspace 2---
 # Ghostty
