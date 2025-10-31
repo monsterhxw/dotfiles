@@ -78,6 +78,7 @@ scratchpad() {
       $AEROSPACE move-node-to-workspace NSP --window-id "$win_id"
     else
       $AEROSPACE focus --window-id "$win_id"
+      resize_app
     fi
   else
     local win_id=$(get_app_window_id "--all")
