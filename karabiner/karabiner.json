@@ -1,5 +1,8 @@
 {
-    "global": { "show_in_menu_bar": false },
+    "global": {
+        "check_for_updates_on_startup": false,
+        "show_in_menu_bar": false
+    },
     "profiles": [
         {
             "complex_modifications": {
@@ -172,18 +175,19 @@
                         ]
                     },
                     {
-                        "description": "Map Ctrl + [ to escape and language to en",
+                        "description": "Map Ctrl + [ and ESC to Escape (auto switch to EN when not in ABC)",
                         "manipulators": [
                             {
+                                "description": "Ctrl+[ maps to Escape and switch to EN (when not in ABC)",
                                 "conditions": [
                                     {
+                                        "type": "input_source_unless",
                                         "input_sources": [
                                             {
                                                 "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
                                                 "language": "^en$"
                                             }
-                                        ],
-                                        "type": "input_source_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -194,7 +198,9 @@
                                     }
                                 },
                                 "to": [
-                                    { "key_code": "escape" },
+                                    {
+                                        "key_code": "escape"
+                                    },
                                     {
                                         "select_input_source": {
                                             "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
@@ -203,22 +209,45 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "ESC: ESC and language to en",
-                        "manipulators": [
+                            },
                             {
+                                "description": "Ctrl+[ maps to Escape (when in ABC)",
                                 "conditions": [
                                     {
+                                        "type": "input_source_if",
                                         "input_sources": [
                                             {
                                                 "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
                                                 "language": "^en$"
                                             }
-                                        ],
-                                        "type": "input_source_unless"
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "ESC switches to EN when not in ABC",
+                                "conditions": [
+                                    {
+                                        "type": "input_source_unless",
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "from": { "key_code": "escape" },
