@@ -248,7 +248,7 @@ automatically-unhide-macos-hidden-apps = false
     # Open Notes
     # alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
     # Open AI App
-    alt-shift-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.kangfenmao.CherryStudio "Cherry Studio" float'
+    alt-i = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.kangfenmao.CherryStudio "Cherry Studio" float'
 
 
 # 'service' binding mode declaration.
