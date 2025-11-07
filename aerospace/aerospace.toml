@@ -244,11 +244,11 @@ automatically-unhide-macos-hidden-apps = false
     '''
 
     # Open Terminal
-    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty unfloat 600'
+    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.mitchellh.ghostty Ghostty unfloat 680'
     # Open Notes
     # alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.electron.logseq Logseq float'
     # Open AI App
-    # alt-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.pake.deepseek DeepSeek float'
+    alt-shift-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh com.kangfenmao.CherryStudio "Cherry Studio" float'
 
 
 # 'service' binding mode declaration.
