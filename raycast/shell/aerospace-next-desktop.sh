@@ -12,4 +12,4 @@
 # @raycast.author Monster_Dump
 # @raycast.authorURL https://raycast.com/Monster_Dump
 
-/usr/local/bin/aerospace move-node-to-workspace --focus-follows-window --wrap-around next
+/usr/local/bin/aerospace move-node-to-workspace --focus-follows-window --wrap-around --no-stdin next

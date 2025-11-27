@@ -7,13 +7,13 @@ local config = {
   fingers = 4,
   -- 0.1 = swipe distance > 10% of trackpad
   threshold = 0.08,
-  showAlert = true,
+  showAlert = false,
   alertDuration = 0.3
 }
 
 local AEROSPACE = "/usr/local/bin/aerospace"
 function aerospaceExec(cmd)
-  local command = string.format('%s list-workspaces --monitor mouse --visible | xargs %s workspace && %s workspace %s', AEROSPACE, AEROSPACE, AEROSPACE, cmd)
+  local command = string.format('%s list-workspaces --monitor mouse --visible | xargs %s workspace && %s workspace --no-stdin %s', AEROSPACE, AEROSPACE, AEROSPACE, cmd)
 
   hs.execute(command)
   
