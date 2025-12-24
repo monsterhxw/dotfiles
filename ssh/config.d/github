@@ -5,6 +5,6 @@ Host github.com
   #IdentityFile ~/.ssh/id_ed25519
   Match exec "[ ! -z $all_proxy ]"
    # HTTP Proxy
-   ProxyCommand nc -v -X connect -x $(echo $all_proxy | sed 's/http:\/\///g') %h %p
+   # ProxyCommand nc -v -X connect -x $(echo $all_proxy | sed 's/http:\/\///g') %h %p
    # Socks5 Proxy
-   #ProxyCommand nc -v -x $(echo $all_proxy | sed 's/http:\/\///g') %h %p
+   ProxyCommand nc -X 5 -x $(echo $all_proxy | sed 's/http:\/\///g') %h %p
