@@ -1,6 +1,7 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*)
 description: Generate a git commit
+model: haiku
 ---
 
 ## Context
