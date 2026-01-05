@@ -93,17 +93,17 @@ keybind = cmd+comma=text:\x02,
 # Select a new tmux session for the attached client interactively, `cmd + k`
 keybind = cmd+k=text:\x02s
 # Select tmux window 1-5, `cmd + 1`
-keybind = cmd+one=text:\x021
+# keybind = cmd+one=text:\x021
 # Select tmux window 1-5, `cmd + 2`
-keybind = cmd+two=text:\x022
+# keybind = cmd+two=text:\x022
 # Select tmux window 1-5, `cmd + 3`
-keybind = cmd+three=text:\x023
+# keybind = cmd+three=text:\x023
 # Select tmux window 1-5, `cmd + 4`
-keybind = cmd+four=text:\x024
+# keybind = cmd+four=text:\x024
 # Select tmux window 1-5, `cmd + 5`
-keybind = cmd+five=text:\x025
+# keybind = cmd+five=text:\x025
 # Popup and switch tmux pane, `cmd + j`
-keybind = cmd+j=text:\x02\x0c
+# keybind = cmd+j=text:\x02\x0c
 # Change to the previous tmux window, `cmd + shift + j`
 keybind = cmd+shift+j=text:\x02p
 # Change to the next tmux window, `cmd + shift + k`
