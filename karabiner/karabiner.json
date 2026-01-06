@@ -148,7 +148,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 250,
-                                    "basic.to_if_held_down_threshold_milliseconds": 800
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
@@ -167,7 +167,6 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "tab" }],
-                                "to_if_held_down": [{ "key_code": "tab" }],
                                 "type": "basic"
                             },
                             {
@@ -242,7 +241,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 250,
-                                    "basic.to_if_held_down_threshold_milliseconds": 800
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
@@ -261,7 +260,6 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "tab" }],
-                                "to_if_held_down": [{ "key_code": "tab" }],
                                 "type": "basic"
                             },
                             {
@@ -356,7 +354,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 250,
-                                    "basic.to_if_held_down_threshold_milliseconds": 800
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
@@ -375,7 +373,6 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "tab" }],
-                                "to_if_held_down": [{ "key_code": "tab" }],
                                 "type": "basic"
                             },
                             {
