@@ -10,7 +10,8 @@ config-version = 2
 # after-startup-command = []
 after-startup-command = [
   # https://github.com/FelixKratz/JankyBorders/issues/10#issuecomment-1824068145
-  'exec-and-forget /usr/local/bin/borders active_color=0xDDE1E3E4 inactive_color=0x00000000 width=3.0 blacklist="Alma,Cherry Studio,Telegram,Shadowrocket,Sparkle"'
+  # 'exec-and-forget /usr/local/bin/borders active_color=0xDDE1E3E4 inactive_color=0x00000000 width=3.0 blacklist="Alma,Cherry Studio,Telegram,Shadowrocket,Sparkle"'
+  'exec-and-forget /usr/local/bin/borders active_color=0xA6E1E3E4 inactive_color=0x00000000 width=3.0'
 ]
 
 # Start AeroSpace at login
@@ -159,9 +160,9 @@ on-mode-changed = []
     alt-equal = 'resize smart +100'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-9 = 'exec-and-forget /usr/local/bin/aerospace workspace SP'
+    alt-9 = 'workspace SP'
     # NSP (Named Scratchpad, For Hidden workspace)
-    alt-0 = 'exec-and-forget /usr/local/bin/aerospace workspace NSP'
+    alt-0 = 'workspace NSP'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     # alt-3 = 'workspace 3'
@@ -195,9 +196,9 @@ on-mode-changed = []
     # alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-cmd-9 = 'exec-and-forget /usr/local/bin/aerospace move-node-to-workspace SP'
+    alt-cmd-9 = 'move-node-to-workspace SP'
     # NSP (Named Scratchpad, For Hidden workspace)
-    alt-cmd-0 = 'exec-and-forget /usr/local/bin/aerospace move-node-to-workspace NSP'
+    alt-cmd-0 = 'move-node-to-workspace NSP'
     alt-cmd-1 = 'move-node-to-workspace 1'
     alt-cmd-2 = 'move-node-to-workspace 2'
     # alt-cmd-3 = 'move-node-to-workspace 3'
@@ -596,6 +597,7 @@ on-mode-changed = []
 # Alma
 [[on-window-detected]]
     if.app-id = 'com.yetone.alma'
+    if.app-name-regex-substring = 'Alma'
     check-further-callbacks = true
     run = ['layout floating']
 # ClashMac
@@ -631,6 +633,14 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.ccswitch.desktop'
     if.app-name-regex-substring = 'CC Switch'
+    run = ['layout floating']
+# QiuChenly AppStore
+[[on-window-detected]]
+    if.app-id = 'com.qiuchenly.hayaku.gui'
+    run = ['layout floating']
+# Typora
+[[on-window-detected]]
+    if.app-id = 'abnerworks.Typora'
     run = ['layout floating']
 
 # ---Specifies Workspace 2---
