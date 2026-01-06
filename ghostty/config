@@ -12,7 +12,10 @@ font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2 = Maple
 # term = xterm-256color
 
 # Theme
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
+theme = Raycast Dark
+# theme = Kanagawabones
+# theme = Vercel
 # For zsh-autosuggestions
 palette = 8=#7f869e
 
@@ -23,8 +26,8 @@ cursor-text = "#011423"
 # Background and Foreground
 # background = "#1f2430"
 # foreground = "#cbccc6"
-background-opacity = 0.9
-background-blur-radius = 15
+# background-opacity = 0.90
+# background-blur-radius = 15
 # minimum-contrast = 1.1
 
 # Window
