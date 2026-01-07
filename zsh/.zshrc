@@ -22,6 +22,7 @@ plugins=(
   zsh-autosuggestions
   zsh-osx-autoproxy
   macports
+  you-should-use
 )
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
@@ -67,6 +68,9 @@ java() {
   export JAVA_HOME=$(/usr/libexec/java_home -v 21)
   java "$@"
 }
+# Neovim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # eval
 # Homebrew
@@ -94,6 +98,10 @@ zoxide() {
   zoxide "$@"
 }
 
+
 # Q post block. Keep at the bottom of this file.
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# Added by Antigravity
+export PATH="/Users/monstervivi/.antigravity/antigravity/bin:$PATH"
