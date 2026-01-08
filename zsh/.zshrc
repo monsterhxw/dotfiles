@@ -45,6 +45,7 @@ zstyle ':completion::complete:(rm|trash):*:globbed-files' ignored-patterns
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
+zstyle ':completion:*' special-dirs false # Ignore ./ and ../
 [[ -n $TMUX ]] && zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # source
