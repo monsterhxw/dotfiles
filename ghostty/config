@@ -125,4 +125,4 @@ keybind = cmd+x=text:\x02x
 keybind = cmd+ctrl+[=text:\x02[
 
 # Via Claude Code Command /terminal-setup
-keybind = shift+enter=text:\x1b\r
+# keybind = shift+enter=text:\x1b\r # Fix by Claude Code v2.1.0
