@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(fork log:*)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git commit:*), Bash(fork log:*)
 description: Generate a git commit
 model: haiku
 ---
@@ -19,8 +19,9 @@ Your task is to help the user to generate a commit message and commit the change
 
 - DO NOT add any ads such as "Generated with [Claude Code](https://claude.ai/code)"
 - Only generate the message for staged files/changes
-- Don't add any files using `git add`. The user will decide what to add. 
-- Follow the rules below for the commit message.
+- Don't add any files using `git add`. The user will decide what to add.
+- Follow the Format and Rules sections for the commit message.
+- Always use the AskUserQuestion tool to confirm the generated commit message before executing `git commit`
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI.
 
 ### Format
