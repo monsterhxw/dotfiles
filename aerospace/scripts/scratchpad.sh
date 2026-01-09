@@ -28,7 +28,9 @@ wait_for_window() {
 # 设置浮动并居中
 float_and_center() {
   [[ "$IS_FLOAT" != "float" ]] && return
-  $AEROSPACE layout floating || true
+  local layout
+  layout=$($AEROSPACE list-windows --focused --format '%{window-parent-container-layout}' 2>/dev/null)
+  [[ "$layout" != "floating" ]] && $AEROSPACE layout floating || true
   $OPEN -g raycast://extensions/raycast/window-management/center
 }
 

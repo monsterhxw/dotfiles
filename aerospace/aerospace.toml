@@ -149,19 +149,23 @@ on-mode-changed = []
     # alt-k = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-prev'
     # alt-l = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-next'
 
-    alt-h = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace left'
-    alt-j = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace down'
-    alt-k = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace up'
-    alt-l = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace right'
+    # alt-h = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace left'
+    # alt-j = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace down'
+    # alt-k = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace up'
+    # alt-l = 'focus --boundaries workspace --boundaries-action wrap-around-the-workspace right'
+
+    alt-h = 'exec-and-forget /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action fail left || /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-prev'
+    alt-j = 'exec-and-forget /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action fail down || /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-next'
+    alt-k = 'exec-and-forget /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action fail up || /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-prev'
+    alt-l = 'exec-and-forget /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action fail right || /usr/local/bin/aerospace focus --boundaries workspace --boundaries-action wrap-around-the-workspace dfs-next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
     alt-minus = 'resize smart -100'
     alt-equal = 'resize smart +200'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-9 = 'workspace SP'
     # NSP (Named Scratchpad, For Hidden workspace)
-    alt-0 = 'workspace NSP'
+    alt-0 = 'exec-and-forget /usr/local/bin/aerospace workspace NSP'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     # alt-3 = 'workspace 3'
@@ -195,9 +199,8 @@ on-mode-changed = []
     # alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-cmd-9 = 'move-node-to-workspace SP'
     # NSP (Named Scratchpad, For Hidden workspace)
-    alt-cmd-0 = 'move-node-to-workspace NSP'
+    alt-cmd-0 = 'exec-and-forget /usr/local/bin/aerospace move-node-to-workspace NSP'
     alt-cmd-1 = 'move-node-to-workspace 1'
     alt-cmd-2 = 'move-node-to-workspace 2'
     # alt-cmd-3 = 'move-node-to-workspace 3'
@@ -289,9 +292,10 @@ on-mode-changed = []
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
 
+    alt-semicolon = ['reload-config', 'mode main']
     semicolon = ['reload-config', 'mode main']
-    leftSquareBracket = ['reload-config', 'mode main']
-    ctrl-leftSquareBracket = ['reload-config', 'mode main']
+    # leftSquareBracket = ['reload-config', 'mode main']
+    # ctrl-leftSquareBracket = ['reload-config', 'mode main']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     h = ['move left', 'mode main']
@@ -317,9 +321,40 @@ on-mode-changed = []
 
 
 # On Window Detected
+# Shadowrocket
+[[on-window-detected]]
+    if.app-id = 'com.liguangming.Shadowrocket'
+    check-further-callbacks = true
+    run = ['layout floating']
+# Raycast
+[[on-window-detected]]
+    if.app-id = 'com.raycast.macos'
+    run = ['layout floating']
 # Finder
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
+    run = ['layout floating']
+# Alma
+[[on-window-detected]]
+    if.app-id = 'com.yetone.alma'
+    check-further-callbacks = true
+    run = ['layout floating']
+# Cherry Stuido
+[[on-window-detected]]
+    if.app-id = 'com.kangfenmao.CherryStudio'
+    check-further-callbacks = true
+    run = ['layout floating']
+# Fork
+[[on-window-detected]]
+    if.app-id = 'com.DanPristupov.Fork'
+    run = ['layout floating']
+# CotMate
+[[on-window-detected]]
+    if.app-id = 'ai.umate.codmate'
+    run = ['layout floating']
+# CC Switch
+[[on-window-detected]]
+    if.app-id = 'com.ccswitch.desktop'
     run = ['layout floating']
 # App Store
 [[on-window-detected]]
@@ -341,13 +376,19 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'org.wireshark.Wireshark'
     run = ['layout floating']
+# Homerow
+[[on-window-detected]]
+    if.app-id = 'com.superultra.Homerow'
+    run = ['layout floating']
+# Ghostty Configuration Errors
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
+    if.window-title-regex-substring = 'Configuration Errors'
+    check-further-callbacks = true
+    run = ['layout floating']
 # Telegram
 [[on-window-detected]]
     if.app-id = 'ru.keepcoder.Telegram'
-    run = ['layout floating']
-# Amazon Q
-[[on-window-detected]]
-    if.app-id = 'com.amazon.codewhisperer'
     run = ['layout floating']
 # Discord
 [[on-window-detected]]
@@ -356,10 +397,6 @@ on-mode-changed = []
 # Slack
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
-    run = ['layout floating']
-# Raycast
-[[on-window-detected]]
-    if.app-id = 'com.raycast.macos'
     run = ['layout floating']
 # Latest
 [[on-window-detected]]
@@ -385,9 +422,13 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.aone.keka'
     run = ['layout floating']
-# Fork
+# Hammerspoon
 [[on-window-detected]]
-    if.app-id = 'com.DanPristupov.Fork'
+    if.app-id = 'org.hammerspoon.Hammerspoon'
+    run = ['layout floating']
+# Logseq
+[[on-window-detected]]
+    if.app-id = 'com.electron.logseq'
     run = ['layout floating']
 # OpenCat
 [[on-window-detected]]
@@ -397,21 +438,9 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.app.ChatGPTX'
     run = ['layout floating']
-# DeepL
-[[on-window-detected]]
-    if.app-id = 'com.linguee.DeepLCopyTranslator'
-    run = ['layout floating']
-# Hammerspoon
-[[on-window-detected]]
-    if.app-id = 'org.hammerspoon.Hammerspoon'
-    run = ['layout floating']
 # Follow
 [[on-window-detected]]
     if.app-id = 'is.follow'
-    run = ['layout floating']
-# Logseq
-[[on-window-detected]]
-    if.app-id = 'com.electron.logseq'
     run = ['layout floating']
 # Cubox
 [[on-window-detected]]
@@ -430,31 +459,11 @@ on-mode-changed = []
     if.window-title-regex-substring = '(Welcome to|欢迎访问) IntelliJ IDEA'
     if.app-id = 'com.jetbrains.intellij'
     run = ['layout floating'] 
-[[on-window-detected]]
-    if.window-title-regex-substring = '(Welcome to|欢迎访问) IntelliJ IDEA'
-    if.app-id = 'com.jetbrains.intellij.ce'
-    run = ['layout floating'] 
 # Jetbrains DataGrip Welcome Page
 [[on-window-detected]]
     if.window-title-regex-substring = '(Welcome to|欢迎访问) DataGrip'
     if.app-id = 'com.jetbrains.datagrip'
     run = ['layout floating'] 
-# DeepSeek (By Pake package)
-[[on-window-detected]]
-    if.app-id = 'com.pake.deepseek'
-    run = ['layout floating']
-# Monica
-[[on-window-detected]]
-    if.app-id = 'im.monica.desktop.monica'
-    run = ['layout floating']
-# Poe App
-[[on-window-detected]]
-    if.app-id = 'com.quora.poe.electron'
-    run = ['layout floating']
-# 豆包 Doubao
-[[on-window-detected]]
-    if.app-id = 'com.bot.pc.doubao'
-    run = ['layout floating']
 # Chrome - Untitled 
 # [[on-window-detected]]
 #     if.app-id = 'com.google.Chrome'
@@ -462,22 +471,14 @@ on-mode-changed = []
 #     check-further-callbacks = true
 #     run = ['layout floating']
 # Chrome - Sign in - Google Accounts
-[[on-window-detected]]
-    if.app-id = 'com.google.Chrome'
-    if.window-title-regex-substring = 'Sign in - Google Accounts - Google Chrome'
-    check-further-callbacks = true
-    run = ['layout floating']
+# [[on-window-detected]]
+#     if.app-id = 'com.google.Chrome'
+#     if.window-title-regex-substring = 'Sign in - Google Accounts - Google Chrome'
+#     check-further-callbacks = true
+#     run = ['layout floating']
 # IINA
 [[on-window-detected]]
     if.app-id = 'com.colliderli.iina'
-    run = ['layout floating']
-# Wenxiaobai
-[[on-window-detected]]
-    if.app-id = 'com.wenxiaobai.desktop'
-    run = ['layout floating']
-# ima
-[[on-window-detected]]
-    if.app-id = 'com.tencent.imamac'
     run = ['layout floating']
 # BaiduNetDisk
 [[on-window-detected]]
@@ -487,10 +488,6 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.luckymarmot.Paw'
     run = ['layout floating']
-# Homerow
-[[on-window-detected]]
-    if.app-id = 'com.superultra.Homerow'
-    run = ['layout floating']
 # Karabinder-Elements
 [[on-window-detected]]
     if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
@@ -498,12 +495,6 @@ on-mode-changed = []
 # Karabinder-EventViewer
 [[on-window-detected]]
     if.app-id = 'org.pqrs.Karabiner-EventViewer'
-    run = ['layout floating']
-# Ghostty Configuration Errors
-[[on-window-detected]]
-    if.app-id = 'com.mitchellh.ghostty'
-    if.window-title-regex-substring = 'Configuration Errors'
-    check-further-callbacks = true
     run = ['layout floating']
 # Trae
 [[on-window-detected]]
@@ -549,11 +540,6 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.qwen.chat'
     run = ['layout floating']
-# Shadowrocket
-[[on-window-detected]]
-    if.app-id = 'com.liguangming.Shadowrocket'
-    if.app-name-regex-substring = 'Shadowrocket'
-    run = ['layout floating']
 # Keychain Access
 [[on-window-detected]]
     if.app-id = 'com.apple.keychainaccess'
@@ -566,44 +552,13 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.apple.Notes'
     run = ['layout floating']
-# GitButler
-[[on-window-detected]]
-    if.app-id = 'com.gitbutler.app'
-    run = ['layout floating']
-# Kelivo
-[[on-window-detected]]
-    if.app-id = 'com.psyche.kelivo'
-    if.app-name-regex-substring = 'Kelivo'
-    run = ['layout floating']
-# Code Switch
-[[on-window-detected]]
-    if.app-id = 'com.codeswitch.app'
-    if.app-name-regex-substring = 'Code Switch'
-    run = ['layout floating']
-# 闪电说
-[[on-window-detected]]
-    if.app-id = 'cn.shandianshuo.desktop'
-    if.app-name-regex-substring = '闪电说'
-    run = ['layout floating']
 # DBngin
 [[on-window-detected]]
     if.app-id = 'com.tinyapp.DBngin'
     run = ['layout floating']
-# data-peak
-[[on-window-detected]]
-    if.app-id = 'com.datapeek.app'
-    if.app-name-regex-substring = 'data-peek'
-    run = ['layout floating']
-# Alma
-[[on-window-detected]]
-    if.app-id = 'com.yetone.alma'
-    if.app-name-regex-substring = 'Alma'
-    check-further-callbacks = true
-    run = ['layout floating']
 # ClashMac
 [[on-window-detected]]
     if.app-id = 'lv.llv.ClashMac'
-    if.app-name-regex-substring = 'ClashMac'
     run = ['layout floating']
 # ProxyPin
 [[on-window-detected]]
@@ -625,15 +580,6 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.apple.Music'
     run = ['layout floating']
-# CotMate
-[[on-window-detected]]
-    if.app-id = 'ai.umate.codmate'
-    run = ['layout floating']
-# CC Switch
-[[on-window-detected]]
-    if.app-id = 'com.ccswitch.desktop'
-    if.app-name-regex-substring = 'CC Switch'
-    run = ['layout floating']
 # QiuChenly AppStore
 [[on-window-detected]]
     if.app-id = 'com.qiuchenly.hayaku.gui'
@@ -641,29 +587,4 @@ on-mode-changed = []
 # Typora
 [[on-window-detected]]
     if.app-id = 'abnerworks.Typora'
-    run = ['layout floating']
-
-# ---Specifies Workspace 2---
-# Ghostty
-# [[on-window-detected]]
-#     if.app-id = 'com.mitchellh.ghostty'
-#     run = ['move-node-to-workspace 2']
-# OpenClaude (in Safari)
-[[on-window-detected]]
-    if.app-id = 'com.apple.Safari'
-    if.window-title-regex-substring = 'OpenClaude'
-    check-further-callbacks = true
-    run = ['move-node-to-workspace 2']
-# ---Specifies Workspace 3---
-# Chrome
-# [[on-window-detected]]
-#     if.app-id = 'com.google.Chrome'
-#     if.window-title-regex-substring = 'New Tab - Google Chrome'
-#     check-further-callbacks = true
-#     run = ['move-node-to-workspace 3']
-# ---Specifies Workspace 4---
-# Cherry Stuido
-[[on-window-detected]]
-    if.app-id = 'com.kangfenmao.CherryStudio'
-    # run = ['layout floating', 'move-node-to-workspace 4']
     run = ['layout floating']
