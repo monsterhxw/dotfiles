@@ -139,6 +139,94 @@
                         ]
                     },
                     {
+                        "description": "Tab + [ to Escape (auto switch to EN when not in ABC)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": [] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "description": "Tab + [ to Escape and switch to EN (when not in ABC)",
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "optional": [] }
+                                },
+                                "to": [
+                                    { "key_code": "escape" },
+                                    {
+                                        "select_input_source": {
+                                            "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                            "language": "^en$"
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "description": "Tab + [ maps to Escape (when in ABC)",
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "optional": [] }
+                                },
+                                "to": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Tab + hjkl to Arrow Keys",
                         "manipulators": [
                             {
