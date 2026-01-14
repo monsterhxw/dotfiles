@@ -6,7 +6,7 @@ font-size = 13
 font-thicken
 font-feature = +calt, +ss01 # , -liga, +cv01
 # See: https://www.nerdfonts.com/cheat-sheet
-font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2,U+F4D4 = Maple Mono NF CN
+font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2,U+F4D4,U+F252,U+F0C5,U+E621 = Maple Mono NF CN
 
 # Term
 # term = xterm-256color
