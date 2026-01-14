@@ -1,0 +1,126 @@
+## color ##
+set-option -g default-terminal 'tmux-256color'
+set -as terminal-features ",*256col*:RGB"
+
+set -g allow-passthrough on
+
+## default shell ##
+set-option -g default-shell $SHELL 
+
+## prefix key ##
+#set-option -g prefix2 C-a # two prefixes (ctrl + a and ctrl + b)
+
+## reload config ##
+# reload shortcut (prefix + r)
+bind r source-file $HOME/.config/tmux/tmux.conf \; display-message "Config reloaded..."
+
+set -g history-limit 2500  # increase history size (from 2,000)
+
+## act like vim ##
+set -g mode-keys vi
+# pane moving
+bind h select-pane -L  # move left
+bind j select-pane -D  # move down
+bind k select-pane -U  # move up
+bind l select-pane -R  # move right
+bind > swap-pane -D       # swap current pane with the next one
+bind < swap-pane -U       # swap current pane with the previous one
+# pane resizing
+bind -r H resize-pane -L 2 # left resizing
+bind -r J resize-pane -D 2 # down resizing
+bind -r K resize-pane -U 2 # up resizing
+bind -r L resize-pane -R 2 # right resizing
+
+## split window ##
+bind - split-window -v # split current window horizontally
+bind _ split-window -h # split current window vertically
+
+## window navigation ##
+#bind -r C-h previous-window # select previous window
+#bind -r C-l next-window     # select next window
+bind Tab last-window # move to last active window
+
+set -g mouse on # enable mouse support
+# bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe "pbcopy"
+bind -T copy-mode-vi WheelDownPane send -N2 -X scroll-down  # fix scrolling speed
+bind -T copy-mode-vi WheelUpPane send -N2 -X scroll-up      # fix scrolling speed
+
+bind -T copy-mode-vi 'v' send -X begin-selection
+bind -T copy-mode-vi 'C-v' send-keys -X rectangle-on \; send-keys -X begin-selection
+# bind-key -T copy-mode-vi 'Escape' send -X cancel
+
+# Navigation
+# Create session
+# bind C-c new-session
+
+# find session
+# bind C-f command-prompt -p find-session 'switch-client -t %%'
+
+# 监视窗口信息，如有内容变动，进行提示
+setw -g monitor-activity on
+set -g visual-activity on
+ 
+# 窗口号和窗口分割号都以1开始（默认从0开始）
+set -g base-index 1
+set -g display-panes-time 1000 # PREFIX-Q 显示编号的驻留时长，单位 ms
+set -g pane-base-index 1
+set -g renumber-windows   on    # 关掉某个窗口后，编号重排
+
+#setw -g allow-rename      off   # 禁止活动进程修改窗口名
+#setw -g automatic-rename  off   # 禁止自动命名新窗口
+
+set -g escape-time 10
+
+## Theme
+source-file $HOME/.config/tmux/themes/theme.conf
+
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+
+# 每15分钟保存一次（这获取比较频繁）
+set -g @continuum-save-interval '20'
+
+# 当启动 tmux 进程时，自动恢复之前的布局
+set -g @resurrect-dir '~/.config/tmux/resurrect'
+set -g @continuum-restore 'on'
+# set -g @resurrect-strategy-vim 'session'
+# set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-capture-pane-contents 'on'
+# 在 tmux-resurrect 保存会话后清理旧的 resurrect 文件，只保留最近的 5 个文件
+set -g @resurrect-hook-post-save-all '\
+         find "$HOME/.config/tmux/resurrect" -name "tmux_resurrect_*.txt" -type f -print \
+         | sort -r \
+         | tail -n +6 \
+         | xargs /usr/local/bin/trash'
+set -g @yank_action 'copy-pipe' # 复制后继续停留在 Copy Mode
+
+set -g @vim_navigator_mapping_left "S-Left"
+set -g @vim_navigator_mapping_down "S-Down"
+set -g @vim_navigator_mapping_up "S-Up"
+set -g @vim_navigator_mapping_right "S-Right"
+set -g @vim_navigator_mapping_prev "C-\\"
+set -g @vim_navigator_prefix_mapping_clear_screen ""
+
+# see https://github.com/sainnhe/tmux-fzf/issues/6
+TMUX_FZF_MENU=\
+"switch pane\n~/.config/tmux/plugins/tmux-fzf/scripts/pane.sh switch\n"\
+"attach session\n~/.config/tmux/plugins/tmux-fzf/scripts/session.sh attach\n"\
+"rename window\n~/.config/tmux/plugins/tmux-fzf/scripts/window.sh rename\n"
+bind-key "C-l" run-shell -b "~/.config/tmux/plugins/tmux-fzf/scripts/pane.sh switch"
+
+# Prefix + =, Equalize all panes size
+bind = select-layout -E
+
+# Enable Shift+Enter for Claude Code multi-line input
+bind -n S-Enter send-keys Escape "[13;2u"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.config/tmux/plugins/tpm/tpm'
