@@ -1,7 +1,7 @@
 # Font
-font-family = "Maple Mono NF CN"
-# font-family = "GeistMono Nerd Font Mono"
-# font-family = "LXGW WenKai Mono"
+font-family = "Maple Mono NF"
+# font-family = "LXGW WenKai"
+font-family = "LXGW Neo ZhiSong"
 font-size = 13
 font-thicken
 font-feature = +calt, +ss01 # , -liga, +cv01
@@ -26,8 +26,8 @@ cursor-text = "#011423"
 # Background and Foreground
 # background = "#1f2430"
 # foreground = "#cbccc6"
-# background-opacity = 0.90
-# background-blur-radius = 15
+background-opacity = 0.95
+background-blur-radius = 30
 # minimum-contrast = 1.1
 
 # Window
