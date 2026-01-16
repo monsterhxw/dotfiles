@@ -1,7 +1,6 @@
 # Font
 font-family = "Maple Mono NF"
-# font-family = "LXGW WenKai"
-font-family = "LXGW Neo ZhiSong"
+font-family = "LXGW WenKai"
 font-size = 13
 font-thicken
 font-feature = +calt, +ss01 # , -liga, +cv01
