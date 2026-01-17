@@ -21,7 +21,7 @@ Your task is to help the user to generate a commit message and commit the change
 - Only generate the message for staged files/changes
 - Don't add any files using `git add`. The user will decide what to add.
 - Follow the Format and Rules sections for the commit message.
-- Always use the AskUserQuestion tool to confirm the generated commit message before executing `git commit`
+- First list the modified files, summarize the changes concisely, and display the generated commit message, then use the **AskUserQuestion tool** to confirm before executing `git commit`
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI. If sandbox is enabled, use `dangerouslyDisableSandbox: true` for `fork log` only during this command.
 - If sandbox is enabled, do not use heredoc for git commit messages. Use multiple `-m` flags instead (first `-m` for title, second `-m` for body).
 
