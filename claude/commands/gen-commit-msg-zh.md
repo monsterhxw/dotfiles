@@ -23,7 +23,7 @@ Your task is to help the user to generate a commit message and commit the change
 - Follow the Format and Rules sections for the commit message.
 - Always use the AskUserQuestion tool to confirm the generated commit message before executing `git commit`
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI. If sandbox is enabled, use `dangerouslyDisableSandbox: true` for `fork log` only during this command.
-- Do not use heredoc for git commit messages. Use multiple `-m` flags instead (first `-m` for title, second `-m` for body).
+- If sandbox is enabled, do not use heredoc for git commit messages. Use multiple `-m` flags instead (first `-m` for title, second `-m` for body).
 
 ### Format
 
