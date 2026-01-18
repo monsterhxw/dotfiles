@@ -49,8 +49,8 @@ zstyle ':completion:*' special-dirs false # Ignore ./ and ../
 [[ -n $TMUX ]] && zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # source
-[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
-[[ -f ~/.zprofile ]] && source ~/.zprofile
+[[ -f "$HOME/.zsh/aliases.zsh" ]] && source "$HOME/.zsh/aliases.zsh"
+[[ -f "$HOME/.zsh/functions.zsh" ]] && source "$HOME/.zsh/functions.zsh"
 [[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
 [[ -f ~/.atuin/bin/env ]] && source ~/.atuin/bin/env
 
@@ -105,4 +105,7 @@ zoxide() {
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 # Added by Antigravity
-export PATH="/Users/monstervivi/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# Amp CLI
+export PATH="$HOME/.amp/bin:$PATH"
