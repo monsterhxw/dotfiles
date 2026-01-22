@@ -80,8 +80,8 @@
                                     "key_code": "open_bracket",
                                     "modifiers": { "mandatory": ["control"] }
                                 },
-                                "to": [
-                                    { "key_code": "escape" },
+                                "to": [{ "key_code": "escape" }],
+                                "to_after_key_up": [
                                     {
                                         "select_input_source": {
                                             "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
@@ -125,8 +125,8 @@
                                 ],
                                 "description": "ESC switches to EN when not in ABC",
                                 "from": { "key_code": "escape" },
-                                "to": [
-                                    { "key_code": "escape" },
+                                "to": [{ "key_code": "escape" }],
+                                "to_after_key_up": [
                                     {
                                         "select_input_source": {
                                             "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
@@ -188,8 +188,8 @@
                                     "key_code": "open_bracket",
                                     "modifiers": { "optional": [] }
                                 },
-                                "to": [
-                                    { "key_code": "escape" },
+                                "to": [{ "key_code": "escape" }],
+                                "to_after_key_up": [
                                     {
                                         "select_input_source": {
                                             "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
@@ -519,6 +519,46 @@
                                     {
                                         "key_code": "d",
                                         "modifiers": ["control", "option", "shift", "command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl + b (auto switch to EN when not in ABC)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "b",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "select_input_source": {
+                                            "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                            "language": "^en$"
+                                        }
                                     }
                                 ],
                                 "type": "basic"
