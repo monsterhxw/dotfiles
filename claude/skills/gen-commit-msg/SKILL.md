@@ -18,20 +18,6 @@ model: haiku
 
 Your task is to help the user to generate a commit message and commit the changes using git.
 
-### Language Selection
-
-Determine the language for the commit message:
-
-1. **Chinese** if ANY of these conditions are met:
-   - `$ARGUMENTS` contains "zh" (e.g., `/gen-commit-msg zh`)
-   - User explicitly mentions Chinese: "中文", "用中文", "Chinese"
-
-2. **English** (default) for all other cases
-
-Based on the language, read the corresponding format template:
-- English: See [format-en.md](format/format-en.md)
-- Chinese: See [format-zh.md](format/format-zh.md)
-
 ### Guidelines
 
 - DO NOT add any ads such as "Generated with [Claude Code](https://claude.ai/code)"
@@ -41,6 +27,13 @@ Based on the language, read the corresponding format template:
 - First list the modified files, summarize the changes concisely, and display the generated commit message, then use the **AskUserQuestion tool** to confirm before executing `git commit`
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI. If sandbox is enabled, use `dangerouslyDisableSandbox: true` for `fork log` only during this command.
 - If sandbox is enabled, do not use heredoc for git commit messages. Use multiple `-m` flags instead (first `-m` for title, second `-m` for body).
+
+### Format
+
+| Language | Trigger | Template |
+|----------|---------|----------|
+| English | Default | [format-en.md](format/format-en.md) |
+| Chinese | `$ARGUMENTS` = `zh` or user mentions "中文/Chinese" | [format-zh.md](format/format-zh.md) |
 
 ### Rules
 
