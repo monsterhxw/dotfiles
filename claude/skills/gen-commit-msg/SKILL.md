@@ -32,8 +32,8 @@ Your task is to help the user to generate a commit message and commit the change
 
 | Language | Trigger | Template |
 |----------|---------|----------|
-| English | Default | [format-en.md](format/format-en.md) |
-| Chinese | `$ARGUMENTS` = `zh` or user mentions "中文/Chinese" | [format-zh.md](format/format-zh.md) |
+| English | Default | [format-en.md](references/format-en.md) |
+| Chinese | `$ARGUMENTS` = `zh` or user mentions "中文/Chinese" | [format-zh.md](references/format-zh.md) |
 
 ### Rules
 
