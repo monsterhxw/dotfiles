@@ -283,10 +283,10 @@ on-mode-changed = []
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
 
-    shift-h = ['join-with left', 'mode main']
-    shift-j = ['join-with down', 'mode main']
-    shift-k = ['join-with up', 'mode main']
-    shift-l = ['join-with right', 'mode main']
+    h = ['join-with left', 'mode main']
+    j = ['join-with down', 'mode main']
+    k = ['join-with up', 'mode main']
+    l = ['join-with right', 'mode main']
 
     down = 'volume down'
     up = 'volume up'
@@ -298,10 +298,10 @@ on-mode-changed = []
     # ctrl-leftSquareBracket = ['reload-config', 'mode main']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
-    h = ['move left', 'mode main']
-    j = ['move down', 'mode main']
-    k = ['move up', 'mode main']
-    l = ['move right', 'mode main']
+    alt-h = ['move left', 'mode main']
+    alt-j = ['move down', 'mode main']
+    alt-k = ['move up', 'mode main']
+    alt-l = ['move right', 'mode main']
 
     # Move node to workspace
     alt-leftSquareBracket  = ['move-node-to-workspace --focus-follows-window --wrap-around prev', 'mode main']
