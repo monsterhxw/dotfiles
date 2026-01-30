@@ -333,6 +333,9 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
     run = ['layout floating']
+[[on-window-detected]]
+    if.app-id = 'com.confirmo.app'
+    run = ['layout floating']
 # Alma
 [[on-window-detected]]
     if.app-id = 'com.yetone.alma'
