@@ -9,7 +9,8 @@
     "ANTHROPIC_BASE_URL": "",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1"
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
+    "CLAUDE_CODE_TMPDIR": "/tmp/claude"
   },
   "model": "opus",
   "permissions": {
@@ -20,6 +21,17 @@
       "Read(./.env*)",
       "Read(/**/.env*)"
     ]
+  },
+  "sandbox": {
+    "autoAllowBashIfSandboxed": true,
+    "enabled": true,
+    "excludedCommands": [
+      "git",
+      "docker"
+    ],
+    "network": {
+      "allowLocalBinding": true
+    }
   },
   "statusLine": {
     "command": "$HOME/.claude/ccline/ccline",
