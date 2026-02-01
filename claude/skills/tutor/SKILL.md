@@ -2,7 +2,10 @@
 name: tutor
 description: Socratic tutor that guides learning through questions using notes, code, or direct questions.
 disable-model-invocation: true
-allowed-tools: Read, Glob, Grep
+allowed-tools:
+  - Read 
+  - Glob
+  - Grep
 argument-hint: "[topic, file path, or question]"
 ---
 
