@@ -2,9 +2,16 @@
 name: gen-commit-msg
 description: Generate and git commit staged changes with a Conventional Commits message. 
 disable-model-invocation: true
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git commit:*), Bash(fork log:*), Read
+allowed-tools: 
+  - Bash(git status:*)
+  - Bash(git diff:*)
+  - Bash(git branch:*)
+  - Bash(git log:*)
+  - Bash(git commit:*)
+  - Bash(fork log:*)
+  - Read
 argument-hint: "[zh] - use 'zh' for Chinese commit message"
-model: haiku
+model: opus
 ---
 
 ## Context
@@ -25,8 +32,7 @@ Your task is to help the user to generate a commit message and commit the change
 - Don't add any files using `git add`. The user will decide what to add.
 - Follow the Format and Rules from the template file you read.
 - First list the modified files, summarize the changes concisely, and display the generated commit message, then use the **AskUserQuestion tool** to confirm before executing `git commit`
-- After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI. If sandbox is enabled, use `dangerouslyDisableSandbox: true` for `fork log` only during this command.
-- If sandbox is enabled, do not use heredoc for git commit messages. Use multiple `-m` flags instead (first `-m` for title, second `-m` for body).
+- After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI
 
 ### Format
 
