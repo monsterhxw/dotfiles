@@ -4,6 +4,7 @@
     "commit": "",
     "pr": ""
   },
+  "cleanupPeriodDays": 60,
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
     "ANTHROPIC_BASE_URL": "",
