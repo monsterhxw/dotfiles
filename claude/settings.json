@@ -5,12 +5,16 @@
     "pr": ""
   },
   "cleanupPeriodDays": 60,
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true
+  },
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
     "ANTHROPIC_BASE_URL": "",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1"
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
+    "CLAUDE_CODE_TMPDIR": "/tmp/claude"
   },
   "model": "opus",
   "permissions": {
