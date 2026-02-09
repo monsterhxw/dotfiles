@@ -1,0 +1,15 @@
+approval_policy = "on-failure"
+sandbox_mode = "workspace-write"
+web_search = "live"
+
+model_provider = "custom"
+model = "gpt-5.3-codex"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+[model_providers.custom]
+name = "custom"
+base_url = ""
+wire_api = "responses"
+
+[features]
+collaboration_modes = true
