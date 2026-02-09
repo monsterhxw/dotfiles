@@ -40,8 +40,8 @@ bindkey '^K' kill-line
 # autoload -zU compinit && compinit # oh-my-zsh will call
 # Include hidden files
 _comp_options+=(globdots)
-zstyle ':completion::complete:*:*:(files|globbed-files)' ignored-patterns '.DS_Store'
-zstyle ':completion::complete:(rm|trash):*:globbed-files' ignored-patterns
+zstyle ':completion:*' ignored-patterns '.DS_Store'
+zstyle ':completion:*:(rm|trash):*' ignored-patterns
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
