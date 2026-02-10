@@ -6,4 +6,4 @@
 - **Code/comments/docs**: English
 
 ## Tools
-  - GitHub-related: prefer `gh` CLI
+- GitHub URL/content: prefer `gh` CLI over Web Fetch
