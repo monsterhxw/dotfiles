@@ -45,7 +45,7 @@ Read [claude-project-instructions.md](references/claude-project-instructions.md)
 
 The reference instructions mention "HTML artifact" — in Agent CLI environments there are no artifacts. Instead:
 
-1. **Modify the Python script**: At the end of the script (after generating the URL), add `import webbrowser; webbrowser.open(url)` to directly open the draw.io URL in the default browser — no intermediate HTML page needed
+1. **Open draw.io URL directly in browser**: **CRITICAL** — You MUST call `webbrowser.open(url)` where `url` is the **draw.io URL** (starts with `https://app.diagrams.net/...`). Do NOT open the local HTML file path. The HTML file is only a backup — the user expects draw.io to open.
 2. **Save HTML backup**: Save the HTML to `{intent}-{type}-{timestamp}.html` in the current working directory (see Configuration > Working Directory above). Naming convention:
    - `{intent}`: 1-5 word kebab-case subject (e.g., `mqtt-conn`, `user-auth-flow`)
    - `{type}`: Abbreviated diagram type (e.g., `seq`, `flow`, `erd`, `arch`, `class`, `mind`)
