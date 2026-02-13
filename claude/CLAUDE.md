@@ -7,4 +7,4 @@
 
 ## Tools
 - GitHub URL/content: prefer `gh` CLI over Web Fetch
-- curl: When fetching web content, always use `-H "Accept: text/markdown"`
+- `curl`: When fetching web content, always use `-H "Accept: text/markdown"`
