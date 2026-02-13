@@ -59,3 +59,22 @@ fto() {
   local file
   file=$(fzf-tmux $FZF_TMUX_OPTS --preview 'bat --color=always --line-range :50 {}' +m -q "$1") && vim "$file"
 }
+
+# dirs + fzf: interactive directory stack jump
+zd() {
+  local selection
+  selection=$(
+    dirs -v |
+    if [[ -n $TMUX ]]; then
+      fzf-tmux $FZF_TMUX_OPTS --no-sort --reverse
+    else
+      fzf --no-sort --reverse
+    fi
+  ) || return
+  local index=$(echo "$selection" | awk '{print $1}')
+ if [[ -o pushdminus ]]; then
+   cd -$index
+ else
+   cd +$index
+ fi
+}
