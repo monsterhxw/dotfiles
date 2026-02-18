@@ -4,7 +4,7 @@
     "commit": "",
     "pr": ""
   },
-  "cleanupPeriodDays": 60,
+  "cleanupPeriodDays": 100,
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true
   },
@@ -14,8 +14,7 @@
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
-    "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
-    "CLAUDE_CODE_TMPDIR": "/tmp/claude"
+    "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true"
   },
   "model": "opus",
   "permissions": {
