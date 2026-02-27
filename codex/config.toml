@@ -1,4 +1,4 @@
-approval_policy = "on-failure"
+approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "live"
 
@@ -7,7 +7,7 @@ model = "gpt-5.3-codex"
 model_reasoning_effort = "xhigh"
 disable_response_storage = true
 [model_providers.custom]
-name = "custom"
+name = "OpenAI"
 base_url = ""
 wire_api = "responses"
 
