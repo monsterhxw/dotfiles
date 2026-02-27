@@ -6,4 +6,4 @@
 - **Code/comments/docs**: English
 
 ## Tools
-- `curl`: When fetching web content, always use `-H "Accept: text/markdown"`
+- `curl`: When fetching web content, prefer Jina Reader API (`curl https://r.jina.ai/<url>`) for clean Markdown output; always use `-H "Accept: text/markdown"`
