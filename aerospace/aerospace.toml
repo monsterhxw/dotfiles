@@ -260,15 +260,6 @@ on-mode-changed = []
       || /usr/local/bin/aerospace layout tiling
     '''
 
-    # Open Terminal
-    # alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.mitchellh.ghostty" "unfloat" "600"'
-    alt-t = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.mitchellh.ghostty" "unfloat"'
-    # Open Notes
-    # alt-n = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.electron.logseq" "float"'
-    # Open AI App
-    # alt-i = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.psyche.kelivo" "float"'
-    alt-i = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.kangfenmao.CherryStudio" "float"'
-    alt-a = 'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.yetone.alma" "float"'
 
 
 # 'service' binding mode declaration.
@@ -316,6 +307,20 @@ on-mode-changed = []
     alt-cmd-rightSquareBracket = [
       'move-node-to-monitor --focus-follows-window --wrap-around next',
       'exec-and-forget open -g raycast://extensions/raycast/window-management/center',
+      'mode main'
+    ]
+
+    # Quick Open App
+    t = [
+      'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.mitchellh.ghostty" "unfloat"',
+      'mode main'
+    ]
+    i = [
+      'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.kangfenmao.CherryStudio" "float"',
+      'mode main'
+    ]
+    a = [
+      'exec-and-forget $HOME/.config/aerospace/scripts/scratchpad.sh "com.yetone.alma" "float"',
       'mode main'
     ]
 
@@ -520,6 +525,10 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
     run = ['layout floating']
+# Codex
+[[on-window-detected]]
+    if.app-id = 'com.openai.codex'
+    run = ['layout floating']
 # ClashX Meta
 [[on-window-detected]]
     if.app-id = 'com.metacubex.ClashX.meta'
@@ -575,6 +584,10 @@ on-mode-changed = []
 # ProxyMan
 [[on-window-detected]]
     if.app-id = 'com.proxyman.NSProxy'
+    run = ['layout floating']
+# Reqable
+[[on-window-detected]]
+    if.app-id = 'com.reqable.macosx'
     run = ['layout floating']
 # Charles
 [[on-window-detected]]
