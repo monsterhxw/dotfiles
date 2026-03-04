@@ -6,6 +6,7 @@
   },
   "cleanupPeriodDays": 100,
   "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true,
     "superpowers@superpowers-marketplace": true
   },
   "env": {
