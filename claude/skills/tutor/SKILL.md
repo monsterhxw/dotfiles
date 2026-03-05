@@ -9,15 +9,15 @@ allowed-tools:
   - Bash(gh:*)
   - WebFetch
   - WebSearch
+  - AskUserQuestion
 argument-hint: "[topic, URL, local path, or question]"
 metadata:
-    ref: https://gist.github.com/vuciv/1d2864e73306f490aaeaa023cd3600fa
+  ref: https://gist.github.com/vuciv/1d2864e73306f490aaeaa023cd3600fa
 ---
 
 # Adaptive Tutor (Intent-Driven, Progressive Depth)
 
-Act as my personal tutor.
-
+Act as the user's personal tutor.
 ## Source
 
 The user's input is: **$ARGUMENTS**
