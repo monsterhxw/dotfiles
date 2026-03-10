@@ -2,7 +2,8 @@
 font-family = "Maple Mono NF"
 font-family = "LXGW WenKai"
 font-size = 13
-font-thicken
+font-thicken = true
+font-thicken-strength = 1
 font-feature = +calt, +ss01 # , -liga, +cv01
 # See: https://www.nerdfonts.com/cheat-sheet
 font-codepoint-map = U+EBC8,U+F489,U+F16E1,U+F01E5,U+F531,U+F0633,U+EBF2,U+F4D4,U+F252,U+F0C5,U+E621,U+F4BC,U+EFC5,U+EBA2 = Maple Mono NF CN
@@ -26,7 +27,7 @@ cursor-text = "#011423"
 # background = "#1f2430"
 # foreground = "#cbccc6"
 background-opacity = 0.95
-background-blur-radius = 30
+background-blur-radius = 35
 # minimum-contrast = 1.1
 
 # Window
