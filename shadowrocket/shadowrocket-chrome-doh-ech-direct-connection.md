@@ -54,7 +54,7 @@ tun-excluded-routes = ...,104.20.16.234/32,172.66.166.61/32
 skip-proxy = ...,linux.do,*.linux.do
 
 [Rule]
-# 配置直连 cloudflare-ech.com
+# 配置直连 cloudflare-ech.com （假设 Chrome 安全 DNS 是配置了 Cloudflare DoH 服务器）
 DOMAIN-SUFFIX,cloudflare-ech.com,DIRECT
 ```
 
