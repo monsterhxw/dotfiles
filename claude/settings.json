@@ -5,6 +5,7 @@
     "pr": ""
   },
   "cleanupPeriodDays": 100,
+  "effortLevel": "high",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
     "superpowers@superpowers-marketplace": true
@@ -19,6 +20,9 @@
   },
   "model": "opus",
   "permissions": {
+    "allow": [
+      "WebSearch"
+    ],
     "defaultMode": "plan",
     "deny": [
       "Read(~/.ssh/**)",
