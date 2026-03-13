@@ -1,4 +1,14 @@
-如何配置 Shadowrocket 的 **`skip-proxy (跳过代理)`** 和 **`tun-excluded-routes (TUN 旁路路由)`** 或 **配置直连规则 (`DOMAIN-SUFFIX,cloudflare-ech.com,DIRECT)`**，让 Chrome 使用 DoH 和 ECH 保护来完全直连 (Chrome 来直连或 Shadowrocket 来直连) `linux.do`。
+# 如何让 macOS 上开启 Shadowrocket 不影响 Chrome (开启安全 DNS) 来直连访问 `linux.do` ？
+
+## TL;DR
+
+  - 当 Shadowrocket 代理软件运行时，Chrome 的 DoH + ECH 保护会失效，导致无法直连访问 `linux.do`
+  - 失效原因是 Shadowrocket 有两道流量拦截机制：系统代理 和 TUN 模式。
+    - Chrome 一旦检测到系统代理，就不再自行做 DoH/ECH。
+    - 即使绕过了系统代理，TUN 还会劫持流量并重新建立 TCP 连接。
+  - 两种解决方案：
+    - 方法一：绕过系统代理 + 配置 `cloudflare-ech.com` 直连规则（Shadowrocket 代为直连）
+    - 方法二：绕过系统代理 + 绕过 TUN（Chrome 完全直连）
 
 ## 为何设置了 Chrome 浏览器的「安全 DNS」就可无需「代理软件」来直连访问 `linux.do` ？
 >**简单来说：Chrome 通过「DoH」避免了运营商「DNS 污染」，通过「ECH」解决了运营商的「SNI 阻断」，从而实现无需「代理软件」来直连访问 `linux.do`。**
