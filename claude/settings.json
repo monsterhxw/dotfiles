@@ -18,7 +18,7 @@
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true"
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "permissions": {
     "allow": [
       "WebSearch"
