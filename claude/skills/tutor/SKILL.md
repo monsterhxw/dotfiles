@@ -10,6 +10,7 @@ allowed-tools:
   - WebFetch
   - WebSearch
   - AskUserQuestion
+  - Bash(curl *)
 argument-hint: "[topic, URL, local path, or question]"
 metadata:
   ref: https://gist.github.com/vuciv/1d2864e73306f490aaeaa023cd3600fa
