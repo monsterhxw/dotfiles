@@ -58,7 +58,9 @@ quit-after-last-window-closed = true
 
 # Shell
 shell-integration = zsh
-shell-integration-features = no-cursor
+# no-cursor: https://ghostty.org/docs/config/reference#cursor-style
+# ssh: https://ghostty.org/docs/help/terminfo#ssh
+shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 
 # Command
 initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux attach; else tmux new -s lab; fi"
