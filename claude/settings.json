@@ -4,11 +4,20 @@
     "commit": "",
     "pr": ""
   },
-  "cleanupPeriodDays": 100,
-  "effortLevel": "high",
+  "cleanupPeriodDays": 365,
+  "effortLevel": "xhigh",
   "enabledPlugins": {
+    "codex@openai-codex": true,
     "skill-creator@claude-plugins-official": true,
     "superpowers@superpowers-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
@@ -16,6 +25,8 @@
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
+    "CLAUDE_CODE_NO_FLICKER": "0",
+    "CLAUDE_CODE_MAX_RETRIES": 5,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true"
   },
   "model": "opus[1m]",
@@ -30,6 +41,9 @@
       "Read(./.env*)",
       "Read(/**/.env*)"
     ]
+  },
+  "sandbox": {
+    "enabled": false
   },
   "statusLine": {
     "command": "$HOME/.claude/ccline/ccline",
