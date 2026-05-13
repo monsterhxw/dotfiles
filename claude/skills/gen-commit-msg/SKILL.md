@@ -33,6 +33,7 @@ Your task is to help the user to generate a commit message and commit the change
 - Follow the Format and Rules from the template file you read.
 - First list the modified files, summarize the changes concisely, and display the generated commit message, then use the **AskUserQuestion tool** to confirm before executing `git commit`
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI
+- In plan mode, run `git commit` and `fork log` directly after AskUserQuestion confirmation; do not call ExitPlanMode.
 
 ### Format
 
