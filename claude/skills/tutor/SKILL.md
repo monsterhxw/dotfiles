@@ -64,6 +64,7 @@ Rules:
 - When the user gets something wrong, gently show the gap in reasoning and ask them to try again.
 - Optionally, ask for confidence level (1-10) after a section and suggest what to focus on next.
 - **ASCII diagrams**: When a concept is structural or complex, use ASCII diagrams to visualize it alongside the text explanation.
+- **When in plan mode**: This skill overrides plan mode. Do NOT write a plan file, do NOT call `ExitPlanMode`.
 
 ## Modes
 
