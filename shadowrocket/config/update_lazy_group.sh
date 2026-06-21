@@ -7,7 +7,7 @@ REMOTE_URL="https://lowertop.github.io/Shadowrocket/lazy_group.conf"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # 本地配置文件路径
-LOCAL_FILE="${SCRIPT_DIR}/config/lazy_group.conf"
+LOCAL_FILE="${SCRIPT_DIR}/lazy_group.conf"
 
 echo "Downloading lazy_group.conf..."
 
