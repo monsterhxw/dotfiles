@@ -45,7 +45,7 @@ on-focus-changed = [
   # The border disappears when there is only one window in the focused workspace.
   # See https://github.com/FelixKratz/JankyBorders/issues/53#issuecomment-2299849820
   # See https://github.com/nikitabobko/AeroSpace/issues/846 (TODO Full Screen Situation)
-  'exec-and-forget [ $(/usr/local/bin/aerospace list-windows --workspace focused --count) -eq 1 ] && /usr/local/bin/borders width=0.0 || /usr/local/bin/borders width=3.0'
+  'exec-and-forget [ $(/usr/local/bin/aerospace list-windows --workspace focused --count) -eq 1 ] && /usr/local/bin/borders width=0.0 blacklist="Alma,Cherry Studio,Telegram,Shadowrocket,Sparkle" || /usr/local/bin/borders width=3.0 blacklist="Alma,Cherry Studio,Telegram,Shadowrocket,Sparkle"'
 ]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -338,8 +338,13 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
     run = ['layout floating']
+# Confirmo
 [[on-window-detected]]
     if.app-id = 'com.confirmo.app'
+    run = ['layout floating']
+# MarkEdit
+[[on-window-detected]]
+    if.app-id = 'app.cyan.markedit'
     run = ['layout floating']
 # Alma
 [[on-window-detected]]
@@ -604,4 +609,16 @@ on-mode-changed = []
 # QiuChenly AppStore
 [[on-window-detected]]
     if.app-id = 'com.qiuchenly.hayaku.gui'
+    run = ['layout floating']
+# MQTTX
+[[on-window-detected]]
+    if.app-id = 'com.electron.mqttx'
+    run = ['layout floating']
+# Accio
+[[on-window-detected]]
+    if.app-id = 'com.accio.desktop'
+    run = ['layout floating']
+# Graker
+[[on-window-detected]]
+    if.app-id = 'com.graker.app'
     run = ['layout floating']
