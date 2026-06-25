@@ -27,9 +27,10 @@
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_NO_FLICKER": "0",
     "CLAUDE_CODE_MAX_RETRIES": 5,
-    "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true"
+    "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
+    "ENABLE_TOOL_SEARCH": "true"
   },
-  "model": "opus[1m]",
+  "model": "opus",
   "permissions": {
     "allow": [
       "WebSearch"
