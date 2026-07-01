@@ -8,12 +8,28 @@ local config = {
   -- 0.1 = swipe distance > 10% of trackpad
   threshold = 0.08,
   showAlert = false,
-  alertDuration = 0.3
+  alertDuration = 0.3,
+  -- wrap around from the last workspace back to the first (and vice versa).
+  -- kept off so it's obvious when you hit the first/last workspace.
+  wrapAround = false
 }
 
 local AEROSPACE = "/usr/local/bin/aerospace"
 function aerospaceExec(cmd)
-  local command = string.format('%s list-workspaces --monitor mouse --visible | xargs %s workspace && %s workspace --no-stdin %s', AEROSPACE, AEROSPACE, AEROSPACE, cmd)
+  -- Uses `aerospace eval` (added in AeroSpace 0.21.0-Beta) to run the whole
+  -- chain in a single aerospace process instead of the old
+  -- `list-workspaces | xargs aerospace workspace && aerospace workspace ...`,
+  -- which spawned multiple processes per swipe. See release notes:
+  -- https://github.com/nikitabobko/AeroSpace/releases/tag/v0.21.0-Beta
+  --
+  -- First segment focuses the workspace visible on the monitor under the mouse
+  -- (single-element stdin list, so `next` here is just a placeholder). The
+  -- second segment does the actual next/prev switch.
+  local wrap = config.wrapAround and " --wrap-around" or ""
+  local command = string.format(
+    "%s eval 'list-workspaces --monitor mouse --visible | workspace --stdin next; workspace %s%s'",
+    AEROSPACE, cmd, wrap
+  )
 
   hs.execute(command)
   
