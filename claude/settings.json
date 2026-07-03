@@ -26,13 +26,20 @@
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_NO_FLICKER": "0",
-    "CLAUDE_CODE_MAX_RETRIES": 5,
+    "CLAUDE_CODE_MAX_RETRIES": 6,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
+    "CLAUDE_CODE_RETRY_WATCHDOG": "1",
     "ENABLE_TOOL_SEARCH": "true"
   },
-  "model": "opus",
+  "model": "fable[1m]",
   "permissions": {
     "allow": [
+      "Bash(gh * list *)",
+      "Bash(gh * view *)",
+      "Bash(gh * diff *)",
+      "Bash(gh * status *)",
+      "Bash(gh * checks *)",
+      "Bash(gh search *)",
       "WebSearch"
     ],
     "defaultMode": "plan",
