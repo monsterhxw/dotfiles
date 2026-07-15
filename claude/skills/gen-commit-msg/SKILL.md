@@ -11,7 +11,7 @@ allowed-tools:
   - Bash(fork log:*)
   - Read
 argument-hint: "[zh] - use 'zh' for Chinese commit message"
-model: opus
+model: haiku
 ---
 
 ## Context
