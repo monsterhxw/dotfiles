@@ -5,23 +5,17 @@
     "pr": ""
   },
   "cleanupPeriodDays": 365,
+  "editorMode": "vim",
   "enabledPlugins": {
     "codex@openai-codex": true,
     "skill-creator@claude-plugins-official": true,
     "superpowers@superpowers-marketplace": true
   },
-  "extraKnownMarketplaces": {
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
-    }
-  },
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
     "ANTHROPIC_BASE_URL": "",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
@@ -31,9 +25,18 @@
     "CLAUDE_CODE_RETRY_WATCHDOG": "1",
     "ENABLE_TOOL_SEARCH": "true"
   },
-  "model": "fable[1m]",
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "model": "fable",
   "permissions": {
     "allow": [
+      "Bash(curl *https://r.jina.ai/*)",
       "Bash(gh * list *)",
       "Bash(gh * view *)",
       "Bash(gh * diff *)",
@@ -53,9 +56,13 @@
   "sandbox": {
     "enabled": false
   },
+  "skipDangerousModePermissionPrompt": true,
+  "skipWebFetchPreflight": true,
   "statusLine": {
     "command": "$HOME/.claude/ccline/ccline",
     "padding": 0,
     "type": "command"
-  }
+  },
+  "useAutoModeDuringPlan": false,
+  "verbose": false
 }
