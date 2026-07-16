@@ -7,9 +7,9 @@
   "cleanupPeriodDays": 365,
   "editorMode": "vim",
   "enabledPlugins": {
-    "codex@openai-codex": true,
+    "codex@openai-codex": false,
     "skill-creator@claude-plugins-official": true,
-    "superpowers@superpowers-marketplace": true
+    "superpowers@superpowers-marketplace": false
   },
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",

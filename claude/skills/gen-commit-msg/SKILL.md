@@ -11,7 +11,7 @@ allowed-tools:
   - Bash(fork log:*)
   - Read
 argument-hint: "[zh] - use 'zh' for Chinese commit message"
-model: haiku
+effort: medium
 ---
 
 ## Context
@@ -31,9 +31,9 @@ Your task is to help the user to generate a commit message and commit the change
 - Only generate the message for staged files/changes
 - Don't add any files using `git add`. The user will decide what to add.
 - Follow the Format and Rules from the template file you read.
-- First list the modified files, summarize the changes concisely, and display the generated commit message, then use the **AskUserQuestion tool** to confirm before executing `git commit`
+- **You MUST first** display all three of the following in your reply, in order: (1) the list of modified files, (2) a concise summary of the changes, and (3) the complete generated commit message (title and body). **Only then** use the **AskUserQuestion tool** to confirm before executing `git commit` — in the option's `preview` field, show ONLY the complete commit message (title and body), NOT the file list or the summary.
 - After successfully committing, run `fork log` to open the Fork app for the user to review the commit history in GUI
-- In plan mode, run `git commit` and `fork log` directly after AskUserQuestion confirmation; do not call ExitPlanMode.
+- **In plan mode:** do NOT write a plan file or call ExitPlanMode. Treat the AskUserQuestion confirmation as approval, and run `git commit` then `fork log` directly.
 
 ### Format
 
