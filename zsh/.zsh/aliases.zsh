@@ -20,6 +20,7 @@ alias lt='lsd --tree -Nav'
 alias alacritty='/Applications/Alacritty.app/Contents/MacOS/alacritty'
 
 alias tksv='tmux kill-server'
+alias tkp='tmux kill-pane'
 
 # AeroSpace Switch windows
 alias ass='/usr/local/bin/aerospace list-windows --workspace focused | grep -v "^$(/usr/local/bin/aerospace list-windows --focused --format '%{window-id}')" | fzf --reverse | cut -f1 -d"|" | xargs /usr/local/bin/aerospace focus --window-id'
@@ -30,3 +31,9 @@ alias gdn='git diff --no-index'
 # Neovim
 alias nv='nvim'
 alias nvd='nvim -d'
+
+# Shadowrocket Debug Log
+alias gosr='cd $HOME/Library/Group\ Containers/group.com.liguangming.Shadowrocket/Library/Caches/DebugLogs/'
+
+# Herdr
+alias hksv='herdr server stop'
