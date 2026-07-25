@@ -1,0 +1,9 @@
+onboarding = false
+
+[theme]
+name = "nord"
+auto_switch = false
+
+[experimental]
+switch_ascii_input_source_in_prefix = true
+pane_history = true
