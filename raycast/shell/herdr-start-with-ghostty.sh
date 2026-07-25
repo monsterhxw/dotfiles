@@ -10,6 +10,6 @@
 # @raycast.packageName Ghostty
 
 # Documentation:
-# @raycast.description Launch a Ghostty window running herdr (bypasses tmux)
+# @raycast.description Launch a Ghostty window running herdr
 
 open -na Ghostty --args -e /bin/zsh -l -c herdr
