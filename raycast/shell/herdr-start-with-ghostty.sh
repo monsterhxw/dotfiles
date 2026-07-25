@@ -17,13 +17,22 @@
 # that terminal and focus it (brings its window to front). Needs only
 # Automation permission (prompted on first run), not Accessibility.
 #
-# Guard with `is running` first: a bare `tell application "Ghostty"` would
-# auto-launch Ghostty just to run the query, spawning an extra (initial-command)
-# instance and a second dock icon on cold start. Querying `is running` does not
-# launch it, so when Ghostty is closed we skip straight to `open` below.
+# Only trust a 🐑 match when a live herdr client exists: a herdr-named
+# process (pgrep -x matches the executable name, argv-independent) that has
+# a controlling terminal — the server runs detached (tty = ??). Without one,
+# a 🐑 match is a stale Cmd+N window (--title is instance-wide config) or a
+# crashed client's leftover surface, and must not be focused. No client also
+# means nothing to focus, so the osascript below is skipped entirely.
+#
+# The `is running` line inside the script guards the bare `tell`: it does
+# not launch Ghostty (evaluated outside the tell block, and compiling the
+# tell block does not launch it either — verified), so a closed Ghostty
+# skips straight to `open` below without spawning an extra (initial-command)
+# instance and a second dock icon on cold start.
 focused="none"
-if [ "$(osascript -e 'application "Ghostty" is running')" = "true" ]; then
+if ps -o tty= -p "$(pgrep -x herdr | paste -sd, -)" 2>/dev/null | grep -q ttys; then
     focused=$(osascript <<'EOF'
+if application "Ghostty" is not running then return "none"
 tell application "Ghostty"
     set matches to (every terminal whose name is "🐑")
     if (count of matches) > 0 then
