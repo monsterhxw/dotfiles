@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🐑
-# @raycast.packageName Ghostty
+# @raycast.packageName Herdr
 
 # Documentation:
 # @raycast.description Focus the herdr window if open, otherwise launch it in Ghostty
