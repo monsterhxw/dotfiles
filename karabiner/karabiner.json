@@ -599,7 +599,7 @@
                         ]
                     },
                     {
-                        "description": "Ctrl + b (auto switch to EN when not in ABC)",
+                        "description": "Ctrl + b/o/z (auto switch to EN when not in ABC)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -622,16 +622,92 @@
                                 },
                                 "to": [
                                     {
+                                        "select_input_source": {
+                                            "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                            "language": "^en$"
+                                        }
+                                    },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none"
+                                    },
+                                    {
                                         "key_code": "b",
                                         "modifiers": ["control"]
                                     }
                                 ],
-                                "to_after_key_up": [
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
                                     {
                                         "select_input_source": {
                                             "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
                                             "language": "^en$"
                                         }
+                                    },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none"
+                                    },
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                                "language": "^en$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "select_input_source": {
+                                            "input_source_id": "^com\\.apple\\.keylayout\\.ABC$",
+                                            "language": "^en$"
+                                        }
+                                    },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none"
+                                    },
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": ["control"]
                                     }
                                 ],
                                 "type": "basic"
