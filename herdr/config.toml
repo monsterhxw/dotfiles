@@ -1,7 +1,7 @@
 onboarding = false
 
 [theme]
-name = "dracula"
+name = "nord"
 auto_switch = false
 
 [experimental]
