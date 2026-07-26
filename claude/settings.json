@@ -20,7 +20,7 @@
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1",
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "0",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
     "CLAUDE_CODE_NO_FLICKER": "0",
@@ -38,6 +38,20 @@
       }
     }
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash $HOME/.claude/hooks/herdr-agent-state.sh session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
   "model": "fable",
   "permissions": {
     "allow": [
@@ -50,7 +64,7 @@
       "Bash(gh search *)",
       "WebSearch"
     ],
-    "defaultMode": "plan",
+    "defaultMode": "default",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.env)",
