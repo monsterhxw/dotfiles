@@ -30,5 +30,14 @@ then
     # via an OSC escape before exec'ing herdr (per-surface, unlike the
     # instance-wide --title); herdr (a TUI) never changes it, so the next
     # run can find it.
-    open -na Ghostty.app --args -e zsh -l -c 'printf "\033]0;🐑\007"; exec herdr'
+    #
+    # --window-save-state=never keeps the 🐑 title out of macOS window state
+    # restoration; passed via --args it is scoped to THIS instance, leaving
+    # ~/.config/ghostty/config alone. Ghostty still records the title while
+    # the window lives, but purges the saved state on exit. Without it, 🐑
+    # persists as NSTitle and gets restored onto any later window whose
+    # program never sets its own title (e.g. tmux with set-titles off) —
+    # polluting unrelated windows and making the focus match above target
+    # the wrong one.
+    open -na Ghostty.app --args --window-save-state=never -e zsh -l -c 'printf "\033]0;🐑\007"; exec herdr'
 fi
