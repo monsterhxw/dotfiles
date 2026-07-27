@@ -9,6 +9,7 @@ allowed-tools:
   - Bash(git log:*)
   - Bash(git commit:*)
   - Bash(fork log:*)
+  - Bash(xargs:*)
   - Read
 argument-hint: "[zh] - use 'zh' for Chinese commit message"
 effort: medium
@@ -19,7 +20,8 @@ effort: medium
 - Current git status: !`git status`
 - Current git diff (staged changes only): !`git diff --staged`
 - Current branch: !`git branch --show-current`
-- Recent commits: !`git log --oneline -10`
+- Recent commits touching the staged files: !`git diff --staged --name-only | xargs -r git log -10 --format='%h %s%n%b' --`
+- Recent commits (repo-wide, fallback only): !`git log --oneline -5`
 
 ## Your task
 
@@ -29,6 +31,7 @@ Your task is to help the user to generate a commit message and commit the change
 
 - DO NOT add any ads such as "Generated with [Claude Code](https://claude.ai/code)"
 - Only generate the message for staged files/changes
+- Infer the type and scope from the staged files' own commit history first; use the repo-wide log only when that history is empty (e.g. newly added files).
 - Don't add any files using `git add`. The user will decide what to add.
 - Follow the Format and Rules from the template file you read.
 - **You MUST first** display all three of the following in your reply, in order: (1) the list of modified files, (2) a concise summary of the changes, and (3) the complete generated commit message (title and body). **Only then** use the **AskUserQuestion tool** to confirm before executing `git commit` — in the option's `preview` field, show ONLY the complete commit message (title and body), NOT the file list or the summary.
