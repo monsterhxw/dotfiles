@@ -27,8 +27,8 @@
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
+        "repo": "openai/codex-plugin-cc",
+        "source": "github"
       }
     }
   },
