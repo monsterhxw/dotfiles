@@ -5,6 +5,7 @@
     "pr": ""
   },
   "cleanupPeriodDays": 365,
+  "disableAutoMode": "disable",
   "editorMode": "vim",
   "enabledPlugins": {
     "codex@openai-codex": false,
@@ -79,5 +80,6 @@
     "padding": 0,
     "type": "command"
   },
+  "useAutoModeDuringPlan": false,
   "verbose": false
 }
