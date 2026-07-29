@@ -1,0 +1,8 @@
+{
+  "disableAutoMode": "disable",
+  "model": "fable",
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "useAutoModeDuringPlan": false
+}
