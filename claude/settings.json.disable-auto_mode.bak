@@ -22,7 +22,7 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
-    "CLAUDE_CODE_MAX_RETRIES": 6,
+    "CLAUDE_CODE_MAX_RETRIES": 3,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
     "CLAUDE_CODE_RETRY_WATCHDOG": "1",
     "DISABLE_ERROR_REPORTING": "1",
@@ -31,8 +31,8 @@
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
+        "repo": "openai/codex-plugin-cc",
+        "source": "github"
       }
     }
   },
@@ -62,7 +62,23 @@
       "Bash(gh search *)",
       "WebSearch"
     ],
-    "defaultMode": "default",
+    "ask": [
+      "Bash(*rm *)",
+      "Bash(*trash *)",
+      "Bash(*sudo *)",
+      "Bash(dd *)",
+      "Bash(*mkfs*)",
+      "Bash(*diskutil *)",
+      "Bash(*git push --force*)",
+      "Bash(*git push -f*)",
+      "Bash(*git reset --hard*)",
+      "Bash(*git clean *)",
+      "Bash(*chmod -R *)",
+      "Bash(*chown -R *)",
+      "Edit",
+      "Write"
+    ],
+    "defaultMode": "bypassPermissions",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.env)",

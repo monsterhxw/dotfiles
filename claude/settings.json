@@ -21,7 +21,7 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
-    "CLAUDE_CODE_MAX_RETRIES": 6,
+    "CLAUDE_CODE_MAX_RETRIES": 3,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
     "CLAUDE_CODE_RETRY_WATCHDOG": "1",
     "DISABLE_ERROR_REPORTING": "1",
@@ -30,8 +30,8 @@
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
+        "repo": "openai/codex-plugin-cc",
+        "source": "github"
       }
     }
   },
@@ -61,7 +61,7 @@
       "Bash(gh search *)",
       "WebSearch"
     ],
-    "defaultMode": "default",
+    "defaultMode": "auto",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.env)",
