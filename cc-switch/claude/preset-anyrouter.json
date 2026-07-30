@@ -1,4 +1,7 @@
 {
+  "env": {
+    "ANTHROPIC_CUSTOM_HEADERS": "x-stainless-os: Windows"
+  },
   "disableAutoMode": "disable",
   "model": "fable",
   "permissions": {
