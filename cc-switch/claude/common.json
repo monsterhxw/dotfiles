@@ -4,6 +4,7 @@
     "commit": "",
     "pr": ""
   },
+  "autoMemoryEnabled": false,
   "cleanupPeriodDays": 365,
   "editorMode": "vim",
   "enabledPlugins": {
