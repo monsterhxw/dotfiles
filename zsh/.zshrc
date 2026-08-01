@@ -25,6 +25,8 @@ plugins=(
   you-should-use
 )
 zstyle ':omz:update' mode disabled
+# See: https://github.com/ohmyzsh/ohmyzsh/wiki/Settings/067cf4e22fdf9d4e0d7df920cdd3166ec16ae657#disable_auto_title
+DISABLE_AUTO_TITLE="true"
 source $ZSH/oh-my-zsh.sh
 # vi-mode plugin
 VI_MODE_SET_CURSOR=true 
@@ -98,6 +100,8 @@ zoxide() {
   eval "$(zoxide init zsh)"
   zoxide "$@"
 }
+# mise
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 
 # Q post block. Keep at the bottom of this file.
@@ -109,3 +113,9 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Amp CLI
 export PATH="$HOME/.amp/bin:$PATH"
+
+# Ghostty shell integration is lost when the shell is wrapped (e.g. zsh -l -c).
+# Official remedy from the ghostty-integration script header: source it manually.
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
