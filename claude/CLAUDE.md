@@ -6,8 +6,9 @@
 - **Code/comments/docs**: English
 
 ## Tools
-- GitHub URL/content: prefer `gh` CLI over Web Fetch
-- `curl`: When fetching web content, prefer Jina Reader API (`curl https://r.jina.ai/<url>`) for clean Markdown output; always use `-H "Accept: text/markdown"`
+- Web search: if WebSearch is unavailable or fails, use `anysearch` skill instead
+- GitHub URL/content: prefer `gh` CLI over curl/WebFetch
+- `curl`: When fetching web content, prefer Jina Reader API (`curl -H "Accept: text/markdown" https://r.jina.ai/<url>`) for clean Markdown output
 
 ## Communication
 - Use `AskUserQuestion` tool before acting on assumptions or choosing between approaches
