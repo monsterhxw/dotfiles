@@ -21,7 +21,10 @@
       "Edit",
       "Write"
     ],
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "bypassPermissions",
+    "deny": [
+      "WebSearch"
+    ]
   },
   "useAutoModeDuringPlan": false
 }

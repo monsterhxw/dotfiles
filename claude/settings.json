@@ -59,8 +59,7 @@
       "Bash(gh * diff *)",
       "Bash(gh * status *)",
       "Bash(gh * checks *)",
-      "Bash(gh search *)",
-      "WebSearch"
+      "Bash(gh search *)"
     ],
     "defaultMode": "auto",
     "deny": [
