@@ -84,7 +84,10 @@
       "Read(~/.ssh/**)",
       "Read(~/.env)",
       "Read(./.env*)",
-      "Read(/**/.env*)"
+      "Read(/**/.env*)",
+      "Agent",
+      "WebSearch",
+      "WebFetch"
     ]
   },
   "sandbox": {
