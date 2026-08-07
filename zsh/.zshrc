@@ -14,6 +14,14 @@ fpath+=("$HOME/.zsh/completions")
 
 # oh my zsh
 export ZSH=$HOME/.oh-my-zsh
+# Let zsh-autosuggestions bind its widgets once, at the first prompt, instead of
+# re-wrapping them on every precmd. The default exists only so that edits to the
+# ZSH_AUTOSUGGEST_*_WIDGETS arrays inside a live session take effect without
+# re-sourcing; it does not pick up widgets other tools define later. Measured on
+# this config: identical widget table (206 wrapped, one bind generation) with and
+# without, and ~20ms off every prompt. Only being *set* matters, not the value,
+# and it must come before the plugin loads below.
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 plugins=(
   git 
   vi-mode
@@ -114,8 +122,29 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Amp CLI
 export PATH="$HOME/.amp/bin:$PATH"
 
-# Ghostty shell integration is lost when the shell is wrapped (e.g. zsh -l -c).
-# Official remedy from the ghostty-integration script header: source it manually.
+# Ghostty runs this itself in shells it spawns directly: it points ZDOTDIR at its
+# own dir, whose .zshenv sources ours and then runs the integration -- all before
+# .zshrc is read. This line is for interactive shells that inherit
+# GHOSTTY_RESOURCES_DIR but not ZDOTDIR: `exec zsh`, tmux panes, agents spawned by
+# herdr. Re-sourcing an already-initialized shell is a ~2ms no-op (the script
+# returns early on $_ghostty_state), and non-interactive shells (zsh -l -c) never
+# read .zshrc in the first place.
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
 fi
+
+# Stop leaking $fpath to child processes. Keep the value, drop only the export.
+#
+# `brew shellenv` (above) runs `export FPATH`, so every child shell inherits the
+# fully-built fpath and oh-my-zsh appends its plugin dirs on top again: 18 -> 50
+# -> 65 entries, one round of duplicates per nesting level. oh-my-zsh compares
+# $fpath against the `#omz fpath:` line inside $ZSH_COMPDUMP and `rm -f`s the
+# dump on any mismatch, so pristine shells (new terminal window) and nested ones
+# (tmux panes, spawned agents) kept invalidating each other's cache -- every cold
+# start paid a full compinit rebuild, ~1.7s.
+#
+# Nothing here needs FPATH from the environment: brew's site-functions dir and
+# the stock zsh functions are in zsh's compiled-in default fpath, and fzf-tab
+# re-adds its own lib dir on load. Must stay last -- anything sourced after that
+# calls `export FPATH` would undo it.
+typeset +x FPATH
