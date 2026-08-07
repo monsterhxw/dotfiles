@@ -1,6 +1,5 @@
 {
   "env": {
-    "ANTHROPIC_CUSTOM_HEADERS": "x-stainless-os: Windows",
     "CLAUDE_CODE_RETRY_WATCHDOG": "1"
   },
   "disableAutoMode": "disable",
