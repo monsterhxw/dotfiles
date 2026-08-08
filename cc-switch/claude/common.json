@@ -56,7 +56,8 @@
       "Bash(gh * diff *)",
       "Bash(gh * status *)",
       "Bash(gh * checks *)",
-      "Bash(gh search *)"
+      "Bash(gh search *)",
+      "Read"
     ],
     "deny": [
       "Read(~/.ssh/**)",
