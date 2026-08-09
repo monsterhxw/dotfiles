@@ -63,7 +63,11 @@ shell-integration = zsh
 shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 
 # Command
-initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux attach; else tmux new -s lab; fi"
+# Raycast *-in-ghostty launcher hooks; details in _ghostty-launch.sh.
+# Keep the unset (children must not inherit the vars), and the value MUST
+# start with a real executable (macOS spawns it via `bash -c "exec -l <cmd>"`).
+initial-command = zsh -c '_c="$GHOSTTY_INIT_CMD"; unset GHOSTTY_INIT_CMD; eval "${_c:-exec -l $SHELL}"'
+command = zsh -c '_c="$GHOSTTY_NEW_WINDOW_CMD"; unset GHOSTTY_NEW_WINDOW_CMD GHOSTTY_INIT_CMD; eval "${_c:-exec -l $SHELL}"'
 
 # macOS
 macos-option-as-alt = true
