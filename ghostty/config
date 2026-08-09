@@ -1,7 +1,7 @@
 # Font
 font-family = "Maple Mono NF"
 font-family = "LXGW WenKai"
-font-size = 13
+font-size = 15
 font-thicken = true
 # See: https://github.com/ghostty-org/ghostty/discussions/2363#discussioncomment-11835202
 font-thicken-strength = 70
@@ -27,12 +27,12 @@ cursor-text = "#011423"
 # Background and Foreground
 # background = "#1f2430"
 # foreground = "#cbccc6"
-background-opacity = 0.95
-background-blur-radius = 35
+background-opacity = 0.96
+background-blur-radius = 15
 # minimum-contrast = 1.1
 
 # Window
-window-decoration = true
+# window-decoration = auto
 window-padding-x = 5
 # window-padding-y = 5
 window-padding-balance = true
@@ -67,7 +67,6 @@ initial-command = /bin/zsh -l -c "if tmux has-session 2>/dev/null; then tmux att
 
 # macOS
 macos-option-as-alt = true
-# macos-titlebar-style = hidden
 #macos-non-native-fullscreen = visible-menu
 #fullscreen = true
 
