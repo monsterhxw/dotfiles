@@ -47,3 +47,26 @@ set -ag status-right "${block_cpu_ram}"
 > Status line when in copy mode:
 
 ![Copy Mode](../.assets/tmux/tmux-theme-3.png)
+
+## Ghostty Proxy Icon & Title
+
+Show the macOS proxy icon + cwd path in Ghostty's title bar under tmux, same as a plain Ghostty window.
+
+**Principle**: Ghostty's zsh integration emits OSC 7 (cwd) on every prompt / `cd`; Ghostty sets it as the window's `representedURL`, and macOS renders the proxy icon. tmux sits in between as a full terminal emulator — it doesn't pass OSC 7 through, but parses it into the pane (`#{pane_path}`) and re-emits a new one to Ghostty via the `Swd` capability on redraw.
+
+**tmux.conf**:
+
+```tmux
+set -as terminal-features ",xterm-ghostty:osc7"  # declare Swd support (tmux auto-enables it only for iTerm2/foot)
+set -g set-titles on                             # hard prerequisite: tmux re-emits OSC 7 only with titles on
+set -g set-titles-string "#T"                    # forward pane title, so the title matches a plain Ghostty window
+```
+
+**~/.zshrc** — cover shells missed by Ghostty's ZDOTDIR auto-injection (tmux panes, `exec zsh`), and drop oh-my-zsh's redundant OSC 7 hook:
+
+```zsh
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+  add-zsh-hook -d precmd omz_termsupport_cwd  # Ghostty reports cwd itself
+fi
+```
