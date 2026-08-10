@@ -14,13 +14,8 @@ fpath+=("$HOME/.zsh/completions")
 
 # oh my zsh
 export ZSH=$HOME/.oh-my-zsh
-# Let zsh-autosuggestions bind its widgets once, at the first prompt, instead of
-# re-wrapping them on every precmd. The default exists only so that edits to the
-# ZSH_AUTOSUGGEST_*_WIDGETS arrays inside a live session take effect without
-# re-sourcing; it does not pick up widgets other tools define later. Measured on
-# this config: identical widget table (206 wrapped, one bind generation) with and
-# without, and ~20ms off every prompt. Only being *set* matters, not the value,
-# and it must come before the plugin loads below.
+# Bind autosuggest widgets once, not every precmd (~20ms/prompt); the default
+# rebind only tracks live ZSH_AUTOSUGGEST_*_WIDGETS edits. Any value, pre-plugin.
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 plugins=(
   git 
