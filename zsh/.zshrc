@@ -122,29 +122,15 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Amp CLI
 export PATH="$HOME/.amp/bin:$PATH"
 
-# Ghostty runs this itself in shells it spawns directly: it points ZDOTDIR at its
-# own dir, whose .zshenv sources ours and then runs the integration -- all before
-# .zshrc is read. This line is for interactive shells that inherit
-# GHOSTTY_RESOURCES_DIR but not ZDOTDIR: `exec zsh`, tmux panes, agents spawned by
-# herdr. Re-sourcing an already-initialized shell is a ~2ms no-op (the script
-# returns early on $_ghostty_state), and non-interactive shells (zsh -l -c) never
-# read .zshrc in the first place.
+# Ghostty's ZDOTDIR trick runs the integration only in shells it spawns; cover
+# shells that inherit GHOSTTY_RESOURCES_DIR but not ZDOTDIR: `exec zsh`, tmux
+# panes, herdr agents. Re-sourcing is a ~2ms no-op ($_ghostty_state early return).
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+  # Ghostty reports cwd itself; drop omz's OSC 7 hook (forks 2 subshells/prompt, ~4.7ms)
+  add-zsh-hook -d precmd omz_termsupport_cwd
 fi
 
-# Stop leaking $fpath to child processes. Keep the value, drop only the export.
-#
-# `brew shellenv` (above) runs `export FPATH`, so every child shell inherits the
-# fully-built fpath and oh-my-zsh appends its plugin dirs on top again: 18 -> 50
-# -> 65 entries, one round of duplicates per nesting level. oh-my-zsh compares
-# $fpath against the `#omz fpath:` line inside $ZSH_COMPDUMP and `rm -f`s the
-# dump on any mismatch, so pristine shells (new terminal window) and nested ones
-# (tmux panes, spawned agents) kept invalidating each other's cache -- every cold
-# start paid a full compinit rebuild, ~1.7s.
-#
-# Nothing here needs FPATH from the environment: brew's site-functions dir and
-# the stock zsh functions are in zsh's compiled-in default fpath, and fzf-tab
-# re-adds its own lib dir on load. Must stay last -- anything sourced after that
-# calls `export FPATH` would undo it.
+# Unexport FPATH (brew exports it): nested shells re-stack omz dirs, the fpath
+# mismatch nukes $ZSH_COMPDUMP -> ~1.7s cold compinit. Must stay last.
 typeset +x FPATH
