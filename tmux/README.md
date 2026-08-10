@@ -50,6 +50,10 @@ set -ag status-right "${block_cpu_ram}"
 
 ## Ghostty Proxy Icon & Title
 
+![Ghostty Proxyicon](../.assets/tmux/tmux-ghostty-proxyicon-1.png)
+![Ghostty Proxyicon](../.assets/tmux/tmux-ghostty-proxyicon-2.png)
+![Ghostty Proxyicon](../.assets/tmux/tmux-ghostty-proxyicon-3.png)
+
 Show the macOS proxy icon + cwd path in Ghostty's title bar under tmux, same as a plain Ghostty window.
 
 **Principle**: Ghostty's zsh integration emits OSC 7 (cwd) on every prompt / `cd`; Ghostty sets it as the window's `representedURL`, and macOS renders the proxy icon. tmux sits in between as a full terminal emulator — it doesn't pass OSC 7 through, but parses it into the pane (`#{pane_path}`) and re-emits a new one to Ghostty via the `Swd` capability on redraw.
