@@ -7,8 +7,8 @@
 
 ## Tools
 - GitHub URL/content: prefer `gh` CLI over curl/WebFetch
-- Web fetch: if WebFetch is unavailable or fails, use Jina Reader API via curl (`curl -H "Accept: text/markdown" https://r.jina.ai/<url>`) for clean Markdown output
-- Web search: if WebSearch is unavailable or fails, use `anysearch` skill instead
+- Web fetch: prefer WebFetch when available; if it is absent or fails, immediately use Jina Reader API via curl (`curl -H "Accept: text/markdown" https://r.jina.ai/<url>`) instead — never skip fetching a URL for lack of WebFetch
+- Web search: prefer WebSearch when available; if the WebSearch tool is absent from available tools or a call is denied/fails, immediately fall back to the `exa-search` skill — never skip or refuse a needed web search for lack of WebSearch
 - File edits: prefer **Edit** or **Write** tools; use shell only if those tools fail, and state the reason
 
 ## Communication
