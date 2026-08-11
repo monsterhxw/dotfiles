@@ -58,7 +58,7 @@ zstyle ':completion:*' special-dirs false # Ignore ./ and ../
 [[ -f "$HOME/.zsh/functions.zsh" ]] && source "$HOME/.zsh/functions.zsh"
 [[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
 [[ -f ~/.atuin/bin/env ]] && source ~/.atuin/bin/env
-[[ "$CLAUDECODE" == "1" && -f "$HOME/.zsh/claude-code.local.zsh" ]] && source "$HOME/.zsh/claude-code.local.zsh"
+[[ -f "$HOME/.zsh/claude-code.local.zsh" ]] && source "$HOME/.zsh/claude-code.local.zsh"
 
 # export
 # X Desktop Group (Freedesktop)
