@@ -64,6 +64,7 @@ Show the macOS proxy icon + cwd path in Ghostty's title bar under tmux, same as 
 set -as terminal-features ",xterm-ghostty:osc7"  # declare Swd support (tmux auto-enables it only for iTerm2/foot)
 set -g set-titles on                             # hard prerequisite: tmux re-emits OSC 7 only with titles on
 set -g set-titles-string "#T"                    # forward pane title, so the title matches a plain Ghostty window
+set -ga update-environment GHOSTTY_RESOURCES_DIR # each attach seeds or removes it for NEW panes (~/.zshrc gates on it)
 ```
 
 **~/.zshrc** — cover shells missed by Ghostty's ZDOTDIR auto-injection (tmux panes, `exec zsh`), and drop oh-my-zsh's redundant OSC 7 hook:
@@ -74,3 +75,5 @@ if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   add-zsh-hook -d precmd omz_termsupport_cwd  # Ghostty reports cwd itself
 fi
 ```
+
+The `update-environment` line keeps this gate in sync with the attaching client: a Ghostty attach seeds `GHOSTTY_RESOURCES_DIR` into the session environment, so NEW panes load the integration even when the tmux server was born outside Ghostty; a non-Ghostty attach removes it again. Existing panes are unaffected either way.
