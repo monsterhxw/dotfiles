@@ -125,6 +125,27 @@ if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
   # Ghostty reports cwd itself; drop omz's OSC 7 hook (forks 2 subshells/prompt, ~4.7ms)
   add-zsh-hook -d precmd omz_termsupport_cwd
+
+  # `fg` leaves the title stuck at literal "fg" (ghostty-org/ghostty#3961).
+  # Must be a wrapper: _ghostty_preexec registers last, overwriting any hook.
+  # jobspec -> job_id parsing from omz:
+  # https://github.com/ohmyzsh/ohmyzsh/blob/2ac69955e84d5ab2407e848275dfc2768b3b1531/lib/termsupport.zsh#L67-L89
+  fg() {
+    if (( _ghostty_fd )) && [[ $GHOSTTY_SHELL_FEATURES == *title* ]]; then
+      builtin emulate -L zsh -o extended_glob
+      local job_id jobspec=${1#%}
+      case $jobspec in
+        <->)    job_id=$jobspec ;;
+        ''|%|+) job_id=${(k)jobstates[(r)*:+:*]} ;;
+        -)      job_id=${(k)jobstates[(r)*:-:*]} ;;
+        [?]*)   job_id=${(k)jobtexts[(r)*${(Q)jobspec}*]} ;;
+        *)      job_id=${(k)jobtexts[(r)${(Q)jobspec}*]} ;;
+      esac
+      [[ -n ${jobtexts[$job_id]} ]] &&
+        builtin print -rnu $_ghostty_fd $'\e]2;'${jobtexts[$job_id]//[[:cntrl:]]}$'\a'
+    fi
+    builtin fg "$@"
+  }
 fi
 
 # Unexport FPATH (brew exports it): nested shells re-stack omz dirs, the fpath
