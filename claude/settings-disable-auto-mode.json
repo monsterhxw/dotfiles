@@ -9,9 +9,8 @@
   "disableAutoMode": "disable",
   "editorMode": "vim",
   "enabledPlugins": {
-    "codex@openai-codex": false,
     "skill-creator@claude-plugins-official": true,
-    "superpowers@superpowers-marketplace": false
+    "diagram-design@diagram-design": true
   },
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "",
@@ -30,11 +29,12 @@
     "ENABLE_TOOL_SEARCH": "true"
   },
   "extraKnownMarketplaces": {
-    "openai-codex": {
+    "diagram-design": {
       "source": {
-        "repo": "openai/codex-plugin-cc",
-        "source": "github"
-      }
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design"
+      },
+      "autoUpdate": true
     }
   },
   "hooks": {
