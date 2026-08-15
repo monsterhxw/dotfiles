@@ -56,32 +56,24 @@ zstyle ':completion:*' special-dirs false # Ignore ./ and ../
 # source
 [[ -f "$HOME/.zsh/aliases.zsh" ]] && source "$HOME/.zsh/aliases.zsh"
 [[ -f "$HOME/.zsh/functions.zsh" ]] && source "$HOME/.zsh/functions.zsh"
-[[ -f ~/.config/fzf/fzf.zsh ]] && source ~/.config/fzf/fzf.zsh
-[[ -f ~/.atuin/bin/env ]] && source ~/.atuin/bin/env
+[[ -f "$HOME/.config/fzf/fzf.zsh" ]] && source "$HOME/.config/fzf/fzf.zsh"
+[[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
 [[ -f "$HOME/.zsh/claude-code.local.zsh" ]] && source "$HOME/.zsh/claude-code.local.zsh"
+# Ghostty extras (re-source, OSC 7 dedup, fg title fix); guard skips stat for
+# non-ghostty shells. Keep after oh-my-zsh: it deletes omz's OSC 7 hook.
+[[ -n $GHOSTTY_RESOURCES_DIR ]] && source "$HOME/.zsh/ghostty.zsh"
 
-# export
-# X Desktop Group (Freedesktop)
-export XDG_CONFIG_HOME="$HOME/.config"
-# MySQL@5.7
-# export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
-export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib:$LDFLAGS"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include:$CPPFLAGS"
-export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig:$PKG_CONFIG_PATH"
-# ripgrep
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.ripgreprc"
+# Environment variables (PATH, brew shellenv, XDG, build flags, EDITOR) live
+# in ~/.zprofile: login-shell-only, so re-running .zshrc can't stack duplicates.
+
+# Lazy JAVA_HOME: /usr/libexec/java_home forks ~50ms, defer until first use
 java() {
   unfunction java
   export JAVA_HOME=$(/usr/libexec/java_home -v 21)
   java "$@"
 }
-# Neovim
-export EDITOR=nvim
-export VISUAL=nvim
 
 # eval
-# Homebrew
-eval "$(/usr/local/bin/brew shellenv)"
 # Startship
 eval "$(starship init zsh)"
 # Atuin
@@ -111,42 +103,6 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 # Q post block. Keep at the bottom of this file.
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-# Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-# Amp CLI
-export PATH="$HOME/.amp/bin:$PATH"
-
-# Ghostty's ZDOTDIR trick runs the integration only in shells it spawns; cover
-# shells that inherit GHOSTTY_RESOURCES_DIR but not ZDOTDIR: `exec zsh`, tmux
-# panes, herdr agents. Re-sourcing is a ~2ms no-op ($_ghostty_state early return).
-if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
-  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
-  # Ghostty reports cwd itself; drop omz's OSC 7 hook (forks 2 subshells/prompt, ~4.7ms)
-  add-zsh-hook -d precmd omz_termsupport_cwd
-
-  # `fg` leaves the title stuck at literal "fg" (ghostty-org/ghostty#3961).
-  # Must be a wrapper: _ghostty_preexec registers last, overwriting any hook.
-  # jobspec -> job_id parsing from omz:
-  # https://github.com/ohmyzsh/ohmyzsh/blob/2ac69955e84d5ab2407e848275dfc2768b3b1531/lib/termsupport.zsh#L67-L89
-  fg() {
-    if (( _ghostty_fd )) && [[ $GHOSTTY_SHELL_FEATURES == *title* ]]; then
-      builtin emulate -L zsh -o extended_glob
-      local job_id jobspec=${1#%}
-      case $jobspec in
-        <->)    job_id=$jobspec ;;
-        ''|%|+) job_id=${(k)jobstates[(r)*:+:*]} ;;
-        -)      job_id=${(k)jobstates[(r)*:-:*]} ;;
-        [?]*)   job_id=${(k)jobtexts[(r)*${(Q)jobspec}*]} ;;
-        *)      job_id=${(k)jobtexts[(r)${(Q)jobspec}*]} ;;
-      esac
-      [[ -n ${jobtexts[$job_id]} ]] &&
-        builtin print -rnu $_ghostty_fd $'\e]2;'${jobtexts[$job_id]//[[:cntrl:]]}$'\a'
-    fi
-    builtin fg "$@"
-  }
-fi
 
 # Unexport FPATH (brew exports it): nested shells re-stack omz dirs, the fpath
 # mismatch nukes $ZSH_COMPDUMP -> ~1.7s cold compinit. Must stay last.
