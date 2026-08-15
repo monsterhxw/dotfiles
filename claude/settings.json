@@ -6,6 +6,7 @@
   },
   "autoMemoryEnabled": false,
   "cleanupPeriodDays": 365,
+  "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
