@@ -9,8 +9,8 @@
   "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
   "enabledPlugins": {
-    "skill-creator@claude-plugins-official": true,
-    "diagram-design@diagram-design": true
+    "skill-creator@claude-plugins-official": false,
+    "diagram-design@diagram-design": false
   },
   "env": {
     "ANTHROPIC_BETAS": "context-1m-2025-08-07",
@@ -67,6 +67,7 @@
       "Read(/**/.env*)"
     ]
   },
+  "preferredNotifChannel": "ghostty",
   "sandbox": {
     "enabled": false
   },
