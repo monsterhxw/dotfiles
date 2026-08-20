@@ -37,6 +37,9 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.ripgreprc"
 export EDITOR=nvim
 export VISUAL=nvim
 
+# See: https://github.com/MichaelAquilina/zsh-you-should-use#disable-hints-for-specific-aliases
+export YSU_IGNORED_ALIASES=("cl")
+
 # Dedupe PATH; must run AFTER all the `export PATH=...` lines above. tmux panes
 # are login shells on macOS, so this file re-runs on an already-populated PATH
 # and every prepend would stack a duplicate. -U keeps the FIRST occurrence, so
