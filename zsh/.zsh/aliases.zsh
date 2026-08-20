@@ -37,3 +37,6 @@ alias gosr='cd $HOME/Library/Group\ Containers/group.com.liguangming.Shadowrocke
 
 # Herdr
 alias hksv='herdr server stop'
+
+# Claude Code
+alias cl='claude'
