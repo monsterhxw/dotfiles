@@ -58,7 +58,7 @@ zstyle ':completion:*' special-dirs false # Ignore ./ and ../
 [[ -f "$HOME/.zsh/functions.zsh" ]] && source "$HOME/.zsh/functions.zsh"
 [[ -f "$HOME/.config/fzf/fzf.zsh" ]] && source "$HOME/.config/fzf/fzf.zsh"
 [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
-[[ -f "$HOME/.zsh/claude-code.local.zsh" ]] && source "$HOME/.zsh/claude-code.local.zsh"
+# [[ -f "$HOME/.zsh/claude-code.local.zsh" ]] && source "$HOME/.zsh/claude-code.local.zsh"
 # Ghostty extras (re-source, OSC 7 dedup, fg title fix); guard skips stat for
 # non-ghostty shells. Keep after oh-my-zsh: it deletes omz's OSC 7 hook.
 [[ -n $GHOSTTY_RESOURCES_DIR ]] && source "$HOME/.zsh/ghostty.zsh"
