@@ -55,15 +55,16 @@
   "permissions": {
     "allow": [
       "Bash(curl *https://r.jina.ai/*)",
-      "Bash(gh * list *)",
-      "Bash(gh * view *)",
-      "Bash(gh * diff *)",
-      "Bash(gh * status *)",
-      "Bash(gh * checks *)",
-      "Bash(gh search *)",
+      "Bash(gh *)",
       "Read"
     ],
-    "defaultMode": "auto",
+    "ask": [
+      "Bash(gh pr merge *)",
+      "Bash(gh repo delete *)",
+      "Bash(gh release delete *)",
+      "Bash(gh api *)"
+    ],
+    "defaultMode": "default",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.env)",
