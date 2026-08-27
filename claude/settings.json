@@ -62,7 +62,8 @@
       "Bash(gh pr merge *)",
       "Bash(gh repo delete *)",
       "Bash(gh release delete *)",
-      "Bash(gh api *)"
+      "Bash(gh api -X *)",
+      "Bash(gh api --method *)"
     ],
     "defaultMode": "default",
     "deny": [
