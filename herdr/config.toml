@@ -1,8 +1,16 @@
 onboarding = false
 
 [theme]
-name = "nord"
 auto_switch = false
+
+# >>> nord theme >>>
+name = "nord"
+# nord3 提亮 20%，Nord 官方修法：只提亮度（nordtheme/nord#94）。
+[theme.custom]
+overlay0 = "#7B88A1" # 用于 pane 边框和标签、tab 文字、分隔符、按钮、提示。
+overlay1 = "#99A3B6" # 同一规则提亮 30%。用于 scrollbar 滑块、非活动 tab 文字。
+active_row_bg = "#3B4252" # 活动 Space / 聚焦 Agent 行背景，nord2 降一档到 nord1，前景对比度 +17%。
+# <<< nord theme <<<
 
 [experimental]
 switch_ascii_input_source_in_prefix = false
@@ -15,8 +23,8 @@ window_title = "{terminal_title}"
 status_indicators = "symbols"
 [ui.sidebar.agents]
 rows = [
-  ["state_icon", "workspace", "tab"],
-  ["state_text", "agent"],
+  ["state_icon", { token = "agent", fg = "#D08770", bold = true, dim = false }, { token = "state_text", bold = true, dim = false }],
+  ["workspace", { token = "tab", dim = false }],
 ]
 
 [ui.toast]
