@@ -57,6 +57,7 @@
     "allow": [
       "Bash(curl *https://r.jina.ai/*)",
       "Bash(gh *)",
+      "Bash(tinyfish *)",
       "Read"
     ],
     "ask": [
