@@ -11,7 +11,7 @@
   > TinyFish takes multiple URLs per call; `--format html` when markdown flattens tables; `--links` extracts URLs. Jina can return an unrelated page — check its title matches.
 - Web search: prefer WebSearch; if unavailable, denied, or failing, use `tinyfish search query "<query>"` — never skip a needed web search
   > TinyFish snippets often suffice — fetch only when they don't. Keyword-driven: use exact terms, `--include-domains`/`--exclude-domains`, and in-query `after:YYYY-MM-DD` for version questions.
-- File edits: prefer **Edit** or **Write** tools; use shell only if those tools fail, and state the reason
+- File ops: prefer dedicated tools (Read/Edit/Write/Grep/Glob) over Bash; use Bash only if those fail, and state why
 
 ## Communication
 - Use `AskUserQuestion` tool before acting on assumptions or choosing between approaches
