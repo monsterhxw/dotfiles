@@ -2,7 +2,8 @@
   "alwaysThinkingEnabled": true,
   "attribution": {
     "commit": "",
-    "pr": ""
+    "pr": "",
+    "sessionUrl": false
   },
   "autoMemoryEnabled": false,
   "autoUploadSessions": false,
