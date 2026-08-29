@@ -5,6 +5,7 @@
     "pr": ""
   },
   "autoMemoryEnabled": false,
+  "autoUploadSessions": false,
   "cleanupPeriodDays": 365,
   "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
@@ -20,7 +21,7 @@
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max",
+    "CLAUDE_CODE_EFFORT_LEVEL": "xhigh",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
     "CLAUDE_CODE_MAX_RETRIES": 3,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
@@ -75,6 +76,7 @@
     ]
   },
   "preferredNotifChannel": "ghostty",
+  "remoteControlAtStartup": false,
   "sandbox": {
     "enabled": false
   },
