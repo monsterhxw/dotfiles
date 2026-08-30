@@ -27,8 +27,8 @@ cursor-text = "#011423"
 # Background and Foreground
 # background = "#1f2430"
 # foreground = "#cbccc6"
-background-opacity = 0.96
-background-blur-radius = 15
+background-opacity = 0.80
+background-blur-radius = 20
 # minimum-contrast = 1.1
 
 # Window
