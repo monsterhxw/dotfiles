@@ -11,11 +11,9 @@
   "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
   "enabledPlugins": {
-    "skill-creator@claude-plugins-official": false,
-    "diagram-design@diagram-design": false
+    "skill-creator@claude-plugins-official": false
   },
   "env": {
-    "ANTHROPIC_BETAS": "context-1m-2025-08-07",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
@@ -30,12 +28,12 @@
     "ENABLE_TOOL_SEARCH": "true"
   },
   "extraKnownMarketplaces": {
-    "diagram-design": {
+    "claude-plugins-official": {
+      "autoUpdate": true,
       "source": {
         "source": "github",
-        "repo": "cathrynlavery/diagram-design"
-      },
-      "autoUpdate": true
+        "repo": "anthropics/claude-plugins-official"
+      }
     }
   },
   "hooks": {
@@ -78,6 +76,9 @@
   "remoteControlAtStartup": false,
   "sandbox": {
     "enabled": false
+  },
+  "skillOverrides": {
+    "karpathy-guidelines": "off"
   },
   "skipDangerousModePermissionPrompt": true,
   "skipWebFetchPreflight": true,
