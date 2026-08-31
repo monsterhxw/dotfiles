@@ -74,6 +74,7 @@
   },
   "preferredNotifChannel": "ghostty",
   "remoteControlAtStartup": false,
+  "respondToBashCommands": false,
   "sandbox": {
     "enabled": false
   },
