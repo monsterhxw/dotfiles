@@ -5,6 +5,9 @@
 - **Technical terms**: Keep in English
 - **Code/comments/docs**: English
 
+## Writing
+- Please remove all mannered prose.
+
 ## Tools
 - GitHub URL/content: prefer `gh` CLI over curl/WebFetch
 - Web fetch: prefer WebFetch; if unavailable, denied, or failing, use `tinyfish fetch content get <urls...>`; on `bot_blocked` or a truncated result, fall back to Jina Reader (`curl -H "Accept: text/markdown" https://r.jina.ai/<url>`) — never skip fetching a URL
