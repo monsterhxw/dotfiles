@@ -41,4 +41,4 @@ alias hksv='herdr server stop'
 # Claude Code
 alias cl='claude'
 alias clc='claude -c'
-alias clg='claude "/gen-commit-msg"'
+alias clg='claude --model opus "/gen-commit-msg"'
