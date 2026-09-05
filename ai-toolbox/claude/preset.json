@@ -1,5 +1,9 @@
 {
   "permissions": {
     "defaultMode": "auto"
+    "deny": [
+      "WebSearch",
+      "WebFetch"
+    ]
   }
 }
