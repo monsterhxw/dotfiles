@@ -11,6 +11,7 @@
   "disableAutoMode": "disable",
   "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
+  "effortLevel": "xhigh",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": false
   },
@@ -18,13 +19,13 @@
     "ANTHROPIC_AUTH_TOKEN": "",
     "ANTHROPIC_BASE_URL": "",
     "ANTHROPIC_BETAS": "context-1m-2025-08-07",
+    "ANTHROPIC_MODEL": "fable",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "xhigh",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
-    "CLAUDE_CODE_MAX_RETRIES": 3,
+    "CLAUDE_CODE_MAX_RETRIES": 2,
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
     "CLAUDE_CODE_RETRY_WATCHDOG": "1",
     "CLAUDE_CODE_THRIFTY_SONIC": "0",
@@ -54,7 +55,11 @@
       }
     ]
   },
-  "model": "fable",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    }
+  },
   "permissions": {
     "allow": [
       "Bash(curl *https://r.jina.ai/*)",

@@ -10,15 +10,16 @@
   "cleanupPeriodDays": 365,
   "disableDeepLinkRegistration": "disable",
   "editorMode": "vim",
+  "effortLevel": "xhigh",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": false
   },
   "env": {
+    "ANTHROPIC_MODEL": "fable",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "xhigh",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
     "CLAUDE_CODE_MAX_RETRIES": "2",
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "true",
@@ -50,6 +51,11 @@
       }
     ]
   },
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    }
+  },
   "permissions": {
     "allow": [
       "Bash(curl *https://r.jina.ai/*)",
@@ -62,9 +68,23 @@
       "Bash(gh repo delete *)",
       "Bash(gh release delete *)",
       "Bash(gh api -X *)",
-      "Bash(gh api --method *)"
+      "Bash(gh api --method *)",
+      "Bash(*rm *)",
+      "Bash(*trash *)",
+      "Bash(*sudo *)",
+      "Bash(dd *)",
+      "Bash(*mkfs*)",
+      "Bash(*diskutil *)",
+      "Bash(*git push --force*)",
+      "Bash(*git push -f*)",
+      "Bash(*git reset --hard*)",
+      "Bash(*git clean *)",
+      "Bash(*chmod -R *)",
+      "Bash(*chown -R *)",
+      "Edit",
+      "Write"
     ],
-    "defaultMode": "default",
+    "defaultMode": "bypassPermissions",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.env)",
