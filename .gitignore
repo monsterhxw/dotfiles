@@ -1,2 +1,3 @@
 .DS_Store
 *.local.zsh
+zsh/.zsh/local/

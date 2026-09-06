@@ -85,3 +85,13 @@ bri () {
     brew install --ignore-dependencies "$p" || :
   done
 }
+
+# Run /gen-commit-msg via the cheaper relay in the local settings file, if present.
+# No --model here: the CLI flag would override ANTHROPIC_MODEL from that file.
+# CLAUDE_CODE_SKIP_PROMPT_HISTORY=1 (undocumented): no transcript, no prompt history, so `claude -c` and /resume skip this throwaway session.
+clg () {
+  local settings="$HOME/.zsh/local/settings.gen-commit-msg.local.json"
+  local -a opts
+  [[ -f "$settings" ]] && opts=(--settings "$settings")
+  CLAUDE_CODE_SKIP_PROMPT_HISTORY=1 claude "${opts[@]}" "/gen-commit-msg" "$@"
+}

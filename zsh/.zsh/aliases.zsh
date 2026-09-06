@@ -38,7 +38,6 @@ alias gosr='cd $HOME/Library/Group\ Containers/group.com.liguangming.Shadowrocke
 # Herdr
 alias hksv='herdr server stop'
 
-# Claude Code
+# Claude Code (clg is a function in functions.zsh: it needs a file-existence check and an env prefix)
 alias cl='claude'
 alias clc='claude -c'
-alias clg='claude --model opus "/gen-commit-msg"'
