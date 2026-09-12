@@ -1,0 +1,31 @@
+# Material Snazzy Dark
+#   - palette 0 + background: Raycast Dark (neutral dark, more transparent feel)
+#   - palette 4/12 (blue): Snazzy Soft (softer than Material's vivid blue)
+#   - palette 5/13 (magenta): Snazzy Soft
+#   - palette 6/14 (cyan): Raycast Dark (Material's mint sits too close to green)
+#   - selection: pastel of Material's mint cyan, same lightness as Snazzy Soft's
+#   - cursor: custom mint green
+#   - palette 8: midpoint of Material 0/8, dims zsh-autosuggestions
+#   - everything else: Material Design Colors
+palette = 0=#000000
+palette = 1=#fc3841
+palette = 2=#5cf19e
+palette = 3=#fed032
+palette = 4=#57c7ff
+palette = 5=#ff6ac1
+palette = 6=#52eee5
+palette = 7=#ffffff
+palette = 8=#72868f
+palette = 9=#fc746d
+palette = 10=#adf7be
+palette = 11=#fee16c
+palette = 12=#57c7ff
+palette = 13=#ff6ac1
+palette = 14=#52eee5
+palette = 15=#ffffff
+background = #1a1a1a
+foreground = #e7ebed
+cursor-color = #68f4b0
+cursor-text = #011423
+selection-background = #7cc4b0
+selection-foreground = #000000
