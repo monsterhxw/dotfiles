@@ -1,12 +1,12 @@
 # User Preferences
 
-## Language (STRICT)
+## Language
 - **All responses/explanations**: Chinese
 - **Technical terms**: Keep in English
 - **Code/comments/docs**: English
 
 ## Writing
-- Please remove all mannered prose.
+- IMPORTANT: Please remove all mannered prose.
 
 ## Tools
 - GitHub URL/content: prefer `gh` CLI over curl/WebFetch
@@ -14,7 +14,7 @@
   > TinyFish takes multiple URLs per call; `--format html` when markdown flattens tables; `--links` extracts URLs. Jina can return an unrelated page — check its title matches.
 - Web search: prefer WebSearch; if unavailable, denied, or failing, use `tinyfish search query "<query>"` — never skip a needed web search
   > TinyFish snippets often suffice — fetch only when they don't. Keyword-driven: use exact terms, `--include-domains`/`--exclude-domains`, and in-query `after:YYYY-MM-DD` for version questions.
-- File ops: prefer dedicated tools (Read/Edit/Write/Grep/Glob) over Bash; use Bash only if those fail, and state why
+- File ops: use Read to read, Edit to change existing files, Write to create new ones. Never view or write file contents through Bash (cat, head, tail, sed, `>`/`>>`, heredoc, tee). Use Bash only for what no other loaded tool covers (delete, move, copy, chmod); state why when it modifies files. If a loaded tool fails, fix the cause (e.g. Read first) instead of falling back to Bash. Confirm before deleting anything not created in this session. Before finishing, delete temp/backup files you created.
 
 ## Coding
 - Grep for an existing helper before writing a new one; reuse it instead of re-implementing.
