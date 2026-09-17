@@ -44,14 +44,14 @@
   "hooks": {
     "SessionStart": [
       {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
         "hooks": [
           {
+            "type": "command",
             "command": "bash $HOME/.claude/hooks/herdr-agent-state.sh session",
-            "timeout": 10,
-            "type": "command"
+            "timeout": 10
           }
-        ],
-        "matcher": "*"
+        ]
       }
     ]
   },
