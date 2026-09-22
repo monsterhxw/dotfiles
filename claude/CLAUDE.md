@@ -18,12 +18,7 @@
 
 ## Coding
 - Grep for an existing helper before writing a new one; reuse it instead of re-implementing.
-- Apply YAGNI: no interface with one implementation, no config for a value that never
-  changes, no unreachable defensive branch. Always validate input at trust boundaries.
-- Fix bugs at the root: find all call sites first, then fix the shared code path once
-  instead of guarding each caller.
-- Cover branching, looping, parsing, money, auth, and destructive operations with one test,
-  however trivial they look. For a bug, write the failing regression test first. No new test
-  framework unless asked.
-- Don't delete code you didn't touch — flag it instead. Remove imports and helpers your own
-  change made unused.
+- Apply YAGNI: no interface with one implementation, no config for a value that never changes, no unreachable defensive branch. Always validate input at trust boundaries.
+- Fix bugs at the root: find all call sites first, then fix the shared code path once instead of guarding each caller.
+- Cover branching, looping, parsing, money, auth, and destructive operations with one test, however trivial they look. For a bug, write the failing regression test first. No new test framework unless asked.
+- Don't delete code you didn't touch — flag it instead. Remove imports and helpers your own change made unused.
