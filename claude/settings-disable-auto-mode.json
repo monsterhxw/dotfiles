@@ -62,6 +62,7 @@
   },
   "permissions": {
     "ask": [
+      "Read(//**/*claude*/**/settings*)",
       "Bash(defaults write *)",
       "Bash(*rm *)",
       "Bash(*trash *)",
