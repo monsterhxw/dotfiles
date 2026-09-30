@@ -68,6 +68,9 @@
       "Read"
     ],
     "ask": [
+      "Bash(*python* *subprocess*)",
+      "Bash(*python* *os.*)",
+      "Bash(*python* *pty.spawn*)",
       "Bash(ln *)",
       "Bash(defaults write *)",
       "Bash(*rm *)",
