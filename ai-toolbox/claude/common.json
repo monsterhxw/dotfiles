@@ -68,7 +68,7 @@
       "Read"
     ],
     "ask": [
-      "Read(//**/*claude*/**/settings*)",
+      "Bash(ln *)",
       "Bash(defaults write *)",
       "Bash(*rm *)",
       "Bash(*trash *)",
@@ -103,6 +103,7 @@
       "Bash(git push --force*)",
       "Bash(git push -f*)",
       "Bash(git reset --hard*)",
+      "Read(//**/*claude*/**/settings*)",
       "Edit",
       "Write"
     ],
