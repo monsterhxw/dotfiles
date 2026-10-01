@@ -16,6 +16,9 @@
   > TinyFish snippets often suffice — fetch only when they don't. Keyword-driven: use exact terms, `--include-domains`/`--exclude-domains`, and in-query `after:YYYY-MM-DD` for version questions.
 - File ops: use Read to read, Edit to change existing files, Write to create new ones. Never view or write file contents through Bash (cat, head, tail, sed, `>`/`>>`, heredoc, tee). Use Bash only for what no other loaded tool covers (delete, move, copy, chmod); state why when it modifies files. If a loaded tool fails, fix the cause (e.g. Read first) instead of falling back to Bash. Confirm before deleting anything not created in this session. Once the whole task is done, not each turn, delete temp/backup files you created.
 
+## Git
+- Use Conventional Commits unless `git log` shows the repo follows another convention. When the subject alone can't explain the change, add a body stating the problem and why this approach; the diff shows how.
+
 ## Coding
 - Grep for an existing helper before writing a new one; reuse it instead of re-implementing.
 - Apply YAGNI: no interface with one implementation, no config for a value that never changes, no unreachable defensive branch. Always validate input at trust boundaries.
