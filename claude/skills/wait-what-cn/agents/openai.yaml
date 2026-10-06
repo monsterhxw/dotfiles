@@ -1,0 +1,5 @@
+interface:
+  display_name: "Wait What CN"
+  short_description: "Re-pitch with wait-what, in clear Chinese"
+policy:
+  allow_implicit_invocation: false
