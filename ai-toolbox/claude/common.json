@@ -68,6 +68,10 @@
       "Read"
     ],
     "ask": [
+      "Bash(env *)",
+      "Bash(printenv *)",
+      "Bash(export -p*)",
+      "Bash(set)",
       "Bash(*python* *subprocess*)",
       "Bash(*python* *os.*)",
       "Bash(*python* *pty.spawn*)",
