@@ -5,7 +5,7 @@
     "pr": "",
     "sessionUrl": false
   },
-  "autoCompactWindow": 250000,
+  "autoCompactWindow": 365000,
   "autoMemoryEnabled": false,
   "autoUploadSessions": false,
   "cleanupPeriodDays": 365,
