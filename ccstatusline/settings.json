@@ -111,7 +111,7 @@
       {
         "id": "15",
         "type": "custom-command",
-        "commandPath": "u=${ANTHROPIC_BASE_URL#*://}; printf '%s' \"${u%%/*}\"",
+        "commandPath": "h=${ANTHROPIC_BASE_URL#*://}; h=${h%%/*}; case \"$h\" in 127.0.0.1:3425|localhost:3425) h=magpie ;; esac; printf '%s' \"$h\"",
         "color": "ansi256:221",
         "bold": true
       },
