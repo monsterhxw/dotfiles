@@ -168,7 +168,7 @@
   "skipDangerousModePermissionPrompt": true,
   "skipWebFetchPreflight": true,
   "statusLine": {
-    "command": "$HOME/.claude/ccline/ccline",
+    "command": "ccstatusline",
     "padding": 0,
     "type": "command"
   },

@@ -1,0 +1,187 @@
+{
+  "version": 4,
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "custom-text",
+        "customText": "󰫢\u2002",
+        "color": "ansi256:14",
+        "bold": true,
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "2",
+        "type": "model",
+        "color": "ansi256:14",
+        "bold": true,
+        "rawValue": true
+      },
+      {
+        "id": "3",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "4",
+        "type": "thinking-effort",
+        "color": "ansi256:14",
+        "bold": true,
+        "rawValue": true
+      },
+      {
+        "id": "5",
+        "type": "separator"
+      },
+      {
+        "id": "6",
+        "type": "custom-text",
+        "customText": "\u2002",
+        "color": "ansi256:13",
+        "bold": true,
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "7",
+        "type": "context-length",
+        "color": "ansi256:13",
+        "bold": true,
+        "rawValue": true,
+        "merge": true
+      },
+      {
+        "id": "8",
+        "type": "custom-text",
+        "customText": "/",
+        "color": "ansi256:13",
+        "bold": true
+      },
+      {
+        "id": "9",
+        "type": "context-window",
+        "color": "ansi256:13",
+        "bold": true,
+        "rawValue": true,
+        "merge": true
+      },
+      {
+        "id": "10",
+        "type": "custom-text",
+        "customText": " (",
+        "color": "ansi256:13",
+        "bold": true,
+        "merge": true
+      },
+      {
+        "id": "11",
+        "type": "context-percentage",
+        "color": "ansi256:13",
+        "bold": true,
+        "rawValue": true,
+        "merge": true
+      },
+      {
+        "id": "12",
+        "type": "custom-text",
+        "customText": ")",
+        "color": "ansi256:13",
+        "bold": true
+      },
+      {
+        "id": "13",
+        "type": "separator"
+      },
+      {
+        "id": "14",
+        "type": "custom-text",
+        "customText": "\u2002",
+        "color": "ansi256:221",
+        "bold": true,
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "15",
+        "type": "custom-command",
+        "commandPath": "u=${ANTHROPIC_BASE_URL#*://}; printf '%s' \"${u%%/*}\"",
+        "color": "ansi256:221",
+        "bold": true
+      },
+      {
+        "id": "16",
+        "type": "separator"
+      },
+      {
+        "id": "17",
+        "type": "custom-text",
+        "customText": "\u2002",
+        "color": "ansi256:12",
+        "bold": true,
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "18",
+        "type": "git-branch",
+        "color": "ansi256:12",
+        "bold": true,
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-git"
+        }
+      },
+      {
+        "id": "19",
+        "type": "custom-text",
+        "customText": " ",
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "20",
+        "type": "git-clean-status",
+        "color": "ansi256:12",
+        "bold": true,
+        "metadata": {
+          "hide": "no-git",
+          "symbolDirty": "●"
+        }
+      },
+      {
+        "id": "21",
+        "type": "separator"
+      },
+      {
+        "id": "22",
+        "type": "custom-text",
+        "customText": "\u2002",
+        "color": "ansi256:7",
+        "bold": true,
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "23",
+        "type": "claude-session-id",
+        "color": "ansi256:7",
+        "bold": true,
+        "dim": true,
+        "rawValue": true
+      }
+    ]
+  ]
+}
